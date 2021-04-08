@@ -11,7 +11,7 @@
                         </span>
                     </a>
                     <p>
-                    <table id="tabel" class="table table-striped table-hover ">
+                    <table id="dataTable" class="table table-striped table-hover ">
                         <thead class="table-primary">
                             <tr>
                                 <th>NO</th>
@@ -33,16 +33,16 @@
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
                                         href="<?= base_url().'admin/galeri/hapus/'.$galeri->id_galeri ?>">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
                                         href="<?= base_url().'admin/galeri/edit/'.$galeri->id_galeri ?>">
-                                        <i class="fas fa-edit" aria-hidden="true"></i>
+                                        <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
                                     </a>
                                     <a class='btn btn-info'
                                         href='<?= base_url().'admin/galeri/detail/'.$galeri->id_galeri?>'
                                         class='btn btn-biru'>
-                                        <i class="fas fa-eye" aria-hidden="true"></i>
+                                        <i class="fas fa-eye" aria-hidden="true"><span> Detail</span></i>
                                     </a>
                                 </td>
                             </tr>

@@ -81,6 +81,12 @@
                </div>
            </li>
 
+           <li class="nav-item">
+               <a href="<?php echo base_url().'admin/penduduk' ?>" class="nav-link">
+                   <i class="fas fa-fw fa-table"></i>
+                   <span>Data Penduduk</span></a>
+           </li>
+
            <!-- Nav Item - Charts -->
            <li class="nav-item">
                <a href="<?php echo base_url().'admin/berita' ?>" class="nav-link">
@@ -102,15 +108,5 @@
            <div class="text-center d-none d-md-inline">
                <button class="rounded-circle border-0" id="sidebarToggle"></button>
            </div>
-
-           <!-- Sidebar Message -->
-           <div class="sidebar-card">
-               <img class="sidebar-card-illustration mb-2" src="<?= base_url(); ?>assets/img/undraw_rocket.svg" alt="">
-               <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components,
-                   and more!</p>
-               <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
-                   Pro!</a>
-           </div>
-
        </ul>
        <!-- End of Sidebar -->
