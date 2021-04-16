@@ -9,6 +9,7 @@
         {
             parent::__construct();
             $this->load->model('berita_model');
+            $this->load->model('pegawai_model');
             // $this->load->model('admin/user/user_model');
         }
         
@@ -17,9 +18,10 @@
             // load view admin/overview.php
             $data['title'] = 'Halaman User';
             $data['berita'] = $this->berita_model->tampilBerita();
+            $data['pegawai'] = $this->pegawai_model->tampilPegawai();
             $this->load->view('template user/header',$data);
             $this->load->view('user/home', $data);
-            $this->load->view('template user/footer');   
+            $this->load->view('template user/footer',$data);
         }
     }
         /* End of fils konsep.php */

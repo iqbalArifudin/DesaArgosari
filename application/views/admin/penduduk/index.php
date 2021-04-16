@@ -28,6 +28,7 @@
                                 <th>ALAMAT</th>
                                 <th>RT</th>
                                 <th>RW</th>
+                                <th>AKSES</th>
                                 <!-- <th>DESA</th>
                                 <th>FOTO</th>
                                 <th>PASSWORD</th> -->
@@ -51,6 +52,7 @@
                                 <td><?= $penduduk->alamat ?></td>
                                 <td><?= $penduduk->RT ?></td>
                                 <td><?= $penduduk->RW ?></td>
+                                <td><?= $penduduk->hak_akses ?></td>
                                 <!-- <td><?= $penduduk->desa ?></td> -->
                                 <!-- <td><img src="<?= base_url('assets/foto_penduduk/') . $penduduk->foto ?>"
                                         style="width:50px; height:50px;"></td>

@@ -9,6 +9,13 @@ class penduduk_model extends CI_Model {
         return $this->db->get('penduduk')->result();
     }
 
+    public function tampilPendudukPegawai()
+    {
+          $pegawaisaja = 'Pegawai';
+        $query = $this->db->order_by('id_penduduk', 'DESC')->get_where('penduduk', array('hak_akses' => $pegawaisaja));
+            return $query->result();
+    }
+
     public function tambahPenduduk($upload){
 		$data=[
             'id_penduduk'=>$this->input->post('id_penduduk', true),

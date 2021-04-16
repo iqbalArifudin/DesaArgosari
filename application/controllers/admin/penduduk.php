@@ -14,10 +14,7 @@
         
         public function index()
         {
-        //    $this->admin_model->index();s
-        // $data['user'] = $this->user_model->tampilUser($this->session->userdata('id_berita'));
         $data['penduduk'] = $this->penduduk_model->tampilPenduduk();
-        // $data['berita'] = $this->db->get('berita')->result();
         $this->load->view('template admin/header',$data);
         $this->load->view('template admin/sidebar',$data);
         $this->load->view('template admin/topbar',$data); 
