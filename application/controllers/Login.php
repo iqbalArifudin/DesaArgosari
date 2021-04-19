@@ -33,10 +33,10 @@ class Login extends CI_Controller
 					redirect('admin/home');
 				}
 				else if($this->session->userdata('hak_akses')=='Penduduk'){
-					redirect('user/home');
+					redirect('user/LayananKtp');
 				}
 				else if($this->session->userdata('hak_akses')=='Pegawai'){
-					redirect('sekretaris/home');
+					redirect('pegawai/home');
 				}
 			}
 		}

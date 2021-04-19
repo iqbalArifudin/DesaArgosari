@@ -67,6 +67,7 @@
         public function edit($id_pegawai)
         {
         $data ['pegawai'] = $this->pegawai_model->getPegawai($id_pegawai);
+        $data['penduduk'] = $this->penduduk_model->tampilPendudukPegawai();
         $this->form_validation->set_rules('NIK', 'NIK', 'required|trim');
 
         if ($this->form_validation->run() == false) {
@@ -86,7 +87,7 @@
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('foto')) {
-                    $old_file = $data['berita']['foto'];
+                    $old_file = $data['pegawai']['foto'];
                     if ($old_file != 'default.png') {
                         unlink(FCPATH . './assets/foto_pegawai/' . $old_file);
                     }
@@ -98,35 +99,11 @@
             }
 
             $id_pegawai = $this->input->post('id_pegawai');
-            $NIK = $this->input->post('NIK');
-            $no_KK = $this->input->post('no_KK');
-            $nama = $this->input->post('nama');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tanggal_lahir = $this->input->post('tanggal_lahir');
-            $agama = $this->input->post('agama');
-            $status_perkawinan = $this->input->post('status_perkawinan');
-            $pekerjaan = $this->input->post('pekerjaan');
-            $gol_darah = $this->input->post('gol_darah');
-            $alamat = $this->input->post('alamat');
-            $RT = $this->input->post('RT');
-            $RW = $this->input->post('RW');
-            $desa = $this->input->post('desa');
-            $password = $this->input->post('password');
+            $jabatan = $this->input->post('jabatan');
+            $no_hp = $this->input->post('no_hp');
 
-            $this->db->set('NIK', $NIK);
-            $this->db->set('no_KK', $no_KK);
-            $this->db->set('nama', $nama);
-            $this->db->set('tempat_lahir', $tempat_lahir);
-            $this->db->set('tanggal_lahir', $tanggal_lahir);
-            $this->db->set('agama', $agama);
-            $this->db->set('status_perkawinan', $status_perkawinan);
-            $this->db->set('pekerjaan', $pekerjaan);
-            $this->db->set('gol_darah', $gol_darah);
-            $this->db->set('alamat', $alamat);
-            $this->db->set('RT', $RT);
-            $this->db->set('RW', $RW);
-            $this->db->set('desa', $desa);
-            $this->db->set('password', $password);
+            $this->db->set('jabatan', $jabatan);
+            $this->db->set('no_hp', $no_hp);
             $this->db->where('id_pegawai', $id_pegawai);
             $this->db->update('pegawai');
 
@@ -145,7 +122,7 @@
     }
     
         public function detail($id_pegawai){
-            $data['pegawai']=$this->pegawai_model->getDetail($id_pegawai);
+            $data['pegawai']=$this->pegawai_model->getDetailPegawai($id_pegawai);
             $this->load->view('template admin/header',$data);
             $this->load->view('template admin/sidebar');
             $this->load->view('template admin/topbar'); 

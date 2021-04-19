@@ -1,85 +1,77 @@
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            Pelayanan Pembuatan KTP (Kartu Tanda Penduduk)
-                        </div>
-                        <div class="card-body">
-                            <?php if (validation_errors()): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?= validation_errors(); ?>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
+                    <div class="card-body">
+                        <form action="<?= base_url('barang/proses_tambah') ?>" id="form-tambah" method="POST">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nama_barang"><strong>Nama</strong></label>
+                                    <input type="text" name="nama_barang" placeholder="Masukkan Nama Barang"
+                                        autocomplete="off" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nama_barang"><strong>Tempat Lahir</strong></label>
+                                    <input type="text" name="nama_barang" placeholder="Masukkan Nama Barang"
+                                        autocomplete="off" class="form-control" required>
+                                </div>
                             </div>
-                            <?php endif; ?>
-                            <form class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nama_barang"><strong>Tempat Lahir</strong></label>
+                                    <input type="text" name="nama_barang" placeholder="Masukkan Nama Barang"
+                                        autocomplete="off" class="form-control" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4">
+                                <div class="form-group col-md-6">
+                                    <label for="nama_barang"><strong>Tanggal Lahir</strong></label>
+                                    <input type="date" name="nama_barang" placeholder="Masukkan Nama Barang"
+                                        autocomplete="off" class="form-control" required>
                                 </div>
-                                <div class="col-12">
-                                    <label for="inputAddress" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="inputAddress"
-                                        placeholder="1234 Main St">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="harga_beli"><strong>Harga Beli</strong></label>
+                                    <input type="number" name="harga_beli" placeholder="Masukkan Harga Beli"
+                                        autocomplete="off" class="form-control" required>
                                 </div>
-                                <div class="col-12">
-                                    <label for="inputAddress2" class="form-label">Address 2</label>
-                                    <input type="text" class="form-control" id="inputAddress2"
-                                        placeholder="Apartment, studio, or floor">
+                                <div class="form-group col-md-6">
+                                    <label for="harga_jual"><strong>Harga Jual</strong></label>
+                                    <input type="number" name="harga_jual" placeholder="Masukkan Harga Jual"
+                                        autocomplete="off" class="form-control" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputCity" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="stok"><strong>Stok</strong></label>
+                                    <input type="number" name="stok" placeholder="Masukkan Stok" autocomplete="off"
+                                        class="form-control" required>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="inputState" class="form-label">State</label>
-                                    <select id="inputState" class="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
+                                <div class="form-group col-md-6">
+                                    <label for="satuan"><strong>Satuan</strong></label>
+                                    <select name="satuan" id="satuan" class="form-control" required>
+                                        <option value="">-- Silahkan Pilih --</option>
+                                        <option value="pcs">PCS</option>
+                                        <option value="sachet">SACHET</option>
+                                        <option value="renceng">RENCENG</option>
+                                        <option value="pak">PAK</option>
+                                        <option value="kg">KILOGRAM</option>
+                                        <option value="ons">ONS</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2">
-                                    <label for="inputZip" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip">
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary"><i
+                                        class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+                                <button type="reset" class="btn btn-danger"><i
+                                        class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
+                            </div>
+                        </form>
                     </div>
-
                 </div>
-
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->

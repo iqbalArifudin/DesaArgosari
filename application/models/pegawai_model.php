@@ -63,24 +63,5 @@ class pegawai_model extends CI_Model {
         $this->db->where('id_pegawai', $id_pegawai);
         return $this->db->get('pegawai')->result();
     }
-
-    // public function ubahSurat($id_surat){
-	// 	$data=[
-    //         'id_surat'=>$this->input->post('id_surat', true),
-    //         'dari'=>$this->input->post('dari', true),
-    //         'perihal'=>$this->input->post('perihal', true),
-    //         'tgl_masuk'=>$this->input->post('tgl_masuk', true),
-    //         'tgl_diterima'=>$this->input->post('tgl_diterima', true),
-    //         'status'=>$this->input->post('status', true),
-    //         'keterangan'=>$this->input->post('keterangan', true),
-	// 	];
-    //     $this->db->where('id_surat', $id_surat);	
-    //     $this->db->update('surat', $data);
-    // }
-
-    // public function download($id_surat){
-    //     $query = $this->db->get_where('surat',array('id_surat'=>$id_surat));
-    //     return $query->row_array();
-    // }
     
 }    

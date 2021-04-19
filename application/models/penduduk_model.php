@@ -9,6 +9,11 @@ class penduduk_model extends CI_Model {
         return $this->db->get('penduduk')->result();
     }
 
+    public function tampilPendudukSaja($id_penduduk)
+    {
+        return $this->db->get('penduduk', ['id_penduduk' => $id_penduduk])->result();
+    }
+    
     public function tampilPendudukPegawai()
     {
           $pegawaisaja = 'Pegawai';
