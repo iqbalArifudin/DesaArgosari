@@ -10,12 +10,12 @@
             parent::__construct();
             $this->load->helper('url');
             $this->load->model('berita_model');  
+            $this->load->model('penduduk_model');  
         }
         
         public function index()
         {
-        //    $this->admin_model->index();s
-        // $data['user'] = $this->user_model->tampilUser($this->session->userdata('id_berita'));
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['berita'] = $this->berita_model->tampilBerita();
         // $data['berita'] = $this->db->get('berita')->result();
         $this->load->view('template admin/header',$data);
@@ -26,6 +26,7 @@
         }
 
         public function tambahberita(){
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['berita'] = $this->berita_model->tampilBerita();
             $this->load->library('form_validation');
             $this->form_validation->set_rules('judul', 'judul', 'required');
@@ -67,6 +68,7 @@
 
         public function edit($id_berita)
         {
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data ['berita'] = $this->berita_model->getBerita($id_berita);
         $this->form_validation->set_rules('judul', 'judul', 'required|trim');
 
@@ -124,6 +126,7 @@
     }
     
         public function detail($id_berita){
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['berita']=$this->berita_model->getDetail($id_berita);
             $this->load->view('template admin/header',$data);
             $this->load->view('template admin/sidebar');

@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <?php foreach ($penduduk as $penduduk) : ?>
+                    <?php foreach ($penduduk1 as $penduduk) : ?>
                     <div class="card" style="width: 20rem;">
                         <img src="<?= base_url('assets/foto_penduduk/') . $penduduk->foto ?>" class="card-img-top">
                         <ul class="list-group list-group-flush">

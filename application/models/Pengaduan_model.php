@@ -13,7 +13,7 @@ class Pengaduan_model extends CI_Model {
 
     public function tampilJenisPengaduan()
     {
-          $pengaduansaja = 'Pengaduan';
+          $pengaduansaja = 'pengaduan';
         $query = $this->db->order_by('id_pengaduan', 'DESC')->get_where('pengaduan', array('jenis_pengaduan' => $pengaduansaja));
             return $query->result();
     }
@@ -21,13 +21,13 @@ class Pengaduan_model extends CI_Model {
     public function tambahDataPengaduan($upload){
 		$data=[
             'id_pengaduan'=>$this->input->post('id_pengaduan', true),
-            'id_penduduk'=>$this->input->post('id_penduduk', true),
+            'id_penduduk'=>$this->session->userdata('id_penduduk'),
             'jenis_pengaduan'=>$this->input->post('jenis_pengaduan', true),
             'tanggal'=>$this->input->post('tanggal', true),
-            'alasan'=>$this->input->post('alasan', true),
+            'alasan'=>'-',
             'keterangan'=>$this->input->post('keterangan', true),
             'bukti'=>$upload['file']['file_name'],
-            'status'=>$this->input->post('status', true),
+            'status'=>'-',
 		];
 	$this->db->insert('pengaduan', $data);
     }
@@ -73,24 +73,5 @@ class Pengaduan_model extends CI_Model {
         $this->db->where('id_pengaduan', $id_pengaduan);
         return $this->db->get('pengaduan')->result();
     }
-
-    // public function ubahSurat($id_surat){
-	// 	$data=[
-    //         'id_surat'=>$this->input->post('id_surat', true),
-    //         'dari'=>$this->input->post('dari', true),
-    //         'perihal'=>$this->input->post('perihal', true),
-    //         'tgl_masuk'=>$this->input->post('tgl_masuk', true),
-    //         'tgl_diterima'=>$this->input->post('tgl_diterima', true),
-    //         'status'=>$this->input->post('status', true),
-    //         'keterangan'=>$this->input->post('keterangan', true),
-	// 	];
-    //     $this->db->where('id_surat', $id_surat);	
-    //     $this->db->update('surat', $data);
-    // }
-
-    // public function download($id_surat){
-    //     $query = $this->db->get_where('surat',array('id_surat'=>$id_surat));
-    //     return $query->row_array();
-    // }
     
 }    

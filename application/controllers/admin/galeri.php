@@ -10,12 +10,12 @@
             parent::__construct();
             $this->load->helper('url');
             $this->load->model('galeri_model');  
+            $this->load->model('penduduk_model');  
         }
         
         public function index()
         {
-        //    $this->admin_model->index();s
-        // $data['user'] = $this->user_model->tampilUser($this->session->userdata('id_berita'));
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['galeri'] = $this->galeri_model->tampilGaleri();
         // $data['berita'] = $this->db->get('berita')->result();
         $this->load->view('template admin/header',$data);
@@ -26,6 +26,7 @@
         }
 
         public function tambahgaleri(){
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['galeri'] = $this->galeri_model->tampilGaleri();
             $this->load->library('form_validation');
             $this->form_validation->set_rules('keterangan', 'keterangan', 'required');
@@ -67,6 +68,7 @@
 
         public function edit($id_galeri)
         {
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data ['galeri'] = $this->galeri_model->getGaleri($id_galeri);
         $this->form_validation->set_rules('keterangan', 'keterangan', 'required|trim');
 
@@ -122,6 +124,7 @@
     }
     
         public function detail($id_galeri){
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['galeri']=$this->galeri_model->getDetail($id_galeri);
             $this->load->view('template admin/header',$data);
             $this->load->view('template admin/sidebar');

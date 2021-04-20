@@ -36,7 +36,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($penduduk as $penduduk): ?>
+                            <?php $no=1; foreach ($penduduk1 as $penduduk): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $penduduk->NIK ?></td>

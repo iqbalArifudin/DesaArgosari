@@ -16,8 +16,9 @@
         
         public function index()
         {
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
-        $data['penduduk'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
+        $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template_layanan/header',$data);
         $this->load->view('template_layanan/sidebar',$data);
         $this->load->view('template_layanan/topbar',$data); 
@@ -27,21 +28,23 @@
 
         public function tambahpengaduan(){
             $this->load->library('form_validation');
+            $this->form_validation->set_rules('jenis_pengaduan', 'jenis_pengaduan', 'required');
+            // $this->form_validation->set_rules('tanggal', 'jabatan', 'required');
             // $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
             $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
-            // $data['pengaduan2'] = $this->Pengaduan_model->tampilJenisPengaduan();
+            $data['pengaduan2'] = $this->Pengaduan_model->tampilJenisPengaduan();
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             if($this->form_validation->run() == FALSE){
                 $this->load->view('template_layanan/header',$data);
                 $this->load->view('template_layanan/sidebar');
                 $this->load->view('template_layanan/topbar'); 
                 $this->load->view('user/Pengaduan/tambah' ,$data);
-                $this->load->view('template_layanan/footer');  
+
             }
             else{
                 $upload = $this->Pengaduan_model->upload();
                 if ($upload['result'] == 'success'){
-                    $this->Pengaduan_model->tambahpengaduan($upload);
+                    $this->Pengaduan_model->tambahDataPengaduan($upload);
                     $this->session->set_flashdata('pesan','Data Berhasil Di tambah');
                     redirect('user/Pengaduan','refresh');
                 } else {
@@ -78,7 +81,7 @@
                 $this->load->view('template_layanan/sidebar',$data);
                 $this->load->view('template_layanan/topbar',$data); 
                 $this->load->view('user/Pengaduan/edit',$data);
-                $this->load->view('template_layanan/footer',$data); 
+                // $this->load->view('template_layanan/footer',$data); 
         } else {
 
             //check jika ada gambar yang akan di upload

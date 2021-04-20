@@ -25,6 +25,7 @@
                                 </div>
                                 <?php endforeach ?>
                                 <p>
+                                    <?php foreach($pengaduan as $p):?>
                                 <div class="form-row">
                                     <label for="id_pengaduan"><strong>Jenis Pengaduan</strong></label>
                                     <select name="jenis_pengaduan" id="jenis_pengaduan" class="form-control" required>
@@ -39,26 +40,26 @@
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>Tanggal</strong></label>
                                     <input type="date" name="tanggal" placeholder="Masukkan Tanggal" autocomplete="off"
-                                        class="form-control" required>
+                                        class="form-control" value="<?=$p->tanggal;?>" required>
                                 </div>
 
                                 <p>
                                 <div class="form-row">
-                                    <label for="satuan"><strong>Keterangan</strong></label>
-                                    <textarea class="form-control" rows="3" name="keterangan"></textarea>
+                                    <label for="nama_barang"><strong>Keterangan</strong></label>
+                                    <input type="text" name="keterangan" autocomplete="off" class="form-control"
+                                        value="<?=$p->keterangan;?>" required>
                                 </div>
                                 <p>
 
                                 <div class="form-row">
                                     <label for="satuan"><strong>Bukti</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="bukti" name="bukti" required
-                                            autofocus>
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                        <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                                        <input type="file" class="custom-file-input" id="bukti" name="bukti">
+                                        <label class="custom-file-label" for="customFile"><?= $p->bukti ?></label>
+                                        <?= form_error('bukti', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
-
+                                <?php endforeach ?>
                                 <hr>
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-success ">Submit</button>
@@ -73,10 +74,3 @@
             </div>
         </div>
     </div>
-</div>
-<script>
-$('.custom-file-input').on('change', function() {
-    let fileName = $(this).val().split('\\').pop();
-    $(this).next('.custom-file-label').addClass("selected").html(fileName);
-});
-</script>

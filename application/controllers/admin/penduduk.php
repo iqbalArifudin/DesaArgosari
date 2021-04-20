@@ -14,7 +14,8 @@
         
         public function index()
         {
-        $data['penduduk'] = $this->penduduk_model->tampilPenduduk();
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data['penduduk1'] = $this->penduduk_model->tampilPenduduk();
         $this->load->view('template admin/header',$data);
         $this->load->view('template admin/sidebar',$data);
         $this->load->view('template admin/topbar',$data); 
@@ -23,7 +24,8 @@
         }
 
         public function tambahpenduduk(){
-            $data['penduduk'] = $this->penduduk_model->tampilPenduduk();
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+            $data['penduduk1'] = $this->penduduk_model->tampilPenduduk();
             $this->load->library('form_validation');
             $this->form_validation->set_rules('NIK', 'NIK', 'required');
             if($this->form_validation->run() == FALSE){
@@ -64,7 +66,8 @@
 
         public function edit($id_penduduk)
         {
-        $data ['penduduk'] = $this->penduduk_model->getPenduduk($id_penduduk);
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data ['penduduk1'] = $this->penduduk_model->getPenduduk($id_penduduk);
         $this->form_validation->set_rules('NIK', 'NIK', 'required|trim');
 
         if ($this->form_validation->run() == false) {
@@ -143,7 +146,8 @@
     }
     
         public function detail($id_penduduk){
-            $data['penduduk']=$this->penduduk_model->getDetail($id_penduduk);
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+            $data['penduduk1']=$this->penduduk_model->getDetail($id_penduduk);
             $this->load->view('template admin/header',$data);
             $this->load->view('template admin/sidebar');
             $this->load->view('template admin/topbar'); 

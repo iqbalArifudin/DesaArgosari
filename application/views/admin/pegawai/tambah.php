@@ -32,7 +32,7 @@
                                     <div class="input-group">
                                         <select name="id_penduduk" id="id_penduduk" class="custom-select">
                                             <option value="" selected disabled>Pilih Nama</option>
-                                            <?php foreach ($penduduk as $j) : ?>
+                                            <?php foreach ($penduduk1 as $j) : ?>
                                             <option value="<?= $j->id_penduduk ?>"><?= $j->nama ?></option>
                                             <?php endforeach ?>
                                         </select>

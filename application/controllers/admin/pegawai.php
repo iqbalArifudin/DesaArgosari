@@ -15,7 +15,8 @@
         
         public function index()
         {
-        $data['pegawai'] = $this->pegawai_model->tampilPegawai();
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+            $data['pegawai'] = $this->pegawai_model->tampilPegawai();
         $this->load->view('template admin/header',$data);
         $this->load->view('template admin/sidebar',$data);
         $this->load->view('template admin/topbar',$data); 
@@ -26,8 +27,10 @@
         public function tambahpegawai(){
             $this->load->library('form_validation');
             $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['pegawai'] = $this->pegawai_model->tampilPegawai();
-            $data['penduduk'] = $this->penduduk_model->tampilPendudukPegawai();
+            $data['penduduk1'] = $this->penduduk_model->tampilPendudukPegawai();
+            // $data['penduduk'] = $this->penduduk_model->tampilPendudukPegawai();
             if($this->form_validation->run() == FALSE){
                 $this->load->view('template admin/header',$data);
                 $this->load->view('template admin/sidebar');
@@ -66,62 +69,66 @@
 
         public function edit($id_pegawai)
         {
-        $data ['pegawai'] = $this->pegawai_model->getPegawai($id_pegawai);
-        $data['penduduk'] = $this->penduduk_model->tampilPendudukPegawai();
-        $this->form_validation->set_rules('NIK', 'NIK', 'required|trim');
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+            $data ['pegawai'] = $this->pegawai_model->getPegawai($id_pegawai);
+            $data['penduduk1'] = $this->penduduk_model->tampilPendudukPegawai();
+            $this->form_validation->set_rules('id_penduduk', 'id_penduduk', 'required|trim');
 
-        if ($this->form_validation->run() == false) {
-                $this->load->view('template admin/header',$data);
-                $this->load->view('template admin/sidebar',$data);
-                $this->load->view('template admin/topbar',$data); 
-                $this->load->view('admin/pegawai/edit',$data);
-                $this->load->view('template admin/footer',$data); 
-        } else {
+            if ($this->form_validation->run() == false) {
+                $this->load->view('template admin/header', $data);
+                $this->load->view('template admin/sidebar', $data);
+                $this->load->view('template admin/topbar', $data);
+                $this->load->view('admin/pegawai/edit', $data);
+                $this->load->view('template admin/footer', $data);
+            } else {
 
             //check jika ada gambar yang akan di upload
-            $upload_file = $_FILES['foto']['name'];
-            if ($upload_file) {
-                $config['upload_path'] = './assets/foto_pegawai/';    
-                $config['allowed_types'] = 'jpg|png|jpeg';
-                $config['max_size']     = '10000';
-                $this->load->library('upload', $config);
+                $upload_file = $_FILES['foto']['name'];
+                if ($upload_file) {
+                    $config['upload_path'] = './assets/foto_pegawai/';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['max_size']     = '10000';
+                    $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('foto')) {
-                    $old_file = $data['pegawai']['foto'];
-                    if ($old_file != 'default.png') {
-                        unlink(FCPATH . './assets/foto_pegawai/' . $old_file);
+                    if ($this->upload->do_upload('foto')) {
+                        $old_file = $data['pegawai']['foto'];
+                        if ($old_file != 'default.png') {
+                            unlink(FCPATH . './assets/foto_pegawai/' . $old_file);
+                        }
+                        $new_file = $this->upload->data('file_name');
+                        $this->db->set('foto_pegawai', $new_file);
+                    } else {
+                        echo $this->upload->display_errors();
                     }
-                    $new_file = $this->upload->data('file_name');
-                    $this->db->set('foto_pegawai', $new_file);
-                } else {
-                    echo $this->upload->display_errors();
                 }
-            }
 
-            $id_pegawai = $this->input->post('id_pegawai');
-            $jabatan = $this->input->post('jabatan');
-            $no_hp = $this->input->post('no_hp');
+                $id_pegawai = $this->input->post('id_pegawai');
+                $id_penduduk = $this->input->post('id_penduduk');
+                $jabatan = $this->input->post('jabatan');
+                $no_hp = $this->input->post('no_hp');
 
-            $this->db->set('jabatan', $jabatan);
-            $this->db->set('no_hp', $no_hp);
-            $this->db->where('id_pegawai', $id_pegawai);
-            $this->db->update('pegawai');
+                $this->db->set('id_penduduk', $id_penduduk);
+                $this->db->set('jabatan', $jabatan);
+                $this->db->set('no_hp', $no_hp);
+                $this->db->where('id_pegawai', $id_pegawai);
+                $this->db->update('pegawai');
 
 
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-success alert-dismissible fade show" role="alert">
                Data berhasil di edit ! 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>'
-            );
-            redirect('admin/pegawai');
+                );
+                redirect('admin/pegawai');
+            }
         }
-    }
     
         public function detail($id_pegawai){
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['pegawai']=$this->pegawai_model->getDetailPegawai($id_pegawai);
             $this->load->view('template admin/header',$data);
             $this->load->view('template admin/sidebar');

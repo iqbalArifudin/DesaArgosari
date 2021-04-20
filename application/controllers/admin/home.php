@@ -8,13 +8,15 @@
         public function __construct()
         {
             parent::__construct();
-            // $this->load->model('admin/surat/surat_model');
-            // $this->load->model('admin/user/user_model'); 
+            $this->load->helper('url');
+            $this->load->model('pegawai_model');  
+            $this->load->model('penduduk_model');  
         }
         
         public function index()
         {
             $data['title'] = 'Halaman Admin';
+            $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
            $this->load->view('template admin/header',$data);
            $this->load->view('template admin/sidebar');
            $this->load->view('template admin/topbar'); 

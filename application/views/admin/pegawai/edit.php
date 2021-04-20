@@ -25,8 +25,11 @@
                                 <div class="input-group">
                                     <select name="id_penduduk" id="id_penduduk" class="custom-select">
                                         <option value="" selected disabled>Pilih Nama</option>
-                                        <?php foreach ($penduduk as $j) : ?>
-                                        <option value="<?= $j->id_penduduk ?>"><?= $j->nama ?></option>
+                                        <?php foreach ($penduduk1 as $j) : ?>
+                                        <option value="<?= $j->id_penduduk ?>"
+                                            <?= $j->id_penduduk == $pegawai->id_penduduk ? "selected" : null ?>>
+                                            <?= $j->nama ?>
+                                        </option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
@@ -453,7 +456,8 @@
                             <br>
                             <br>
                             <?php endforeach ?>
-                            <button type="submit" name="submit" class="btn btn-success ">Simpan</button>
+                            <button type="submit" class=" btn btn-success"><i
+                                    class="fas fa-save"></i>&nbsp;Simpan</button>
                             <a href="<?=base_url("admin/pegawai");?>" class="btn btn-info">Kembali</a>
                         </form>
 
