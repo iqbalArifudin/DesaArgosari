@@ -4,55 +4,46 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h2 class="h5 align-middle m-0 font-weight-bold text-dark">
-                        Data Pengaduan
-                    </h2>
                     <p>
-                    <p>
-                        <a class='btn btn-primary' href="Pengaduan/tambahpengaduan">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                            <span>
-                                Tambah Pengaduan
-                            </span>
-                        </a>
                     <table id="dataTable" class="table table-striped table-hover ">
                         <thead class="table-primary">
                             <tr>
                                 <th>NO</th>
-                                <th>TANGGAL</th>
-                                <th>JENIS PENGADUAN</th>
-                                <th>KETERANGAN PENGADUAN</th>
-                                <th>BUKTI</th>
-                                <th>STATUS</th>
-                                <th>ALASAN</th>
+                                <th>NAMA</th>
+                                <th>JABATAN</th>
+                                <th>NIK / NO KTP</th>
+                                <th>JENIS KELAMIN</th>
+                                <th>NO HP</th>
+                                <th>FOTO</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($pengaduan as $pengaduan): ?>
+                            <?php $no=1; foreach ($pegawai as $pegawai): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-                                <td><?= $pengaduan->tanggal ?></td>
-                                <td><?= $pengaduan->jenis_pengaduan ?></td>
-                                <td><?= $pengaduan->keterangan ?></td>
-                                <td><img src="<?= base_url('assets/foto_pengaduan/') . $pengaduan->bukti ?>"
+                                <td><?= $pegawai->nama ?></td>
+                                <td><?= $pegawai->jabatan ?></td>
+                                <td><?= $pegawai->NIK ?></td>
+                                <td><?= $pegawai->jenis_kelamin ?></td>
+                                <td><?= $pegawai->no_hp ?></td>
+
+                                <td><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
                                         style="width:50px; height:50px;"></td>
-                                <td><?= $pengaduan->status ?></td>
-                                <td><?= $pengaduan->alasan ?></td>
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'user/Pengaduan/hapus/'.$pengaduan->id_pengaduan ?>">
+                                        href="<?= base_url().'pegawai/pegawai/hapus/'.$pegawai->id_pegawai ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url().'user/Pengaduan/edit/'.$pengaduan->id_pengaduan ?>">
+                                        href="<?= base_url().'pegawai/pegawai/edit/'.$pegawai->id_pegawai ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'user/Pengaduan/detail/'.$pengaduan->id_pengaduan?>'
+                                        href='<?= base_url().'pegawai/pegawai/detail/'.$pegawai->id_pegawai?>'
                                         class='btn btn-biru'>
-                                        <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
+                                        <i class="fas fa-eye" aria-hidden="true"><span> Detail</span></i>
                                     </a>
                                 </td>
                             </tr>

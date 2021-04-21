@@ -18,6 +18,20 @@ class Pengaduan_model extends CI_Model {
             return $query->result();
     }
 
+    public function tampilPengaduanPenduduk($id_penduduk){
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('pengaduan.id_penduduk', $id_penduduk);
+        return $this->db->get('pengaduan')->result();
+    }
+
+    public function tampilPengaduanPegawai()
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get_where('pengaduan', ['status' => 'Diajukan ke Kepala Desa'])->result();
+    }
+
     public function tambahDataPengaduan($upload){
 		$data=[
             'id_pengaduan'=>$this->input->post('id_pengaduan', true),
@@ -58,6 +72,23 @@ class Pengaduan_model extends CI_Model {
         }else{
             return false;
         }
+    }
+    
+    public function ubahPengaduan($id_pengaduan){
+		$data=[
+            'alasan'=>$this->input->post('alasan', true),
+            'status'=>$this->input->post('status', true),
+		];
+        $this->db->where('id_pengaduan', $id_pengaduan);	
+        $this->db->update('pengaduan', $data);
+    }
+
+    public function ubahPengaduanadmin($id_pengaduan){
+		$data=[
+            'status'=>$this->input->post('status', true),
+		];
+        $this->db->where('id_pengaduan', $id_pengaduan);	
+        $this->db->update('pengaduan', $data);
     }
 
     public function getPengaduan($id_pengaduan){  

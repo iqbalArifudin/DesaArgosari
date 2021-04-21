@@ -17,7 +17,8 @@
         public function index()
         {
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+        // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+        $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduanPenduduk($this->session->userdata('id_penduduk'));
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template_layanan/header',$data);
         $this->load->view('template_layanan/sidebar',$data);
@@ -29,9 +30,8 @@
         public function tambahpengaduan(){
             $this->load->library('form_validation');
             $this->form_validation->set_rules('jenis_pengaduan', 'jenis_pengaduan', 'required');
-            // $this->form_validation->set_rules('tanggal', 'jabatan', 'required');
-            // $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
-            $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+            $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduanPenduduk($this->session->userdata('id_penduduk'));
+            // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
             $data['pengaduan2'] = $this->Pengaduan_model->tampilJenisPengaduan();
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             if($this->form_validation->run() == FALSE){
@@ -134,7 +134,7 @@
     }
     
         public function detail($id_pengaduan){
-            $data['pengaduan']=$this->Pengaduan_model->getDetail($id_pengaduan);
+            $data['pengaduan']=$this->Pengaduan_model->getDetailPengaduan($id_pengaduan);
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $this->load->view('template_layanan/header',$data);
             $this->load->view('template_layanan/sidebar');

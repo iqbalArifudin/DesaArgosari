@@ -8,17 +8,11 @@
                         Data Pengaduan
                     </h2>
                     <p>
-                    <p>
-                        <a class='btn btn-primary' href="Pengaduan/tambahpengaduan">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                            <span>
-                                Tambah Pengaduan
-                            </span>
-                        </a>
                     <table id="dataTable" class="table table-striped table-hover ">
                         <thead class="table-primary">
                             <tr>
                                 <th>NO</th>
+                                <th>NAMA</th>
                                 <th>TANGGAL</th>
                                 <th>JENIS PENGADUAN</th>
                                 <th>KETERANGAN PENGADUAN</th>
@@ -32,6 +26,7 @@
                             <?php $no=1; foreach ($pengaduan as $pengaduan): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
+                                <td><?= $pengaduan->nama ?></td>
                                 <td><?= $pengaduan->tanggal ?></td>
                                 <td><?= $pengaduan->jenis_pengaduan ?></td>
                                 <td><?= $pengaduan->keterangan ?></td>
@@ -42,15 +37,15 @@
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'user/Pengaduan/hapus/'.$pengaduan->id_pengaduan ?>">
+                                        href="<?= base_url().'pegawai/Pengaduan/hapus/'.$pengaduan->id_pengaduan ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url().'user/Pengaduan/edit/'.$pengaduan->id_pengaduan ?>">
-                                        <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
+                                        href="<?= base_url().'pegawai/Pengaduan/edit/'.$pengaduan->id_pengaduan ?>">
+                                        <i class="fas fa-hourglass-half" aria-hidden="true"><span> Proses</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'user/Pengaduan/detail/'.$pengaduan->id_pengaduan?>'
+                                        href='<?= base_url().'pegawai/Pengaduan/detail/'.$pengaduan->id_pengaduan?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
                                     </a>

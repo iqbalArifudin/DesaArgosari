@@ -49,6 +49,12 @@
                                         <h1>Silahkan Login</h1>
                                     </div>
                                     <br>
+                                    <?php
+                                    $pesan = $this->session->flashdata('pesan');
+                                    if(!empty($pesan)){
+                                        echo $pesan;
+                                    }
+                                    ?>
                                     <form class="user" action="Login/proses_login" role="form" autocomplete="off"
                                         id="formlogin" method="POST">
                                         <div class="form-group">
