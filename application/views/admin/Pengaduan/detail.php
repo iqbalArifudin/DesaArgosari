@@ -102,50 +102,8 @@
                                                         <?php endforeach ?>
 
 
-                                                        <?php foreach($pengaduan as $p):?>
-                                                    <div class="form-group">
-                                                        <label for="nim">Status</label>
-                                                        <?php if($p->status == "Disetujui"): ?>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Disetujui"
-                                                                checked>Disetujui
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Ditolak">Ditolak
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Diproses">Diproses
-                                                        </div>
 
-                                                        <?php elseif($p->status == "Ditolak"): ?>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status"
-                                                                value="Disetujui">Disetujui
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Ditolak"
-                                                                checked>Ditolak
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Diproses">Diproses
-                                                        </div>
-
-                                                        <?php else: ?>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status"
-                                                                value="Disetujui">Disetujui
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Ditolak">Ditolak
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="radio" name="status" value="Diproses"
-                                                                checked>Diproses
-                                                        </div>
-                                                        <?php endif ?>
-                                                    </div>
-                                                    <?php endforeach ?>
-                                                    <!-- Modal footer -->
+                                                        <!-- Modal footer -->
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-primary"><a
                                                                 style="color:white">Ajukan

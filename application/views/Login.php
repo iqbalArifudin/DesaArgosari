@@ -44,6 +44,7 @@
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
+                                <?= $this->session->flashdata('message'); ?>
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1>Silahkan Login</h1>
@@ -55,7 +56,7 @@
                                         echo $pesan;
                                     }
                                     ?>
-                                    <form class="user" action="Login/proses_login" role="form" autocomplete="off"
+                                    <form class="user" action="<?= base_url('Login'); ?>" role="form" autocomplete="off"
                                         id="formlogin" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="NIK"

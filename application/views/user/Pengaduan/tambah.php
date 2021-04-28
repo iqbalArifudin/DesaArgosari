@@ -1,3 +1,8 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Pengaduan &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-plus-square"></i>
+    Tambah Data Pengaduan
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -33,13 +38,6 @@
                                         <option value="Administrasi">Administrasi</option>
                                         <option value="Lainnya">Lainnya</option>
                                     </select>
-                                </div>
-                                <p>
-
-                                <div class="form-row">
-                                    <label for="nama_barang"><strong>Tanggal</strong></label>
-                                    <input type="date" name="tanggal" placeholder="Masukkan Tanggal" autocomplete="off"
-                                        class="form-control" required>
                                 </div>
 
                                 <p>

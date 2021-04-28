@@ -1,3 +1,8 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i
+        class="fas fa-fw fa-chart-area"></i>
+    Berita &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-plus-square"></i> Tambah Berita
+</div>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

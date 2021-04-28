@@ -17,7 +17,7 @@
         public function index()
         {
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduanPegawai();
+        $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template pegawai/header',$data);
         $this->load->view('template pegawai/sidebar',$data);
@@ -45,6 +45,7 @@
             $this->load->library('form_validation');
             $data ['pengaduan'] = $this->Pengaduan_model->getPengaduan($id_pengaduan);
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+            $data['pengaduan1'] = $this->Pengaduan_model->tampilPengaduan();
             $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
             $this->form_validation->set_rules('status', 'status', 'required');
             // $this->form_validation->set_rules('status', 'status', 'required');

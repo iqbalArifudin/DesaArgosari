@@ -1,3 +1,8 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Data Pegawai &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-edit"></i>
+    Edit Data Pegawai
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Main content -->
 <div class="content">

@@ -40,7 +40,7 @@ class penduduk_model extends CI_Model {
             'desa'=>$this->input->post('desa', true),
             'Kecamatan'=>$this->input->post('Kecamatan', true),
             'foto'=>$upload['file']['file_name'],
-            'password'=>$this->input->post('password', true),
+            'password'=>password_hash($this->input->post('password'),PASSWORD_DEFAULT),
             'hak_akses'=>$this->input->post('hak_akses', true),
 		];
 	$this->db->insert('penduduk', $data);

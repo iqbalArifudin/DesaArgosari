@@ -32,7 +32,7 @@
                                 <td><?= $pengaduan->keterangan ?></td>
                                 <td><img src="<?= base_url('assets/foto_pengaduan/') . $pengaduan->bukti ?>"
                                         style="width:50px; height:50px;"></td>
-                                <td><?= $pengaduan->status ?></td>
+                                <td><span class="badge badge-success"><?= $pengaduan->status ?></span></td>
                                 <td><?= $pengaduan->alasan ?></td>
                                 <td>
                                     <a class='btn btn-danger'

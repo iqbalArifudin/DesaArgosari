@@ -14,9 +14,9 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="index.html">
+               <a class="nav-link" href="<?php echo base_url().'admin/home' ?>">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>Dashboard</span></a>
+                   <span>Beranda</span></a>
            </li>
 
            <!-- Divider -->
@@ -27,36 +27,49 @@
                    <i class="fas fa-fw fa-table"></i>
                    <span>Pengaduan</span></a>
            </li>
+           <hr class="sidebar-divider">
 
            <li class="nav-item">
-               <a href="<?php echo base_url().'admin/pegawai' ?>" class="nav-link">
-                   <i class="fas fa-fw fa-table"></i>
-                   <span>Pelayanan</span></a>
+               <a href="<?php echo base_url().'admin/Pelayanan_ktp' ?>" class="nav-link">
+                   <i class="fas fa-address-card"></i>
+                   <span>Pelayanan KTP</span></a>
            </li>
-
+           <hr class="sidebar-divider">
+           <li class="nav-item">
+               <a href="<?php echo base_url().'admin/Pelayanan_kk' ?>" class="nav-link">
+                   <i class="fas fa-newspaper"></i>
+                   <span>Pelayanan KK</span></a>
+           </li>
+           <hr class="sidebar-divider">
+           <li class="nav-item">
+               <a href="<?php echo base_url().'admin/Pelayanan_akta' ?>" class="nav-link">
+                   <i class="fas fa-id-badge"></i>
+                   <span>Pelayanan Akta Kelahiran</span></a>
+           </li>
+           <hr class="sidebar-divider">
            <li class="nav-item">
                <a href="<?php echo base_url().'admin/pegawai' ?>" class="nav-link">
                    <i class="fas fa-fw fa-table"></i>
                    <span>Data Pegawai</span></a>
            </li>
-
+           <hr class="sidebar-divider">
            <li class="nav-item">
                <a href="<?php echo base_url().'admin/penduduk' ?>" class="nav-link">
                    <i class="fas fa-fw fa-table"></i>
                    <span>Data Penduduk</span></a>
            </li>
-
+           <hr class="sidebar-divider">
            <!-- Nav Item - Charts -->
            <li class="nav-item">
                <a href="<?php echo base_url().'admin/berita' ?>" class="nav-link">
                    <i class="fas fa-fw fa-chart-area"></i>
                    <span>Berita</span></a>
            </li>
-
+           <hr class="sidebar-divider">
            <!-- Nav Item - Tables -->
            <li class="nav-item">
                <a href="<?php echo base_url().'admin/galeri' ?>" class="nav-link">
-                   <i class="fas fa-fw fa-table"></i>
+                   <i class="fas fa-images"></i>
                    <span>Galeri</span></a>
            </li>
 

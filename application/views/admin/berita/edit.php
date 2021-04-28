@@ -1,3 +1,8 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i
+        class="fas fa-fw fa-chart-area"></i>
+    Berita &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-edit"></i> Edit Berita
+</div>
 <!-- Main content -->
 <div class="content">
     <div class="container-fluid">

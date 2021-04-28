@@ -20,7 +20,7 @@
                         </div>
                         <?php endif; ?>
 
-                        <?php foreach($penduduk as $penduduk):?>
+                        <?php foreach($penduduk1 as $penduduk):?>
                         <form action="" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk;?>">
 
@@ -311,12 +311,6 @@
                                 <label for="merk">Kecamatan</label>
                                 <input type="text" class="form-control" id="Kecamatan" name="Kecamatan"
                                     value="<?=$penduduk->Kecamatan;?>">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="merk">Password</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    value="<?=$penduduk->password;?>">
                             </div>
 
                             <label for="file_penduduk">Foto</label>

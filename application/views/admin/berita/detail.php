@@ -1,35 +1,42 @@
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
-     <!-- Main content -->
-     <div class="content">
-         <div class="container-fluid">
-             <div class="row">
-                 <div class="col">
-                     <div class="card">
-                         <div class="card-header">
-                             Detail Berita
-                         </div>
-                         <?php
-                            foreach ($berita as $pmj) : ?>
-                         <div class="card mb-3">
-                             <img src="<?= base_url('assets/foto_berita/') . $pmj->foto_berita ?>" class="card-img-top">
-                             <div class="card-body">
-                                 <h5 class="card-title"><?= $pmj->judul ?></h5>
-                                 <p class="card-text"><?= $pmj->keterangan ?></p>
-                                 <p class="card-text"><small class="text-muted"><?= $pmj->tanggal ?></small>
-                                 </p>
-                             </div>
-                             <br>
-                             <a href="<?= base_url("admin/berita/");?>" class="btn btn-primary">Kembali</a>
-                         </div>
-                     </div>
-                     <?php endforeach ?>
-
-                     <!-- /.card-body -->
-                 </div>
-             </div>
-         </div>
-         <!-- /.row -->
-     </div>
-     <!-- /.container-fluid -->
- </div>
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i
+        class="fas fa-fw fa-chart-area"></i>
+    Berita &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-eye"></i> Detail
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <div class="card shadow-sm border-bottom-primary">
+            <div class="card-header bg-white py-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-header">
+                            <center><strong>Detail Berita</strong></center>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <?php foreach($berita as $pmj):?>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <img src="<?= base_url('assets/foto_berita/') . $pmj->foto_berita ?>"
+                                            class="card-img-top" style="height: 370px;">
+                                        <p>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <h5 class="card-title"><strong><?= $pmj->judul ?></strong></h5>
+                                        <p class="card-text"><?= $pmj->keterangan ?></p>
+                                        <p class="card-text"><small class="text-muted"><?= $pmj->tanggal ?></small>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php endforeach ?>
+                                <p>
+                                    <center><a href="<?=base_url("admin/berita/");?>" class="btn btn-info">Kembali</a>
+                                    </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -67,83 +67,86 @@
         public function edit($id_penduduk)
         {
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $data ['penduduk1'] = $this->penduduk_model->getPenduduk($id_penduduk);
-        $this->form_validation->set_rules('NIK', 'NIK', 'required|trim');
+            $data ['penduduk1'] = $this->penduduk_model->getPenduduk($id_penduduk);
+            $this->form_validation->set_rules('NIK', 'NIK', 'required|trim');
 
-        if ($this->form_validation->run() == false) {
-                $this->load->view('template admin/header',$data);
-                $this->load->view('template admin/sidebar',$data);
-                $this->load->view('template admin/topbar',$data); 
-                $this->load->view('admin/penduduk/edit',$data);
-                $this->load->view('template admin/footer',$data); 
-        } else {
+            if ($this->form_validation->run() == false) {
+                $this->load->view('template admin/header', $data);
+                $this->load->view('template admin/sidebar', $data);
+                $this->load->view('template admin/topbar', $data);
+                $this->load->view('admin/penduduk/edit', $data);
+            } else {
 
             //check jika ada gambar yang akan di upload
-            $upload_file = $_FILES['foto']['name'];
-            if ($upload_file) {
-                $config['upload_path'] = './assets/foto_penduduk/';    
-                $config['allowed_types'] = 'jpg|png|jpeg';
-                $config['max_size']     = '10000';
-                $this->load->library('upload', $config);
+                $upload_file = $_FILES['foto']['name'];
+                if ($upload_file) {
+                    $config['upload_path'] = './assets/foto_penduduk/';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['max_size']     = '10000';
+                    $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('foto')) {
-                    $old_file = $data['berita']['foto'];
-                    if ($old_file != 'default.png') {
-                        unlink(FCPATH . './assets/foto_penduduk/' . $old_file);
+                    if ($this->upload->do_upload('foto')) {
+                        $old_file = $data['berita']['foto'];
+                        if ($old_file != 'default.png') {
+                            unlink(FCPATH . './assets/foto_penduduk/' . $old_file);
+                        }
+                        $new_file = $this->upload->data('file_name');
+                        $this->db->set('foto', $new_file);
+                    } else {
+                        echo $this->upload->display_errors();
                     }
-                    $new_file = $this->upload->data('file_name');
-                    $this->db->set('foto_penduduk', $new_file);
-                } else {
-                    echo $this->upload->display_errors();
                 }
-            }
 
-            $id_penduduk = $this->input->post('id_penduduk');
-            $NIK = $this->input->post('NIK');
-            $no_KK = $this->input->post('no_KK');
-            $nama = $this->input->post('nama');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tanggal_lahir = $this->input->post('tanggal_lahir');
-            $agama = $this->input->post('agama');
-            $status_perkawinan = $this->input->post('status_perkawinan');
-            $pekerjaan = $this->input->post('pekerjaan');
-            $gol_darah = $this->input->post('gol_darah');
-            $alamat = $this->input->post('alamat');
-            $RT = $this->input->post('RT');
-            $RW = $this->input->post('RW');
-            $desa = $this->input->post('desa');
-            $password = $this->input->post('password');
+                $id_penduduk = $this->input->post('id_penduduk');
+                $NIK = $this->input->post('NIK');
+                $no_KK = $this->input->post('no_KK');
+                $nama = $this->input->post('nama');
+                $tempat_lahir = $this->input->post('tempat_lahir');
+                $tanggal_lahir = $this->input->post('tanggal_lahir');
+                $agama = $this->input->post('agama');
+                $status_perkawinan = $this->input->post('status_perkawinan');
+                $pekerjaan = $this->input->post('pekerjaan');
+                $gol_darah = $this->input->post('gol_darah');
+                $jenis_kelamin = $this->input->post('jenis_kelamin');
+                $alamat = $this->input->post('alamat');
+                $RT = $this->input->post('RT');
+                $RW = $this->input->post('RW');
+                $desa = $this->input->post('desa');
+                $password = $this->input->post('password');
+                $hak_akses = $this->input->post('hak_akses');
 
-            $this->db->set('NIK', $NIK);
-            $this->db->set('no_KK', $no_KK);
-            $this->db->set('nama', $nama);
-            $this->db->set('tempat_lahir', $tempat_lahir);
-            $this->db->set('tanggal_lahir', $tanggal_lahir);
-            $this->db->set('agama', $agama);
-            $this->db->set('status_perkawinan', $status_perkawinan);
-            $this->db->set('pekerjaan', $pekerjaan);
-            $this->db->set('gol_darah', $gol_darah);
-            $this->db->set('alamat', $alamat);
-            $this->db->set('RT', $RT);
-            $this->db->set('RW', $RW);
-            $this->db->set('desa', $desa);
-            $this->db->set('password', $password);
-            $this->db->where('id_penduduk', $id_penduduk);
-            $this->db->update('penduduk');
+                $this->db->set('NIK', $NIK);
+                $this->db->set('no_KK', $no_KK);
+                $this->db->set('nama', $nama);
+                $this->db->set('tempat_lahir', $tempat_lahir);
+                $this->db->set('tanggal_lahir', $tanggal_lahir);
+                $this->db->set('agama', $agama);
+                $this->db->set('status_perkawinan', $status_perkawinan);
+                $this->db->set('pekerjaan', $pekerjaan);
+                $this->db->set('gol_darah', $gol_darah);
+                $this->db->set('jenis_kelamin', $jenis_kelamin);
+                $this->db->set('alamat', $alamat);
+                $this->db->set('RT', $RT);
+                $this->db->set('RW', $RW);
+                $this->db->set('desa', $desa);
+                $this->db->set('password', $password);
+                $this->db->set('hak_akses', $hak_akses);
+                $this->db->where('id_penduduk', $id_penduduk);
+                $this->db->update('penduduk');
 
 
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-success alert-dismissible fade show" role="alert">
                Data berhasil di edit ! 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>'
-            );
-            redirect('admin/penduduk');
+                );
+                redirect('admin/penduduk');
+            }
         }
-    }
     
         public function detail($id_penduduk){
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));

@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-images"></i>
+    Galeri &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-plus-square"></i> Tambah Galeri
+</div>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

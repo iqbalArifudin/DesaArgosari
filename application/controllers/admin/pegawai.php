@@ -96,7 +96,7 @@
                             unlink(FCPATH . './assets/foto_pegawai/' . $old_file);
                         }
                         $new_file = $this->upload->data('file_name');
-                        $this->db->set('foto_pegawai', $new_file);
+                        $this->db->set('foto', $new_file);
                     } else {
                         echo $this->upload->display_errors();
                     }

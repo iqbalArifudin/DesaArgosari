@@ -36,7 +36,7 @@
                             </b>&nbsp;: <?= $p->keterangan ?></h5>
                         <hr>
                         <h5 class="card-title text-dark"><b>Status Pengaduan
-                            </b>&nbsp;: <?= $p->status ?></h5>
+                            </b>&nbsp;: <span class="badge badge-warning"><?= $p->status ?></span></h5>
                         <hr>
                         <h5 class="card-title text-dark"><b>Alasan
                             </b>&nbsp;: <?= $p->alasan ?></h5>
@@ -45,8 +45,6 @@
                         <p>
                             <a href="<?php echo base_url("user/Pengaduan"); ?>" class="btn btn-primary"> <i
                                     class="fas fa-arrow-left"></i>&nbsp;Kembali</a>
-                            <a href="<?php echo base_url("user/Pengaduan"); ?>" class="btn btn-primary"> <i
-                                    class="fas fa-arrow-right"></i>&nbsp;Ajukan</a>
                         </p>
                 </div>
             </div>

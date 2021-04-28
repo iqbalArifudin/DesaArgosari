@@ -45,7 +45,15 @@
                 $upload = $this->Pengaduan_model->upload();
                 if ($upload['result'] == 'success'){
                     $this->Pengaduan_model->tambahDataPengaduan($upload);
-                    $this->session->set_flashdata('pesan','Data Berhasil Di tambah');
+                    $this->session->set_flashdata(
+                        'message',
+                        '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Data berhasil di tambahkan ! 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>'
+                    );
                     redirect('user/Pengaduan','refresh');
                 } else {
                     echo $upload['error'];
@@ -58,13 +66,26 @@
         {
             if($this->Pengaduan_model->hapusDatapengaduan($id_pengaduan) == false)
             {
-                $this->session->set_flashdata('flashdata', 'gagal');
-                $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data tidak dapat dihapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+                );
                 redirect('user/Pengaduan');
             }else{
-                $this->load->library('session');
-                $this->session->set_flashdata('flashdata', 'dihapus');
-                $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data Berhasil di hapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+                );
                 redirect('user/Pengaduan','refresh');
             }
            
@@ -98,7 +119,7 @@
                         unlink(FCPATH . './assets/foto_pengaduan/' . $old_file);
                     }
                     $new_file = $this->upload->data('file_name');
-                    $this->db->set('foto_pengaduan', $new_file);
+                    $this->db->set('bukti', $new_file);
                 } else {
                     echo $this->upload->display_errors();
                 }
@@ -106,14 +127,10 @@
 
             $id_pengaduan = $this->input->post('id_pengaduan');
             $jenis_pengaduan = $this->input->post('jenis_pengaduan');
-            $tanggal = $this->input->post('tanggal');
-            $status = $this->input->post('status');
             $alasan = $this->input->post('alasan');
             $keterangan = $this->input->post('keterangan');
 
             $this->db->set('jenis_pengaduan', $jenis_pengaduan);
-            $this->db->set('tanggal', $tanggal);
-            $this->db->set('status', $status);
             $this->db->set('alasan', $alasan);
             $this->db->set('keterangan', $keterangan);
             $this->db->where('id_pengaduan', $id_pengaduan);

@@ -25,23 +25,22 @@ class Pengaduan_model extends CI_Model {
         return $this->db->get('pengaduan')->result();
     }
 
-    public function tampilPengaduanPegawai()
-    {
-        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' => 'Diajukan ke Kepala Desa'])->result();
-    }
+    // public function tampilPengaduanPegawai()
+    // {
+    //     $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+    //     $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+    //     return $this->db->get_where('pengaduan', ['status' => 'Diajukan'])->result();
+    // }
 
     public function tambahDataPengaduan($upload){
 		$data=[
             'id_pengaduan'=>$this->input->post('id_pengaduan', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
             'jenis_pengaduan'=>$this->input->post('jenis_pengaduan', true),
-            'tanggal'=>$this->input->post('tanggal', true),
             'alasan'=>'-',
             'keterangan'=>$this->input->post('keterangan', true),
             'bukti'=>$upload['file']['file_name'],
-            'status'=>'-',
+            'status'=>'Diajukan',
 		];
 	$this->db->insert('pengaduan', $data);
     }
@@ -83,13 +82,13 @@ class Pengaduan_model extends CI_Model {
         $this->db->update('pengaduan', $data);
     }
 
-    public function ubahPengaduanadmin($id_pengaduan){
-		$data=[
-            'status'=>$this->input->post('status', true),
-		];
-        $this->db->where('id_pengaduan', $id_pengaduan);	
-        $this->db->update('pengaduan', $data);
-    }
+    // public function ubahPengaduanadmin($id_pengaduan){
+	// 	$data=[
+    //         'status'=>"diajukan_ke_kepala_desa",
+	// 	];
+    //     $this->db->where('id_pengaduan', $id_pengaduan);	
+    //     $this->db->update('pengaduan', $data);
+    // }
 
     public function getPengaduan($id_pengaduan){  
         $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');

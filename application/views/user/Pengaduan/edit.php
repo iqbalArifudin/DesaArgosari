@@ -1,3 +1,8 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Pengaduan &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-edit"></i>
+    Edit Data Pengaduan
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -9,7 +14,10 @@
                             <center><strong>Isi Form Pengaduan Dibawah Ini!</strong></center>
                         </div>
                         <div class="card-body">
+                            <?php foreach($pengaduan as $k):?>
                             <form action="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id_pengaduan" value="<?= $k->id_pengaduan;?>">
+                                <?php endforeach ?>
                                 <?php foreach($penduduk as $j):?>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -36,12 +44,6 @@
                                     </select>
                                 </div>
                                 <p>
-
-                                <div class="form-row">
-                                    <label for="nama_barang"><strong>Tanggal</strong></label>
-                                    <input type="date" name="tanggal" placeholder="Masukkan Tanggal" autocomplete="off"
-                                        class="form-control" value="<?=$p->tanggal;?>" required>
-                                </div>
 
                                 <p>
                                 <div class="form-row">
