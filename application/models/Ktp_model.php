@@ -32,6 +32,7 @@ class Ktp_model extends CI_Model {
             // 'keterangan'=>$this->input->post('keterangan', true),
             'status'=>'Diajukan',
             'keterangan'=>$this->input->post('keterangan', true),
+            'alasan'=>'Belum Diterima',
             'fc_kk'=>$upload['file']['file_name'],
 		];
 	$this->db->insert('ktp', $data);
@@ -68,6 +69,7 @@ class Ktp_model extends CI_Model {
     public function ubahKtp($id_ktp){
 		$data=[
             'status'=>$this->input->post('status', true),
+            'alasan'=>$this->input->post('alasan', true),
 		];
         $this->db->where('id_ktp', $id_ktp);	
         $this->db->update('ktp', $data);

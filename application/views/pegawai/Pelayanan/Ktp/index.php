@@ -1,51 +1,55 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-address-card"></i>
+    Pelayanan KTP
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="content-wrapper">
     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h2 class="h5 align-middle m-0 font-weight-bold text-dark">
-                        Data Pengaduan
-                    </h2>
+                    <?= $this->session->flashdata('message'); ?>
                     <p>
-                    <table id="dataTable" class="table table-bordered">
-                        <thead class="table table-bordered">
+                        <a class='btn btn-primary' href="LayananKtp/tambahKtp">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <span>
+                                Tambah Data Ktp
+                            </span>
+                        </a>
+                    <table id="dataTable" class="table table-striped">
+                        <thead class="table table-striped">
                             <tr>
                                 <th>NO</th>
                                 <th>NAMA</th>
-                                <th>TANGGAL</th>
-                                <th>JENIS PENGADUAN</th>
-                                <th>KETERANGAN PENGADUAN</th>
-                                <th>BUKTI</th>
+                                <th>TANGGAL MENGAJUKAN</th>
                                 <th>STATUS</th>
                                 <th>ALASAN</th>
+                                <th>Foto Copy KK</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($pengaduan as $pengaduan): ?>
+                            <?php $no=1; foreach ($ktp as $ktp): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-                                <td><?= $pengaduan->nama ?></td>
-                                <td><?= $pengaduan->tanggal ?></td>
-                                <td><?= $pengaduan->jenis_pengaduan ?></td>
-                                <td><?= $pengaduan->keterangan ?></td>
-                                <td><img src="<?= base_url('assets/foto_pengaduan/') . $pengaduan->bukti ?>"
+                                <td><?= $ktp->nama ?></td>
+                                <td><?= $ktp->tanggal_buat ?></td>
+                                <td><span class="badge badge-warning"><?= $ktp->status ?></span></td>
+                                <td><?= $ktp->alasan ?></td>
+                                <td><img src="<?= base_url('assets/foto_ktp/') . $ktp->fc_kk ?>"
                                         style="width:50px; height:50px;"></td>
-                                <td><span class="badge badge-success"><?= $pengaduan->status ?></span></td>
-                                <td><?= $pengaduan->alasan ?></td>
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'pegawai/Pengaduan/hapus/'.$pengaduan->id_pengaduan ?>">
+                                        href="<?= base_url().'pegawai/Pelayanan_ktp/hapus/'.$ktp->id_ktp ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url().'pegawai/Pengaduan/edit/'.$pengaduan->id_pengaduan ?>">
+                                        href="<?= base_url().'pegawai/Pelayanan_ktp/edit/'.$ktp->id_ktp ?>">
                                         <i class="fas fa-hourglass-half" aria-hidden="true"><span> Proses</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'pegawai/Pengaduan/detail/'.$pengaduan->id_pengaduan?>'
+                                        href='<?= base_url().'pegawai/Pelayanan_ktp/edit/'.$ktp->id_ktp?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
                                     </a>

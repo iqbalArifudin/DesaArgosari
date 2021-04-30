@@ -13,26 +13,40 @@
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($penduduk as $penduduk):?>
+                            <?php foreach($penduduk1 as $penduduk):?>
                             <form action="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk;?>">
+
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <img src="<?= base_url('assets/foto_penduduk/') . $penduduk->foto ?>"
                                             class="card-img-top" style="height: 370px;">
                                         <p>
-                                        <div class="">
-                                            <center>
-                                                <a class='btn btn-outline-secondary'
-                                                    href="<?= base_url().'user/Profil/edit/'.$penduduk->id_penduduk ?>">
-                                                    <i class="fas fa-edit" aria-hidden="true"><span> Edit Foto
-                                                            Profil</span></i>
-                                                </a>
+
+                                            <hr>
+                                            <center><label for="nama"><strong>Tambahkan Foto Profil</strong></label>
                                             </center>
+                                        <div class="form-group col-md-20">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-8">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="foto"
+                                                            name="foto">
+                                                        <label class="custom-file-label" for="customFile"></label>
+                                                        <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <button type="submit" name="submit"
+                                                        class="btn btn-outline-secondary">Simpan</button>
+                                                </div>
+                                            </div>
                                         </div>
                                         <hr>
-                                    </div>
 
+
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Nama</strong></label>
                                         <input type="text" name="NIK" placeholder="" autocomplete="off"
@@ -142,7 +156,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="nama"><strong>Edit Password</strong></label>
                                             <button type="button" class="btn btn-outline-secondary"><i
-                                                    class="fas fa-edit"></i>Edit</button>
+                                                    class="fas fa-edit"></i> Edit </button>
                                         </div>
 
                                     </div>
@@ -150,7 +164,6 @@
 
                                 <p>
                             </form>
-
                             <?php endforeach ?>
                         </div>
                     </div>

@@ -66,9 +66,9 @@
 
                                 <p>
                                 <div class="form-row">
-                                    <label for="nama_barang"><strong>Alasan</strong></label>
+                                    <label for="nama_barang"><strong>Alasan / Keterangan</strong></label>
                                     <input type="text" name="alasan" autocomplete="off" class="form-control"
-                                        value="<?=$p->alasan;?>" required>
+                                        value="<?=$p->alasan;?>">
                                 </div>
                                 <p>
                                     <?php endforeach ?>

@@ -20,8 +20,8 @@
                                 Tambah Pengaduan
                             </span>
                         </a>
-                    <table id="dataTable" class="table table-striped table-hover ">
-                        <thead class="table-primary">
+                    <table id="dataTable" class="table table-bordered">
+                        <thead class="table table-bordered">
                             <tr>
                                 <th>NO</th>
                                 <th>TANGGAL</th>

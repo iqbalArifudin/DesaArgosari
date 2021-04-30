@@ -29,9 +29,21 @@
            </li>
 
            <li class="nav-item">
+               <a href="<?php echo base_url().'pegawai/Pelayanan_ktp' ?>" class="nav-link">
+                   <i class="fas fa-fw fa-table"></i>
+                   <span>Pelayanan KTP</span></a>
+           </li>
+
+           <li class="nav-item">
                <a href="<?php echo base_url().'pegawai/pegawai' ?>" class="nav-link">
                    <i class="fas fa-fw fa-table"></i>
-                   <span>Pelayanan</span></a>
+                   <span>Pelayanan KK</span></a>
+           </li>
+
+           <li class="nav-item">
+               <a href="<?php echo base_url().'pegawai/pegawai' ?>" class="nav-link">
+                   <i class="fas fa-fw fa-table"></i>
+                   <span>Pelayanan Akta Kelahiran</span></a>
            </li>
 
            <li class="nav-item">

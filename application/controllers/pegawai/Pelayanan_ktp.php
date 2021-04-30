@@ -19,11 +19,11 @@
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['ktp'] = $this->Ktp_model->tampilKtp();
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
-        $this->load->view('template admin/header',$data);
-        $this->load->view('template admin/sidebar',$data);
-        $this->load->view('template admin/topbar',$data); 
-        $this->load->view('admin/Pelayanan/Ktp/index',$data);
-        $this->load->view('template admin/footer',$data);  
+        $this->load->view('template pegawai/header',$data);
+        $this->load->view('template pegawai/sidebar',$data);
+        $this->load->view('template pegawai/topbar',$data); 
+        $this->load->view('pegawai/Pelayanan/Ktp/index',$data);
+        $this->load->view('template pegawai/footer',$data);  
         }
 
         public function hapus($id_ktp)
@@ -32,12 +32,12 @@
             {
                 $this->session->set_flashdata('flashdata', 'gagal');
                 $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
-                redirect('admin/Pelayanan_ktp');
+                redirect('pegawai/Pelayanan_ktp');
             }else{
                 $this->load->library('session');
                 $this->session->set_flashdata('flashdata', 'dihapus');
                 $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
-                redirect('admin/Pelayanan_ktp','refresh');
+                redirect('pegawai/Pelayanan_ktp','refresh');
             } 
         }
 
@@ -50,28 +50,28 @@
             // $this->form_validation->set_rules('status', 'status', 'required');
 
             if($this->form_validation->run() == FALSE){
-                $this->load->view('template admin/header',$data);
-                $this->load->view('template admin/sidebar',$data);
-                $this->load->view('template admin/topbar',$data); 
-                $this->load->view('admin/Pelayanan/Ktp/detail' ,$data);
-                $this->load->view('template admin/footer',$data);
+                $this->load->view('template pegawai/header',$data);
+                $this->load->view('template pegawai/sidebar',$data);
+                $this->load->view('template pegawai/topbar',$data); 
+                $this->load->view('pegawai/Pelayanan/Ktp/edit' ,$data);
+                $this->load->view('template pegawai/footer',$data);
             }
             else{
                     $this->Ktp_model->ubahKtp($id_ktp);
                     $this->session->set_flashdata('pesan3','Data Berhasil Di edit');
                     $this->load->library('session');
-                    redirect('admin/Pelayanan_ktp','refresh');
+                    redirect('pegawai/Pelayanan_ktp','refresh');
             }
         }
     
         public function detail($id_ktp){
             $data['ktp']=$this->Ktp_model->getDetailKtp($id_ktp);
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-            $this->load->view('template admin/header',$data);
-            $this->load->view('template admin/sidebar');
-            $this->load->view('template admin/topbar'); 
-            $this->load->view('admin/Pelayanan/Ktp/detail' ,$data);
-            $this->load->view('template admin/footer'); 
+            $this->load->view('template pegawai/header',$data);
+            $this->load->view('template pegawai/sidebar');
+            $this->load->view('template pegawai/topbar'); 
+            $this->load->view('pegawai/Pelayanan/Ktp/detail' ,$data);
+            $this->load->view('template pegawai/footer'); 
         } 
 
 

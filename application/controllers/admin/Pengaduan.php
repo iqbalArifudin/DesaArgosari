@@ -53,7 +53,7 @@
                 $this->load->view('template admin/header',$data);
                 $this->load->view('template admin/sidebar',$data);
                 $this->load->view('template admin/topbar',$data); 
-                $this->load->view('admin/Pengaduan/detail' ,$data);
+                $this->load->view('admin/Pengaduan/edit' ,$data);
             }
             else{
                     $this->Pengaduan_model->ubahPengaduan($id_pengaduan);

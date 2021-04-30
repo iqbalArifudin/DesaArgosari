@@ -45,14 +45,14 @@
 
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>keterangan</strong></label>
-                                    <input type="text" name="keterangan" id="keterangan" placeholder="Masukkan Tanggal"
+                                    <input type="text" name="keterangan" id="keterangan" placeholder=""
                                         autocomplete="off" class="form-control">
                                 </div>
 
                                 <p>
 
                                 <div class="form-row">
-                                    <label for="satuan"><strong>Foto Copy KK</strong></label>
+                                    <label for="satuan"><strong>Upload Foto Copy KK</strong></label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="fc_kk" name="fc_kk" required
                                             autofocus>

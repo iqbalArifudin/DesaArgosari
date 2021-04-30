@@ -36,17 +36,17 @@
                             </b>&nbsp;: <?= $p->keterangan ?></h5>
                         <hr>
                         <h5 class="card-title text-dark"><b>Status Pengaduan
-                            </b>&nbsp;: <?= $p->status ?></h5>
-                        <hr>
+                                <td><span class="badge badge-success"><?= $p->status ?></span></td>
+                                <hr>
 
-                        <?php endforeach ?>
-                        <p>
-                            <a href="<?php echo base_url("pegawai/Pengaduan"); ?>" class="btn btn-primary"> <i
-                                    class="far fa-arrow-left"></i>&nbsp;Kembali</a>
-                        <div class="form-group">
-                            <!-- The Modal -->
-                            </p>
-                        </div>
+                                <?php endforeach ?>
+                                <p>
+                                    <a href="<?php echo base_url("pegawai/Pengaduan"); ?>" class="btn btn-primary"> <i
+                                            class="far fa-arrow-left"></i>&nbsp;Kembali</a>
+                                <div class="form-group">
+                                    <!-- The Modal -->
+                                    </p>
+                                </div>
                 </div>
             </div>
         </div>

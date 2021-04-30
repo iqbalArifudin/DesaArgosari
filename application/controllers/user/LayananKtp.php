@@ -39,6 +39,7 @@
                 $this->load->view('template_layanan/sidebar');
                 $this->load->view('template_layanan/topbar'); 
                 $this->load->view('user/Pelayanan/Ktp/tambah' ,$data);
+                $this->load->view('template_layanan/footer',$data);  
 
             }         
             else{
@@ -103,6 +104,7 @@
                 $this->load->view('template_layanan/sidebar',$data);
                 $this->load->view('template_layanan/topbar',$data); 
                 $this->load->view('user/Pelayanan/Ktp/edit',$data);
+                $this->load->view('template_layanan/footer',$data);  
         } else {
 
             //check jika ada gambar yang akan di upload

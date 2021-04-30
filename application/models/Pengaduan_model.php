@@ -25,12 +25,33 @@ class Pengaduan_model extends CI_Model {
         return $this->db->get('pengaduan')->result();
     }
 
-    // public function tampilPengaduanPegawai()
-    // {
-    //     $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-    //     $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-    //     return $this->db->get_where('pengaduan', ['status' => 'Diajukan'])->result();
-    // }
+    public function tampilPengaduanPegawai()
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get_where('pengaduan', ['status' => 'Diajukan Ke Kepala Desa'])->result();
+    }
+
+    public function tampilPengaduanPegawai1()
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get_where('pengaduan', ['status' => 'Ditolak'])->result();
+    }
+
+    public function tampilPengaduanPegawai2()
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get_where('pengaduan', ['status' => 'Disetujui'])->result();
+    }
+
+    public function tampilPengaduanPegawai3()
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get_where('pengaduan', ['status' => 'Diproses'])->result();
+    }
 
     public function tambahDataPengaduan($upload){
 		$data=[
@@ -82,13 +103,6 @@ class Pengaduan_model extends CI_Model {
         $this->db->update('pengaduan', $data);
     }
 
-    // public function ubahPengaduanadmin($id_pengaduan){
-	// 	$data=[
-    //         'status'=>"diajukan_ke_kepala_desa",
-	// 	];
-    //     $this->db->where('id_pengaduan', $id_pengaduan);	
-    //     $this->db->update('pengaduan', $data);
-    // }
 
     public function getPengaduan($id_pengaduan){  
         $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');

@@ -12,8 +12,8 @@
                         Data Pengaduan
                     </h2>
                     <p>
-                    <table id="dataTable" class="table table-striped table-hover ">
-                        <thead class="table-primary">
+                    <table id="dataTable" class="table table-bordered">
+                        <thead class="table table-bordered">
                             <tr>
                                 <th>NO</th>
                                 <th>NAMA</th>
@@ -36,15 +36,12 @@
                                 <td><?= $pengaduan->keterangan ?></td>
                                 <td><img src="<?= base_url('assets/foto_pengaduan/') . $pengaduan->bukti ?>"
                                         style="width:50px; height:50px;"></td>
-                                <td><?= $pengaduan->status ?></td>
+                                <td><span class="badge badge-warning"><?= $pengaduan->status ?></span></td>
                                 <td><?= $pengaduan->alasan ?></td>
                                 <td>
-                                    <!-- <a class='btn btn-warning'
-                                        href="<?= base_url().'admin/Pengaduan/edit/'.$pengaduan->id_pengaduan ?>">
-                                        <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
-                                    </a> -->
+
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'admin/Pengaduan/detail/'.$pengaduan->id_pengaduan?>'
+                                        href='<?= base_url().'admin/Pengaduan/edit/'.$pengaduan->id_pengaduan?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
                                     </a>

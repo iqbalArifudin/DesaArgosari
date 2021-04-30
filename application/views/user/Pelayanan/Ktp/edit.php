@@ -63,6 +63,10 @@
                                         <?= form_error('fc_kk', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
+                                <br>
+                                <div class="form-row">
+                                    <img src="<?= base_url('assets/foto_ktp/') . $p->fc_kk ?>" style="width:400px; ">
+                                </div>
                                 <?php endforeach ?>
                                 <hr>
                                 <div class="form-group">
