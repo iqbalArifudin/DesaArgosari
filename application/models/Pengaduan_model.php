@@ -29,28 +29,7 @@ class Pengaduan_model extends CI_Model {
     {
         $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
         $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' => 'Diajukan Ke Kepala Desa'])->result();
-    }
-
-    public function tampilPengaduanPegawai1()
-    {
-        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' => 'Ditolak'])->result();
-    }
-
-    public function tampilPengaduanPegawai2()
-    {
-        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' => 'Disetujui'])->result();
-    }
-
-    public function tampilPengaduanPegawai3()
-    {
-        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' => 'Diproses'])->result();
+        return $this->db->get_where('pengaduan', ['status' != 'Diajukan'])->result();
     }
 
     public function tambahDataPengaduan($upload){
@@ -116,6 +95,11 @@ class Pengaduan_model extends CI_Model {
         $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
         $this->db->where('id_pengaduan', $id_pengaduan);
         return $this->db->get('pengaduan')->result();
+    }
+
+    public function download($id_pengaduan){
+        $query = $this->db->get_where('pengaduan',array('id_pengaduan'=>$id_pengaduan));
+        return $query->row_array();
     }
     
 }    

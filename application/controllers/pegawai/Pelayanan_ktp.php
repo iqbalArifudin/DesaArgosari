@@ -12,6 +12,7 @@
             $this->load->model('pegawai_model');  
             $this->load->model('penduduk_model'); 
             $this->load->model('Ktp_model');  
+            $this->load->library('pdf');
         }
         
         public function index()
@@ -73,7 +74,22 @@
             $this->load->view('pegawai/Pelayanan/Ktp/detail' ,$data);
             $this->load->view('template pegawai/footer'); 
         } 
+        public function download($id_ktp){
+            $this->load->helper('download');
+            $fileinfo = $this->Ktp_model->download($id_ktp);
+            $file = './assets/foto_ktp/'.$fileinfo['fc_kk'];
+            force_download($file, NULL);
+        }
 
+        public function pdf()
+    {
+    
+        $data['ktp'] = $this->Ktp_model->tampilKtp();
+        $this->pdf->setPaper('A4', 'potrait');
+		$this->pdf->filename = "Surat Pengantar KTP.pdf"; 
+		$this->pdf->set_option('isRemoteEnabled', true);
+		$this->pdf->load_view('pegawai/Pelayanan/Ktp/surat_ktp_pdf', $data);	
+    }
 
     }
         /* End of fils admin.php */

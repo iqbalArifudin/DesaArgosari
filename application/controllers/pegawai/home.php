@@ -15,7 +15,7 @@
         
         public function index()
         {
-            $data['title'] = 'Halaman Admin';
+            $data['title'] = 'Halaman Pegawai';
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
            $this->load->view('template pegawai/header',$data);
            $this->load->view('template pegawai/sidebar');

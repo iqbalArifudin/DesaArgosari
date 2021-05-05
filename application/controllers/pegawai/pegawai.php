@@ -136,6 +136,7 @@
             $this->load->view('pegawai/pegawai/detail' ,$data);
             $this->load->view('template pegawai/footer'); 
         } 
+        
 
     }
         /* End of fils pegawai.php */

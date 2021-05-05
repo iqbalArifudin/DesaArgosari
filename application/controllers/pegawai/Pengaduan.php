@@ -74,6 +74,13 @@
             $this->load->view('template pegawai/footer'); 
         } 
 
+        public function download($id_pengaduan){
+            $this->load->helper('download');
+            $fileinfo = $this->Pengaduan_model->download($id_pengaduan);
+            $file = './assets/foto_pengaduan/'.$fileinfo['bukti'];
+            force_download($file, NULL);
+        }
+
     }
         /* End of fils admin.php */
 ?>

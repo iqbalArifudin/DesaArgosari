@@ -49,7 +49,7 @@
                                         <i class="fas fa-hourglass-half" aria-hidden="true"><span> Proses</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'pegawai/Pelayanan_ktp/edit/'.$ktp->id_ktp?>'
+                                        href='<?= base_url().'pegawai/Pelayanan_ktp/detail/'.$ktp->id_ktp?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
                                     </a>

@@ -51,7 +51,7 @@
                                         <input type="radio" name="status" value="Diproses">Diproses
                                     </div>
 
-                                    <?php else: ?>
+                                    <?php elseif($p->status == "Diproses"): ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui">Disetujui
                                     </div>
@@ -60,6 +60,17 @@
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Diproses" checked>Diproses
+                                    </div>
+
+                                    <?php else: ?>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Disetujui">Disetujui
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Ditolak">Ditolak
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Diproses">Diproses
                                     </div>
                                     <?php endif ?>
                                 </div>

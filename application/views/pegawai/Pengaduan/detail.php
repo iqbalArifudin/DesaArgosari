@@ -41,8 +41,12 @@
 
                                 <?php endforeach ?>
                                 <p>
-                                    <a href="<?php echo base_url("pegawai/Pengaduan"); ?>" class="btn btn-primary"> <i
-                                            class="far fa-arrow-left"></i>&nbsp;Kembali</a>
+                                    <a href="<?php echo base_url("pegawai/Pengaduan"); ?>" class="btn btn-primary">
+                                        &nbsp;Kembali</a>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url().'pegawai/Pengaduan/download/'.$p->id_pengaduan; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download Bukti</span></i>
+                                    </a>
                                 <div class="form-group">
                                     <!-- The Modal -->
                                     </p>

@@ -75,13 +75,6 @@ class Ktp_model extends CI_Model {
         $this->db->update('ktp', $data);
     }
 
-    // public function ubahPengaduanadmin($id_pengaduan){
-	// 	$data=[
-    //         'status'=>$this->input->post('status', true),
-	// 	];
-    //     $this->db->where('id_pengaduan', $id_pengaduan);	
-    //     $this->db->update('pengaduan', $data);
-    // }
 
     public function getKtp($id_ktp){  
         $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
@@ -95,6 +88,11 @@ class Ktp_model extends CI_Model {
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('id_ktp', $id_ktp);
         return $this->db->get('ktp')->result();
+    }
+
+    public function download($id_ktp){
+        $query = $this->db->get_where('ktp',array('id_ktp'=>$id_ktp));
+        return $query->row_array();
     }
     
 }    

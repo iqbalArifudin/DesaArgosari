@@ -59,7 +59,12 @@
                                 <p>
                                     <hr>
 
-                                    <button type="submit" name="submit" class="btn btn-success ">Cetak</button>
+                                    <a href="<?=base_url("pegawai/Pelayanan_ktp/pdf");?>"
+                                        class="btn btn-success">Cetak</a>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url().'pegawai/Pelayanan_ktp/download/'.$penduduk->id_ktp; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download Bukti</span></i>
+                                    </a>
                                     <a href="<?=base_url("pegawai/Pelayanan_ktp");?>" class="btn btn-info">Kembali</a>
 
                             </form>
