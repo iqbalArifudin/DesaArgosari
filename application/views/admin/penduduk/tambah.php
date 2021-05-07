@@ -132,17 +132,6 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="nim"><strong>Desa</label></strong>
-                                        <input type="text" class="form-control" id="desa" name="desa">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="nim"><strong>Kecamatan</label></strong>
-                                        <input type="text" class="form-control" id="Kecamatan" name="Kecamatan">
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
                                     <label for="satuan"><strong>Foto</strong></label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="foto" name="foto" autofocus>

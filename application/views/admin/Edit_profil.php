@@ -9,8 +9,8 @@
             <div class="card-header bg-white py-3">
                 <div class="row">
                     <div class="col">
+                    <?= $this->session->flashdata('message'); ?>
                         <div class="card-header">
-                        <?= $this->session->flashdata('message'); ?>
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">

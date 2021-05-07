@@ -58,6 +58,12 @@
                    <span>Data Penduduk</span></a>
            </li>
 
+           <li class="nav-item">
+               <a href="<?php echo base_url().'pegawai/Kritik' ?>" class="nav-link">
+                   <i class="fas fa-comments"></i>
+                   <span>Kritik dan Saran</span></a>
+           </li>
+
            <!-- Divider -->
            <hr class="sidebar-divider d-none d-md-block">
 

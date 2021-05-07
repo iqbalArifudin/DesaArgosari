@@ -129,7 +129,6 @@
                 $this->db->set('RT', $RT);
                 $this->db->set('RW', $RW);
                 $this->db->set('desa', $desa);
-                $this->db->set('password', $password);
                 $this->db->set('hak_akses', $hak_akses);
                 $this->db->where('id_penduduk', $id_penduduk);
                 $this->db->update('penduduk');

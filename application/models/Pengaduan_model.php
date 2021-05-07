@@ -29,7 +29,8 @@ class Pengaduan_model extends CI_Model {
     {
         $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
         $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-        return $this->db->get_where('pengaduan', ['status' != 'Diajukan'])->result();
+        $this->db->where('status !=', 'Diajukan');
+        return $this->db->get('pengaduan')->result();
     }
 
     public function tambahDataPengaduan($upload){

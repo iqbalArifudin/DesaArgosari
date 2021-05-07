@@ -47,7 +47,7 @@
                                 <?= $this->session->flashdata('message'); ?>
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1>Silahkan Login</h1>
+                                    <h1><font color="gray">Silahkan Login</font><br></h1>
                                     </div>
                                     <br>
                                     <?php

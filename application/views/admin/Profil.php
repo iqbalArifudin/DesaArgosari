@@ -9,45 +9,31 @@
             <div class="card-header bg-white py-3">
                 <div class="row">
                     <div class="col">
+                    <?= $this->session->flashdata('message'); ?>
                         <div class="card-header">
-                        <?= $this->session->flashdata('message'); ?>
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($penduduk1 as $penduduk):?>
+                            <?php foreach($penduduk as $penduduk):?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk;?>">
-
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <img src="<?= base_url('assets/foto_penduduk/') . $penduduk->foto ?>"
                                             class="card-img-top" style="height: 370px;">
                                         <p>
-
-                                            <hr>
-                                            <center><label for="nama"><strong>Tambahkan Foto Profil</strong></label>
+                                        <div class="">
+                                            <center>
+                                                <a class='btn btn-outline-secondary'
+                                                    href="<?= base_url().'admin/Profil/edit/'.$penduduk->id_penduduk ?>">
+                                                    <i class="fas fa-edit" aria-hidden="true"><span> Edit Foto
+                                                            Profil</span></i>
+                                                </a>
                                             </center>
-                                        <div class="form-group col-md-20">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-8">
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="foto"
-                                                            name="foto">
-                                                        <label class="custom-file-label" for="customFile"></label>
-                                                        <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <button type="submit" name="submit"
-                                                        class="btn btn-outline-secondary">Simpan</button>
-                                                </div>
-                                            </div>
                                         </div>
                                         <hr>
-
-
                                     </div>
+
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Nama</strong></label>
                                         <input type="text" name="NIK" placeholder="" autocomplete="off"
@@ -142,12 +128,30 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Kabupaten / Kota</strong></label>
+                                        <input type="text" name="nama" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->kabupaten; ?>" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Kode Pos</strong></label>
+                                        <input type="text" name="NIK" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->kode_pos; ?>" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Provinsi</strong></label>
+                                        <input type="text" name="nama" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->provinsi; ?>" readonly>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <label for="nama"><strong>Hak Akses</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
                                             class="form-control" required value="<?= $penduduk->hak_akses; ?>" readonly>
                                     </div>
-
-                                    <div class="form-row col-md-6">
+                                </div>
+                                <div class="form-row ">
                                         <div class="form-group col-md-6">
                                             <label for="nama"><strong>Password</strong></label>
                                             <input type="password" name="NIK" placeholder="" autocomplete="off"
@@ -156,15 +160,15 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="nama"><strong>Edit Password</strong></label>
+                                            <br>
                                             <button type="button" class="btn btn-outline-secondary"><i
-                                                    class="fas fa-edit"></i> Edit </button>
+                                                    class="fas fa-edit"></i>Edit Password</button>
                                         </div>
 
                                     </div>
-                                </div>
-
                                 <p>
                             </form>
+
                             <?php endforeach ?>
                         </div>
                     </div>

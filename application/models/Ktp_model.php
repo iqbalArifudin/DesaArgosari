@@ -17,19 +17,19 @@ class Ktp_model extends CI_Model {
         $this->db->where('ktp.id_penduduk', $id_penduduk);
         return $this->db->get('ktp')->result();
     }
+    public function tampilKtpPegawai()
+    {
+        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('status !=', 'Diajukan');
+        return $this->db->get('ktp')->result();
+    }
 
-    // public function tampilPengaduanPegawai()
-    // {
-    //     $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
-    //     $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
-    //     return $this->db->get_where('pengaduan', ['status' => 'Diajukan ke Kepala Desa'])->result();
-    // }
 
     public function tambahKtp($upload){
 		$data=[
             'id_ktp'=>$this->input->post('id_ktp', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
-            // 'keterangan'=>$this->input->post('keterangan', true),
             'status'=>'Diajukan',
             'keterangan'=>$this->input->post('keterangan', true),
             'alasan'=>'Belum Diterima',

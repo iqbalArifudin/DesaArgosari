@@ -9,21 +9,13 @@
             <div class="row">
                 <div class="col">
                     <?= $this->session->flashdata('message'); ?>
-                    <p>
-                        <a class='btn btn-primary' href="LayananKtp/tambahKtp">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                            <span>
-                                Tambah Data Ktp
-                            </span>
-                        </a>
                     <table id="dataTable" class="table table-striped">
                         <thead class="table table-striped">
                             <tr>
                                 <th>NO</th>
                                 <th>NAMA</th>
-                                <th>TANGGAL MENGAJUKAN</th>
                                 <th>STATUS</th>
-                                <th>ALASAN</th>
+                                <th>KETERANGAN</th>
                                 <th>Foto Copy KK</th>
                                 <th>AKSI</th>
                             </tr>
@@ -33,7 +25,6 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $ktp->nama ?></td>
-                                <td><?= $ktp->tanggal_buat ?></td>
                                 <td><span class="badge badge-warning"><?= $ktp->status ?></span></td>
                                 <td><?= $ktp->alasan ?></td>
                                 <td><img src="<?= base_url('assets/foto_ktp/') . $ktp->fc_kk ?>"
