@@ -2,7 +2,7 @@
     
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class LayananKtp extends CI_Controller {
+    class akta_kelahiran extends CI_Controller {
     
         
         public function __construct()
@@ -12,40 +12,42 @@
             $this->load->model('pegawai_model');  
             $this->load->model('penduduk_model');  
             $this->load->model('Pengaduan_model');  
-            $this->load->model('Ktp_model');  
+            $this->load->model('akta_kelahiran_model');  
+            $this->load->model('akta_kelahiran_model');  
         }
         
         public function index()
         {
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
-        $data['ktp'] = $this->Ktp_model->tampilKtpPenduduk($this->session->userdata('id_penduduk'));
-        $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
-        $this->load->view('template_layanan/header',$data);
-        $this->load->view('template_layanan/sidebar',$data);
-        $this->load->view('template_layanan/topbar',$data); 
-        $this->load->view('user/Pelayanan/Ktp/index',$data);
-        $this->load->view('template_layanan/footer',$data);  
+            $data['akta'] = $this->akta_kelahiran_model->tampilAkta($this->session->userdata('id_penduduk'));
+            $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
+            $this->load->view('template_layanan/header',$data);
+            $this->load->view('template_layanan/sidebar',$data);
+            $this->load->view('template_layanan/topbar',$data); 
+            $this->load->view('user/Pelayanan/Akta_kelahiran/index',$data);
+            $this->load->view('template_layanan/footer',$data);  
         }
 
-        public function tambahKtp(){
+        public function tambahAkta(){
             $this->load->library('form_validation');
-            $this->form_validation->set_rules('keterangan', 'keterangan', 'required');
-            $data['ktp'] = $this->Ktp_model->tampilKtpPenduduk($this->session->userdata('id_penduduk'));
-            // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+            $this->form_validation->set_rules('nama_akta', 'nama_akta', 'required');
+            $data['akta'] = $this->akta_kelahiran_model->tampilAkta($this->session->userdata('id_penduduk'));
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             if($this->form_validation->run() == FALSE){
                 $this->load->view('template_layanan/header',$data);
                 $this->load->view('template_layanan/sidebar');
                 $this->load->view('template_layanan/topbar'); 
-                $this->load->view('user/Pelayanan/Ktp/tambah' ,$data);
+                $this->load->view('user/Pelayanan/Akta_kelahiran/tambah' ,$data);
                 $this->load->view('template_layanan/footer',$data);  
 
             }         
             else{
-                $upload = $this->Ktp_model->upload();
+                $upload = $this->akta_kelahiran_model->upload();
+                $upload1 = $this->akta_kelahiran_model->upload1();
+                $upload2 = $this->akta_kelahiran_model->upload2();
+                $upload3 = $this->akta_kelahiran_model->upload3();
                 if ($upload['result'] == 'success'){
-                    $this->Ktp_model->tambahKtp($upload);
+                    $this->akta_kelahiran_model->tambahAkta($upload, $upload1, $upload2, $upload3);
                     $this->session->set_flashdata(
                         'message',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -55,18 +57,16 @@
                         </button>
                     </div>'
                     );
-                    redirect('user/LayananKtp','refresh');
+                    redirect('user/akta_kelahiran','refresh');
                 } else {
                     echo $upload['error'];
                 }
-                // $this->session->set_flashdata('name', 'value');
-                
             }
         }
 
-        public function hapus($id_ktp)
+        public function hapus($id_akta)
         {
-            if($this->Ktp_model->hapusDataKtp($id_ktp) == false)
+            if($this->akta_kelahiran_model->hapusData($id_akta) == false)
             {
                 $this->session->set_flashdata(
                     'message',
@@ -77,7 +77,7 @@
                     </button>
                     </div>'
                 );
-                redirect('user/LayananKtp');
+                redirect('user/akta_kelahiran');
             }else{
                 $this->session->set_flashdata(
                     'message',
@@ -88,51 +88,55 @@
                     </button>
                     </div>'
                 );
-                redirect('user/LayananKtp','refresh');
+                redirect('user/akta_kelahiran','refresh');
             }
            
         }
 
-        public function edit($id_ktp)
+        public function edit($id_akta)
         {
-        $data ['ktp'] = $this->Ktp_model->getKtp($id_ktp);
+        $data ['akta'] = $this->akta_kelahiran_model->getAkta($id_akta);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $this->form_validation->set_rules('keterangan', 'keterangan', 'required|trim');
+        $this->form_validation->set_rules('nama_akta', 'nama_akta', 'required|trim');
 
         if ($this->form_validation->run() == false) {
                 $this->load->view('template_layanan/header',$data);
                 $this->load->view('template_layanan/sidebar',$data);
                 $this->load->view('template_layanan/topbar',$data); 
-                $this->load->view('user/Pelayanan/Ktp/edit',$data);
+                $this->load->view('user/Pelayanan/Akta_kelahiran/edit',$data);
                 $this->load->view('template_layanan/footer',$data);  
         } else {
 
             //check jika ada gambar yang akan di upload
             $upload_file = $_FILES['fc_kk']['name'];
             if ($upload_file) {
-                $config['upload_path'] = './assets/foto_ktp/';    
+                $config['upload_path'] = './assets/persyaratan_akta/';    
                 $config['allowed_types'] = 'jpg|png|jpeg';
-                $config['max_size']     = '10000';
+                $config['max_size']     = '50000';
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('fc_kk')) {
-                    $old_file = $data['ktp']['fc_kk'];
+                    $old_file = $data['akta_kelahiran']['fc_kk'];
                     if ($old_file != 'default.png') {
-                        unlink(FCPATH . './assets/foto_ktp/' . $old_file);
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
                     }
                     $new_file = $this->upload->data('file_name');
                     $this->db->set('fc_kk', $new_file);
-                } else {
+                } 
+                else {
                     echo $this->upload->display_errors();
                 }
             }
 
-            $id_ktp = $this->input->post('id_ktp');
-            $keterangan = $this->input->post('keterangan');
+            $id_akta = $this->input->post('id_akta');
+            $nama_akta = $this->input->post('nama_akta');
+            $tempat_lahir = $this->input->post('tempat_lahir');
+            $tanggal_lahir = $this->input->post('tanggal_lahir');
 
-            $this->db->set('keterangan', $keterangan);
-            $this->db->where('id_ktp', $id_ktp);
-            $this->db->update('ktp');
+            $this->db->set('nama_akta', $nama_akta);
+            $this->db->where('tempat_lahir', $tempat_lahir);
+            $this->db->where('tanggal_lahir', $tanggal_lahir);
+            $this->db->update('akta_kelahiran');
 
             $this->session->set_flashdata(
                 'message',
@@ -143,17 +147,17 @@
                     </button>
                 </div>'
             );
-            redirect('user/LayananKtp');
+            redirect('user/akta_kelahiran');
         }
     }
     
-        public function detail($id_ktp){
-            $data['ktp']=$this->Ktp_model->getDetailKtp($id_ktp);
+        public function detail($id_akta){
+            $data['akta']=$this->akta_kelahiran_model->getDetailAkta($id_akta);
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $this->load->view('template_layanan/header',$data);
             $this->load->view('template_layanan/sidebar');
             $this->load->view('template_layanan/topbar'); 
-            $this->load->view('user/Pelayanan/Ktp/detail' ,$data);
+            $this->load->view('user/Pelayanan/Akta_kelahiran/detail' ,$data);
             $this->load->view('template_layanan/footer'); 
         } 
 
