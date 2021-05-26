@@ -60,6 +60,15 @@
                     $this->Ktp_model->ubahKtp($id_ktp);
                     $this->session->set_flashdata('pesan3','Data Berhasil Di edit');
                     $this->load->library('session');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                       Data Telah Diajukan Ke Kepala Desa ! 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
+            );
                     redirect('admin/Pelayanan_ktp','refresh');
             }
         }

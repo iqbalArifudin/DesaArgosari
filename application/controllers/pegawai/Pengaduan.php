@@ -30,13 +30,27 @@
         {
             if($this->Pengaduan_model->hapusDatapengaduan($id_pengaduan) == false)
             {
-                $this->session->set_flashdata('flashdata', 'gagal');
-                $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                           Data Tidak Dapat Dihapus ! 
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>'
+            );
                 redirect('pegawai/Pengaduan');
             }else{
                 $this->load->library('session');
-                $this->session->set_flashdata('flashdata', 'dihapus');
-                $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                           Data Behasil Dihapus ! 
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>'
+            );
                 redirect('pegawai/Pengaduan','refresh');
             } 
         }
@@ -60,6 +74,15 @@
                     $this->Pengaduan_model->ubahPengaduan($id_pengaduan);
                     $this->session->set_flashdata('pesan3','Data Berhasil Di edit');
                     $this->load->library('session');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                       Status Berhasil Di Update ! 
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>'
+            );
                     redirect('pegawai/Pengaduan','refresh');
             }
         }

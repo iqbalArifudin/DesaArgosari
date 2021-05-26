@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Data Penduduk &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-plus"></i>&nbsp;Tambah penduduk
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -9,7 +13,7 @@
                             <center><strong>Form Tambah Data Penduduk </strong></center>
                         </div>
                         <div class="card-body">
-                            <?php if (validation_errors()): ?>
+                            <?php if (validation_errors()) : ?>
                             <div class="alert alert-danger" role="alert">
                                 <?= validation_errors(); ?>
                             </div>
@@ -163,10 +167,12 @@
 
                                 <hr>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("admin/penduduk");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?= base_url("admin/penduduk"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

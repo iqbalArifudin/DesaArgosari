@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Data Penduduk
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="content-wrapper">
     <div class="content">
@@ -30,7 +34,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($penduduk1 as $penduduk): ?>
+                            <?php $no = 1;
+                            foreach ($penduduk1 as $penduduk) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $penduduk->NIK ?></td>
@@ -54,15 +59,15 @@
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'pegawai/penduduk/hapus/'.$penduduk->id_penduduk ?>">
+                                        href="<?= base_url() . 'pegawai/penduduk/hapus/' . $penduduk->id_penduduk ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url().'pegawai/penduduk/edit/'.$penduduk->id_penduduk ?>">
+                                        href="<?= base_url() . 'pegawai/penduduk/edit/' . $penduduk->id_penduduk ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'pegawai/penduduk/detail/'.$penduduk->id_penduduk?>'
+                                        href='<?= base_url() . 'pegawai/penduduk/detail/' . $penduduk->id_penduduk ?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span> Detail</span></i>
                                     </a>

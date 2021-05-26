@@ -1,7 +1,7 @@
 <div class="alert alert-primary" role="alert">
     <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-comments"></i>
     Kritik Dan Saran &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-plus-square"></i>
-    Tambah 
+    Tambah
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="row justify-content-center">
@@ -35,12 +35,14 @@
                                     <textarea class="form-control" rows="3" name="keterangan"></textarea>
                                 </div>
                                 <p>
-                                <hr>
+                                    <hr>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/Kritik");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/Kritik");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

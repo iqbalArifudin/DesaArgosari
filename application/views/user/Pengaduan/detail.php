@@ -44,7 +44,7 @@
                         <?php endforeach ?>
                         <p>
                             <a href="<?php echo base_url("user/Pengaduan"); ?>" class="btn btn-primary"> <i
-                                    class="fas fa-arrow-left"></i>&nbsp;Kembali</a>
+                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </p>
                 </div>
             </div>

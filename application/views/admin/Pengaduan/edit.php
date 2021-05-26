@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Pengaduan &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>Detail
+</div>
 <div class="nav-link">
     <div id="darkSwitch"></div>
 </div>
@@ -44,20 +48,29 @@
                         <h5 class="card-title text-dark"><b>
                                 <p>
                                 <div class="form-group">
-                                    <label for="nim"><strong>Status</label></strong>
+                                    <label for="nim"><strong>Ajukan</strong></label>
+                                    <?php if($p->status == "Diajukan Ke Kepala Desa"): ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa"> Diajukan Ke
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa"
+                                            checked>AjukanKe Kepala Desa
+                                    </div>
+
+                                    <?php else: ?>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">AjukanKe
                                         Kepala Desa
                                     </div>
+                                    <?php endif ?>
                                 </div>
                             </b>
                         </h5>
                         <hr>
                         <?php endforeach ?>
                         <p>
-                            <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-success "><i
+                                    class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                             <a href="<?php echo base_url("admin/Pengaduan"); ?>" class="btn btn-primary">
-                                &nbsp;Kembali</a>
+                                <i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                 </div>
             </div>
             </form>

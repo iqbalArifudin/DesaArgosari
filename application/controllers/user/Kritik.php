@@ -39,10 +39,16 @@
             }
             else{
                 $this->Kritik_saran_model->tambahDataSaran();
-                redirect('user/Kritik','refresh');
-                $this->session->set_flashdata('flash-data','ditambahkan');
-			    echo "Kritik dan Saran berhasil dikirim";
-                // $this->session->set_flashdata('name', 'value');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              Kritik atau Saran Anda Berhasil Dikirim ! 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>'
+            );
+            redirect('user/Kritik', 'refresh');
             }
         }
 
@@ -61,8 +67,15 @@
             }
             else{
                     $this->Kritik_saran_model->ubahSaran($id_saran);
-                    $this->session->set_flashdata('pesan3','Data Berhasil Di edit');
-                    $this->load->library('session');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                             Kritik atau Saran Berhasil Diedit !
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>'
+            );
                     redirect('user/Kritik','refresh');
             }
         }
@@ -71,13 +84,27 @@
         {
             if($this->Kritik_saran_model->hapusData($id_saran) == false)
             {
-                $this->session->set_flashdata('flashdata', 'gagal');
-                $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data tidak dapat dihapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+            );
                 redirect('user/Kritik');
             }else{
                 $this->load->library('session');
-                $this->session->set_flashdata('flashdata', 'dihapus');
-                $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data Berhasil dihapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+            );
                 redirect('user/Kritik','refresh');
             }
            

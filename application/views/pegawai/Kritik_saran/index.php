@@ -15,23 +15,17 @@
                                 <th>NAMA</th>
                                 <th>KRITIK / SARAN</th>
                                 <th>TANGGAL</th>
-                                <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($saran as $s): ?>
+                            <?php $no  =  1;
+                        
+                               foreach ($saran as $s)  : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $s->nama ?></td>
                                 <td><?= $s->keterangan ?></td>
                                 <td><?= $s->tanggal ?></td>
-                                <td>
-                                    <a class='btn btn-danger'
-                                        onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'admin/Kritik/hapus/'.$s->id_penduduk ?>">
-                                        <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
-                                    </a>
-                                </td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>

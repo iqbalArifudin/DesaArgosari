@@ -111,7 +111,7 @@
                                     <button type="submit" name="submit" class="btn btn-success ">Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/LayananKtp");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info">Kembali</a>
                                 </div>
                             </form>
                         </div>

@@ -12,10 +12,12 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Kartu Tanda Penduduk</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KTP</div>
+                            <a class="nav-link" href="<?php echo base_url().'user/LayananKtp' ?>">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Kartu Tanda Penduduk</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KTP</div>
                         </div>
+                        </a>
                         <div class="col-auto">
                             <i class="fas fa-address-card fa-3x text-primary"></i>
                         </div>
@@ -30,10 +32,12 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Kartu keluarga</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KK</div>
+                            <a class="nav-link" href="<?php echo base_url().'user/LayananKtp' ?>">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Kartu keluarga</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KK</div>
                         </div>
+                        </a>
                         <div class="col-auto">
                             <i class="fas fa-newspaper fa-3x text-primary"></i>
                         </div>
@@ -48,14 +52,16 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Akta Kelahiran
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">PELAYANAN AKTA
+                            <a class="nav-link" href="<?php echo base_url().'user/akta_kelahiran' ?>">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Akta Kelahiran
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">PELAYANAN AKTA
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-id-badge fa-3x text-primary"></i>
@@ -71,9 +77,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pengaduan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">PENGADUAN</div>
+                            <a class="nav-link" href="<?php echo base_url().'user/Pengaduan' ?>">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                    Pengaduan</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">PENGADUAN</div>
+                            </a>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-3x text-primary"></i>
@@ -97,13 +105,40 @@
                     <div class="card-header">Alur Pembuatan KTP (Kartu Tanda Penduduk)</div>
                 </center>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
-                    <button type="button" class="btn btn-outline-primary"><i class="fas fa-video"></i> Lihat
-                        Petunjuk</button>
+                    <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KTP</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Button Tambah Data KTP, Silahkan Klik</h5>
+                    <h5 class="card-title">3. Isi dan Lengkapi Form Pengajuan KTP, klik Submit</h5>
+                    <h5 class="card-title">4. Pengajuan Anda Sedang Diproses</h5>
+                    <h5 class="card-title">5. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#myModal">
+                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <center>
+                                            <video controls width="950">
+                                                <!-- <source src="assets/video/a.mp4"> -->
+                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                            </video>
+                                        </center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Kembali</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -117,8 +152,35 @@
                         the
                         card's
                         content.</p>
-                    <button type="button" class="btn btn-outline-primary"><i class="fas fa-video"></i> Lihat
-                        Petunjuk</button>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#myModal">
+                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <center>
+                                            <video controls width="950">
+                                                <!-- <source src="assets/video/a.mp4"> -->
+                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                            </video>
+                                        </center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Kembali</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -127,13 +189,41 @@
                     <div class="card-header">Alur Pembuatan Akta Kelahiran</div>
                 </center>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
-                    <button type="button" class="btn btn-outline-primary"><i class="fas fa-video"></i> Lihat
-                        Petunjuk</button>
+                    <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan Akta Kelahiran</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Button Tambah Data Akta Kelahiran, Silahkan Klik</h5>
+                    <h5 class="card-title">3. Isi dan Lengkapi Form Pengajuan Data Akta Kelahiran, klik Submit</h5>
+                    <h5 class="card-title">4. Pastikan Upload Persyaratan Dengan Benar</h5>
+                    <h5 class="card-title">5. Pengajuan Anda Sedang Diproses</h5>
+                    <h5 class="card-title">6. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#myModal">
+                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <center>
+                                            <video controls width="950">
+                                                <!-- <source src="assets/video/a.mp4"> -->
+                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                            </video>
+                                        </center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Kembali</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,13 +253,41 @@
                     <div class="card-header">Alur Pengaduan</div>
                 </center>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
-                    <button type="button" class="btn btn-outline-primary"><i class="fas fa-video"></i> Lihat
-                        Petunjuk</button>
+                    <h5 class="card-title">1. Silahkan Pilih Fitur Pengaduan</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Button Tambah Pengaduan, Silahkan Klik</h5>
+                    <h5 class="card-title">3. Isi dan Lengkapi Form Pengaduan, klik Submit</h5>
+                    <h5 class="card-title">4. Tambahkan Bukti Pengaduan Dengan Benar</h5>
+                    <h5 class="card-title">5. Pengajuan Anda Sedang Diproses</h5>
+                    <h5 class="card-title">6. Untuk Mengetahui Proses Pengaduan Anda, Lihat Kolom Status Pada Tabel</h5>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#myModal">
+                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <center>
+                                            <video controls width="950">
+                                                <!-- <source src="assets/video/a.mp4"> -->
+                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                            </video>
+                                        </center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Kembali</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

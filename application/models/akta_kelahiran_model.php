@@ -142,7 +142,7 @@ class akta_kelahiran_model extends CI_Model {
     }
 
     public function download($id_akta){
-        $query = $this->db->get_where('akta_kelahiran',array('id_akta'=>$id_ktp));
+        $query = $this->db->get_where('akta_kelahiran',array('id_akta'=>$id_akta));
         return $query->row_array();
     }
     

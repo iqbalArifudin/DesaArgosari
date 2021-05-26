@@ -82,6 +82,65 @@
                 redirect('user/Profil');
             }
         }
+
+    public function changePassword()
+    {
+        $data['penduduk1'] = $this->db->get_where('penduduk', ['id_penduduk' => $this->session->userdata('id_penduduk')])->row_array();
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $this->form_validation->set_rules('password', 'Current password', 'required|trim');
+        $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|matches[new_password2]');
+        $this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|matches[new_password1]');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('template_layanan/header', $data);
+            $this->load->view('template_layanan/sidebar', $data);
+            $this->load->view('template_layanan/topbar', $data);
+            $this->load->view('user/changepassword', $data);
+            $this->load->view('template_layanan/footer', $data);
+        } else {
+            $password = $this->input->post('password');
+            $new_password = $this->input->post('new_password1');
+            if (!password_verify($password, $data['penduduk1']['password'])) {
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+               Kata Sandi Salah ! 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>'
+                );
+                redirect('user/Profil/changePassword');
+            } else {
+                if ($password == $new_password) {
+                    $this->session->set_flashdata(
+                        'message',
+                        '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                   Password Tidak boleh sama ! 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>'
+                    );
+                    redirect('user/Profil/changePassword');
+                } else {
+                    $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+                    $this->db->set('password', $password_hash);
+                    $this->db->where('id_penduduk', $this->session->userdata('id_penduduk'));
+                    $this->db->update('penduduk');
+                    $this->session->set_flashdata(
+                        'message',
+                        '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                   Password Berhasil Di Ubah 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>'
+                    );
+                    redirect('user/Profil/changePassword');
+                }
+            }
+        }
+    }
         
 
     }

@@ -1,6 +1,6 @@
 <div class="alert alert-primary" role="alert">
     <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-address-card"></i>
-    Data Penduduk &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>
+    Pelayanan KTP &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>
     Detail
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,10 +14,10 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($ktp as $penduduk):?>
+                            <?php foreach ($ktp as $penduduk) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp;?>">
+                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp; ?>">
 
                                 <div class="form-row">
                                     <label for="nama"><strong>Nama</strong></label>
@@ -55,19 +55,31 @@
                                         alt="..." width="100px">
                                 </div>
                                 <hr>
+
                                 <div class="form-group">
-                                    <label for="nim"><strong>Status</label></strong>
+                                    <label for="nim"><strong>Ajukan</strong></label>
+                                    <?php if($penduduk->status == "Diajukan Ke Kepala Desa"): ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa"> Ajukan Ke
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa"
+                                            checked>AjukanKe Kepala Desa
+                                    </div>
+
+                                    <?php else: ?>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">AjukanKe
                                         Kepala Desa
                                     </div>
+                                    <?php endif ?>
                                 </div>
+
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
 
-                                    <button type="submit" name="submit" class="btn btn-success ">Ajukan</button>
-                                    <a href="<?=base_url("admin/Pelayanan_ktp");?>" class="btn btn-info">Kembali</a>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Ajukan</button>
+                                    <a href="<?= base_url("admin/Pelayanan_ktp"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>

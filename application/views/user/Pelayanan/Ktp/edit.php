@@ -14,11 +14,11 @@
                             <center><strong>Isi Form Pengaduan Dibawah Ini!</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($ktp as $k):?>
+                            <?php foreach ($ktp as $k) : ?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_ktp" value="<?= $k->id_ktp;?>">
+                                <input type="hidden" name="id_ktp" value="<?= $k->id_ktp; ?>">
                                 <?php endforeach ?>
-                                <?php foreach($penduduk as $j):?>
+                                <?php foreach ($penduduk as $j) : ?>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>NAMA</strong></label>
@@ -46,12 +46,12 @@
                                 <?php endforeach ?>
                                 <p>
 
-                                    <?php foreach($ktp as $p):?>
+                                    <?php foreach ($ktp as $p) : ?>
                                 <p>
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>Keterangan</strong></label>
                                     <input type="text" name="keterangan" id="keterangan" autocomplete="off"
-                                        class="form-control" value="<?=$p->keterangan;?>" required>
+                                        class="form-control" value="<?= $p->keterangan; ?>" required>
                                 </div>
                                 <p>
 
@@ -70,10 +70,12 @@
                                 <?php endforeach ?>
                                 <hr>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/LayananKtp");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?= base_url("user/LayananKtp"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

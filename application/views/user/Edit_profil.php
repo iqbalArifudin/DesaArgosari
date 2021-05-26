@@ -10,13 +10,13 @@
                 <div class="row">
                     <div class="col">
                         <div class="card-header">
-                        <?= $this->session->flashdata('message'); ?>
+                            <?= $this->session->flashdata('message'); ?>
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($penduduk1 as $penduduk):?>
+                            <?php foreach ($penduduk1 as $penduduk) : ?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk;?>">
+                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk; ?>">
 
 
                                 <div class="form-row">
@@ -142,24 +142,27 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Kabupaten / Kota</strong></label>
+                                        <input type="text" name="nama" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->kabupaten; ?>" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Kode Pos</strong></label>
+                                        <input type="text" name="NIK" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->kode_pos; ?>" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Provinsi</strong></label>
+                                        <input type="text" name="nama" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->provinsi; ?>" readonly>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <label for="nama"><strong>Hak Akses</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
                                             class="form-control" required value="<?= $penduduk->hak_akses; ?>" readonly>
-                                    </div>
-
-                                    <div class="form-row col-md-6">
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Password</strong></label>
-                                            <input type="password" name="NIK" placeholder="" autocomplete="off"
-                                                class="form-control" required value="<?= $penduduk->password; ?>"
-                                                readonly>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Edit Password</strong></label>
-                                            <button type="button" class="btn btn-outline-secondary"><i
-                                                    class="fas fa-edit"></i> Edit </button>
-                                        </div>
-
                                     </div>
                                 </div>
 

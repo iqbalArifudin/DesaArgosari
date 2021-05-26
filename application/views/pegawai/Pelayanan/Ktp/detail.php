@@ -14,10 +14,10 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($ktp as $penduduk):?>
+                            <?php foreach ($ktp as $penduduk) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp;?>">
+                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp; ?>">
 
                                 <div class="form-row">
                                     <label for="nama"><strong>Nama</strong></label>
@@ -49,6 +49,13 @@
                                         class="form-control" required value="<?= $penduduk->keterangan; ?>" readonly>
                                 </div>
                                 <br>
+
+                                <div class="form-row">
+                                    <label for="nama"><strong>Alasan</strong></label>
+                                    <input type="text" name="nama" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $penduduk->alasan; ?>" readonly>
+                                </div>
+                                <br>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan FC KK</strong></label>
                                     <img src="<?= base_url('assets/foto_ktp/') . $penduduk->fc_kk ?>" class="card-img"
@@ -59,13 +66,14 @@
                                 <p>
                                     <hr>
 
-                                    <a href="<?=base_url("pegawai/Pelayanan_ktp/pdf");?>"
-                                        class="btn btn-success">Cetak</a>
+                                    <a href="<?= base_url("pegawai/Pelayanan_ktp/pdf"); ?>" class="btn btn-success"><i
+                                            class="fa fa-print"></i>&nbsp;&nbsp;Cetak</a>
                                     <a class='btn btn-dark'
-                                        href="<?php echo base_url().'pegawai/Pelayanan_ktp/download/'.$penduduk->id_ktp; ?>">
+                                        href="<?php echo base_url() . 'pegawai/Pelayanan_ktp/download/' . $penduduk->id_ktp; ?>">
                                         <i class="fas fa-download" aria-hidden="true"><span> Download Bukti</span></i>
                                     </a>
-                                    <a href="<?=base_url("pegawai/Pelayanan_ktp");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?= base_url("pegawai/Pelayanan_ktp"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>

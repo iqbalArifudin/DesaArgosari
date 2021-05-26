@@ -1,7 +1,8 @@
 <div class="alert alert-primary" role="alert">
-    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-address-card"></i>
-    Data Penduduk &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>
-    Detail
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i
+        class="fas fa-address-card"></i>&nbsp;
+    Pelayanan KTP &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fa fa-hourglass-half"></i>
+    Proses
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="row justify-content-center">
@@ -14,10 +15,10 @@
                             <center><strong>Proses Pelayanan KTP</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($ktp as $penduduk):?>
+                            <?php foreach ($ktp as $penduduk) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp;?>">
+                                <input type="hidden" name="id_ktp" value="<?= $penduduk->id_ktp; ?>">
 
                                 <div class="form-row">
                                     <label for="nama"><strong>Nama</strong></label>
@@ -58,7 +59,7 @@
 
                                 <div class="form-group">
                                     <label for="nim"><strong>Status</label></strong>
-                                    <?php if($penduduk->status == "Disetujui"): ?>
+                                    <?php if ($penduduk->status == "Disetujui") : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui" checked>Disetujui
                                     </div>
@@ -75,7 +76,7 @@
                                         <input type="radio" name="status" value="Selesai">Selesai
                                     </div>
 
-                                    <?php elseif($penduduk->status == "Ditolak"): ?>
+                                    <?php elseif ($penduduk->status == "Ditolak") : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui">Disetujui
                                     </div>
@@ -92,7 +93,7 @@
                                         <input type="radio" name="status" value="Selesai">Selesai
                                     </div>
 
-                                    <?php elseif($penduduk->status == "Diproses"): ?>
+                                    <?php elseif ($penduduk->status == "Diproses") : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui">Disetujui
                                     </div>
@@ -109,7 +110,7 @@
                                         <input type="radio" name="status" value="Selesai">Selesai
                                     </div>
 
-                                    <?php elseif($penduduk->status == "Selesai"): ?>
+                                    <?php elseif ($penduduk->status == "Selesai") : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui">Disetujui
                                     </div>
@@ -126,7 +127,7 @@
                                         <input type="radio" name="status" value="Selesai" checked>Selesai
                                     </div>
 
-                                    <?php else: ?>
+                                    <?php else : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Disetujui">Disetujui
                                     </div>
@@ -156,8 +157,10 @@
                                 <p>
                                     <hr>
 
-                                    <button type="submit" name="submit" class="btn btn-success ">Simpan</button>
-                                    <a href="<?=base_url("pegawai/Pelayanan_ktp");?>" class="btn btn-info">Kembali</a>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+                                    <a href="<?= base_url("pegawai/Pelayanan_ktp"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>

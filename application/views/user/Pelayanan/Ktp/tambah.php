@@ -15,7 +15,7 @@
                         </div>
                         <div class="card-body">
                             <form action="" method="post" enctype="multipart/form-data">
-                                <?php foreach($penduduk as $j):?>
+                                <?php foreach ($penduduk as $j) : ?>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>NAMA</strong></label>
@@ -52,7 +52,7 @@
                                 <p>
 
                                 <div class="form-row">
-                                    <label for="satuan"><strong>Upload Foto Copy KK</strong></label>
+                                    <label for="satuan"><strong>Upload Foto Kartu Keluarga (KK)</strong></label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="fc_kk" name="fc_kk" required
                                             autofocus>
@@ -63,10 +63,12 @@
 
                                 <hr>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/LayananKtp");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?= base_url("user/LayananKtp"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

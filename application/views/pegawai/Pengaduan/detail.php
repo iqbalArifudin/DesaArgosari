@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Pengaduan &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>Detail
+</div>
 <div class="nav-link">
     <div id="darkSwitch"></div>
 </div>
@@ -35,16 +39,20 @@
                         <h5 class="card-title text-dark"><b>Keterangan Pengaduan
                             </b>&nbsp;: <?= $p->keterangan ?></h5>
                         <hr>
+
                         <h5 class="card-title text-dark"><b>Status Pengaduan
                                 <td><span class="badge badge-success"><?= $p->status ?></span></td>
+                                <hr>
+                                <h5 class="card-title text-dark"><b>Alasan
+                                    </b>&nbsp;: <?= $p->alasan ?></h5>
                                 <hr>
 
                                 <?php endforeach ?>
                                 <p>
                                     <a href="<?php echo base_url("pegawai/Pengaduan"); ?>" class="btn btn-primary">
-                                        &nbsp;Kembali</a>
+                                        <i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                     <a class='btn btn-dark'
-                                        href="<?php echo base_url().'pegawai/Pengaduan/download/'.$p->id_pengaduan; ?>">
+                                        href="<?php echo base_url() . 'pegawai/Pengaduan/download/' . $p->id_pengaduan; ?>">
                                         <i class="fas fa-download" aria-hidden="true"><span> Download Bukti</span></i>
                                     </a>
                                 <div class="form-group">

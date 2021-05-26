@@ -1,8 +1,8 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<div class="alert alert-secondary" role="alert">
-    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-envelope"></i>
-    Edit penduduk
+<div class="alert alert-primary" role="alert">
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-fw fa-table"></i>
+    Data Penduduk &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-envelope"></i>&nbsp; &nbsp;Edit penduduk
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Main content -->
 <div class="content">
     <div class="container-fluid">
@@ -313,12 +313,6 @@
                                     value="<?=$penduduk->Kecamatan;?>">
                             </div>
 
-                            <div class="form-group">
-                                <label for="merk">Password</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    value="<?=$penduduk->password;?>">
-                            </div>
-
                             <label for="file_penduduk">Foto</label>
                             <br>
                             <!-- <?= $penduduk->foto ?> -->
@@ -370,8 +364,10 @@
                             <br>
                             <br>
                             <?php endforeach ?>
-                            <button type="submit" name="submit" class="btn btn-success ">Simpan</button>
-                            <a href="<?=base_url("pegawai/penduduk");?>" class="btn btn-info">Kembali</a>
+                            <button type="submit" name="submit" class="btn btn-success "><i
+                                    class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+                            <a href="<?=base_url("pegawai/penduduk");?>" class="btn btn-info"><i
+                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </form>
 
                     </div>
@@ -383,5 +379,4 @@
     <!-- /.container-fluid -->
 </div>
 <!-- /.content -->
-</div>
 <!-- /.content-wrapper -->

@@ -42,7 +42,7 @@
            </li>
            <hr class="sidebar-divider">
            <li class="nav-item">
-               <a href="<?php echo base_url().'admin/Pelayanan_akta' ?>" class="nav-link">
+               <a href="<?php echo base_url().'admin/akta_kelahiran' ?>" class="nav-link">
                    <i class="fas fa-id-badge"></i>
                    <span>Pelayanan Akta Kelahiran</span></a>
            </li>
