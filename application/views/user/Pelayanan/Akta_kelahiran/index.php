@@ -28,7 +28,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach ($akta as $akta): ?>
+                            <?php $no = 1;
+                            foreach ($akta as $akta) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $akta->nama_akta ?></td>
@@ -38,17 +39,17 @@
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'user/akta_kelahiran/hapus/'.$akta->id_akta ?>">
+                                        href="<?= base_url() . 'user/akta_kelahiran/hapus/' . $akta->id_akta ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url().'user/akta_kelahiran/edit/'.$akta->id_akta ?>">
+                                        href="<?= base_url() . 'user/akta_kelahiran/edit/' . $akta->id_akta ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url().'user/akta_kelahiran/detail/'.$akta->id_akta?>'
+                                        href='<?= base_url() . 'user/akta_kelahiran/detail/' . $akta->id_akta ?>'
                                         class='btn btn-biru'>
-                                        <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
+                                        <i class="fas fa-eye" aria-hidden="true"><span>&nbsp;Detail</span></i>
                                     </a>
                                 </td>
                             </tr>

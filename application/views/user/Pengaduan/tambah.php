@@ -59,10 +59,12 @@
 
                                 <hr>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/Pengaduan");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/Pengaduan");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

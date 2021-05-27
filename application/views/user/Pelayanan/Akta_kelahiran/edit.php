@@ -26,21 +26,23 @@
                                 <p>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="tempat_lahir"><strong>Tempat Lahir</strong></label>
-                                        <input type="text" name="tempat_lahir" id="tempat_lahir" autocomplete="off"
-                                        class="form-control" value="<?=$a->tempat_lahir;?>" required>
+                                        <label for="tempat_lahir_akta"><strong>Tempat Lahir</strong></label>
+                                        <input type="text" name="tempat_lahir_akta" id="tempat_lahir_akta"
+                                            autocomplete="off" class="form-control" value="<?=$a->tempat_lahir_akta;?>"
+                                            required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tanggal_lahir"><strong>Tanggal Lahir</strong></label>
-                                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" autocomplete="off"
-                                            class="form-control" required value="<?= $a->tanggal_lahir; ?>" readonly>
+                                        <label for="tanggal_lahir_akta"><strong>Tanggal Lahir</strong></label>
+                                        <input type="date" name="tanggal_lahir_akta" id="tanggal_lahir_akta"
+                                            autocomplete="off" class="form-control" required
+                                            value="<?= $a->tanggal_lahir_akta; ?>">
                                     </div>
                                 </div>
                                 <p>
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>Keterangan</strong></label>
                                     <input type="text" name="keterangan" id="keterangan" autocomplete="off"
-                                        class="form-control" value="<?=$a->keterangan;?>" required>
+                                        class="form-control" value="<?=$a->keterangan;?>">
                                 </div>
                                 <p>
 
@@ -54,22 +56,25 @@
                                 </div>
                                 <br>
                                 <div class="form-row">
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_kk ?>" style="width:400px; ">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_kk ?>"
+                                        style="width:400px; ">
                                 </div>
                                 <hr>
                                 <p>
-                                
+
                                 <div class="form-row">
                                     <label for="satuan"><strong>Foto KTP Ayah</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="fc_ktp_ayah" name="fc_ktp_ayah">
+                                        <input type="file" class="custom-file-input" id="fc_ktp_ayah"
+                                            name="fc_ktp_ayah">
                                         <label class="custom-file-label" for="customFile"><?= $a->fc_ktp_ayah ?></label>
                                         <?= form_error('fc_ktp_ayah', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="form-row">
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>" style="width:400px; ">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>"
+                                        style="width:400px; ">
                                 </div>
                                 <hr>
                                 <p>
@@ -84,7 +89,8 @@
                                 </div>
                                 <br>
                                 <div class="form-row">
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>" style="width:400px; ">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>"
+                                        style="width:400px; ">
                                 </div>
                                 <hr>
                                 <p>
@@ -92,26 +98,31 @@
                                 <div class="form-row">
                                     <label for="satuan"><strong>Foto KTP Saksi</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="fc_ktp_saksi" name="fc_ktp_saksi">
-                                        <label class="custom-file-label" for="customFile"><?= $a->fc_ktp_saksi ?></label>
+                                        <input type="file" class="custom-file-input" id="fc_ktp_saksi"
+                                            name="fc_ktp_saksi">
+                                        <label class="custom-file-label"
+                                            for="customFile"><?= $a->fc_ktp_saksi ?></label>
                                         <?= form_error('fc_ktp_saksi', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="form-row">
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>" style="width:400px; ">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
+                                        style="width:400px; ">
                                 </div>
                                 <hr>
                                 <p>
 
 
-                            <?php endforeach ?>
-                            <p>
+                                    <?php endforeach ?>
+                                <p>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

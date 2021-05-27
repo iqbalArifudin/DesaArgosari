@@ -109,6 +109,9 @@
 
             //check jika ada gambar yang akan di upload
             $upload_file = $_FILES['fc_kk']['name'];
+            $upload_file1 = $_FILES['fc_ktp_saksi']['name'];
+            $upload_file2 = $_FILES['fc_ktp_ayah']['name'];
+            $upload_file3 = $_FILES['fc_ktp_ibu']['name'];
             if ($upload_file) {
                 $config['upload_path'] = './assets/persyaratan_akta/';    
                 $config['allowed_types'] = 'jpg|png|jpeg';
@@ -126,16 +129,67 @@
                 else {
                     echo $this->upload->display_errors();
                 }
+            } else if ($upload_file1) {
+                $config['upload_path'] = './assets/persyaratan_akta/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '50000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('fc_ktp_saksi')) {
+                    $old_file = $data['akta_kelahiran']['fc_ktp_saksi'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('fc_ktp_saksi', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            } else if ($upload_file2) {
+                $config['upload_path'] = './assets/persyaratan_akta/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '50000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('fc_ktp_ayah')) {
+                    $old_file = $data['akta_kelahiran']['fc_ktp_ayah'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('fc_ktp_ayah', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            } else if ($upload_file3) {
+                $config['upload_path'] = './assets/persyaratan_akta/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '50000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('fc_ktp_ibu')) {
+                    $old_file = $data['akta_kelahiran']['fc_ktp_ibu'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('fc_ktp_ibu', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
             }
 
             $id_akta = $this->input->post('id_akta');
             $nama_akta = $this->input->post('nama_akta');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tanggal_lahir = $this->input->post('tanggal_lahir');
+            $tempat_lahir_akta = $this->input->post('tempat_lahir_akta');
+            $tanggal_lahir_akta = $this->input->post('tanggal_lahir_akta');
+            $keterangan = $this->input->post('keterangan');
 
             $this->db->set('nama_akta', $nama_akta);
-            $this->db->where('tempat_lahir', $tempat_lahir);
-            $this->db->where('tanggal_lahir', $tanggal_lahir);
+            $this->db->set('tempat_lahir_akta', $tempat_lahir_akta);
+            $this->db->set('tanggal_lahir_akta', $tanggal_lahir_akta);
+            $this->db->set('keterangan', $keterangan);
+            $this->db->where('id_akta', $id_akta);
             $this->db->update('akta_kelahiran');
 
             $this->session->set_flashdata(

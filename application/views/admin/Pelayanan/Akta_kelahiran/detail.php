@@ -14,7 +14,7 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($akta as $a):?>
+                            <?php foreach ($akta as $a) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id_akta" value="<?= $a->id_akta;?>">
@@ -41,12 +41,14 @@
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Tempat Lahir</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
-                                            class="form-control" required value="<?= $a->tempat_lahir; ?>" readonly>
+                                            class="form-control" required value="<?= $a->tempat_lahir_akta; ?>"
+                                            readonly>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Tanggal Lahir</strong></label>
                                         <input type="text" name="NIK" placeholder="" autocomplete="off"
-                                            class="form-control" required value="<?= $a->tanggal_lahir; ?>" readonly>
+                                            class="form-control" required value="<?= $a->tanggal_lahir_akta; ?>"
+                                            readonly>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -73,12 +75,20 @@
                                         class="form-control" required value="<?= $a->alasan; ?>" readonly>
                                 </div>
                                 <hr>
-                                
                                 <div class="form-group">
-                                    <label for="nim"><strong>Status</label></strong>
+                                    <label for="nim"><strong>Ajukan</strong></label>
+                                    <?php if ($a->status == "Diajukan Ke Kepala Desa") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" id="status" value="Diajukan Ke Kepala Desa"> Ajukan Ke Kepala Desa
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa" checked>Ajukan
+                                        Ke Kepala Desa
                                     </div>
+
+                                    <?php else : ?>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">Ajukan Ke
+                                        Kepala Desa
+                                    </div>
+                                    <?php endif ?>
                                 </div>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KK</strong></label>
@@ -88,26 +98,30 @@
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Ayah</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Ibu</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Saksi</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
+
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
-                                    <button type="submit" name="submit" class="btn btn-success ">Ajukan</button>
-                                    <a href="<?=base_url("admin/akta_kelahiran");?>" class="btn btn-info">Kembali</a>
+
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Ajukan</button>
+                                    <a href="<?= base_url("admin/akta_kelahiran"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>

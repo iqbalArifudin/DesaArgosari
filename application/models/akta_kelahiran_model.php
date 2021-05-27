@@ -31,8 +31,8 @@ class akta_kelahiran_model extends CI_Model {
             'id_akta'=>$this->input->post('id_akta', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
             'nama_akta'=>$this->input->post('nama_akta', true),
-            'tempat_lahir'=>$this->input->post('tempat_lahir', true),
-            'tanggal_lahir'=>$this->input->post('tanggal_lahir', true),
+            'tempat_lahir_akta' => $this->input->post('tempat_lahir_akta', true),
+            'tanggal_lahir_akta' => $this->input->post('tanggal_lahir_akta', true),
             'fc_kk'=>$upload['file']['file_name'],
             'fc_ktp_saksi'=>$upload1['file']['file_name'],
             'fc_ktp_ayah'=>$upload2['file']['file_name'],
@@ -116,13 +116,14 @@ class akta_kelahiran_model extends CI_Model {
             return false;
         }
     }
-    
-    public function ubahAkta($id_akta){
-		$data=[
-            'status'=>$this->input->post('status', true),
-            'alasan'=>$this->input->post('alasan', true),
-		];
-        $this->db->where('id_akta', $id_akta);	
+
+    public function ubahDataAkta($id_akta)
+    {
+        $data = [
+            'status' => $this->input->post('status', true),
+            'alasan' => $this->input->post('alasan', true),
+        ];
+        $this->db->where('id_akta', $id_akta);
         $this->db->update('akta_kelahiran', $data);
     }
 

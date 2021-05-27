@@ -58,13 +58,13 @@
 
                                 <div class="form-group">
                                     <label for="nim"><strong>Ajukan</strong></label>
-                                    <?php if($penduduk->status == "Diajukan Ke Kepala Desa"): ?>
+                                    <?php if ($penduduk->status == "Diajukan Ke Kepala Desa") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa"
-                                            checked>AjukanKe Kepala Desa
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa" checked>Ajukan
+                                        Ke Kepala Desa
                                     </div>
 
-                                    <?php else: ?>
+                                    <?php else : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Diajukan Ke Kepala Desa">AjukanKe
                                         Kepala Desa

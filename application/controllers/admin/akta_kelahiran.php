@@ -9,10 +9,9 @@
         {
             parent::__construct();
             $this->load->helper('url');
-            $this->load->model('pegawai_model');  
-            $this->load->model('penduduk_model'); 
-            $this->load->model('akta_kelahiran_model');  
-            $this->load->model('akta_kelahiran_model');  
+        $this->load->model('pegawai_model');
+        $this->load->model('penduduk_model');
+        $this->load->model('akta_kelahiran_model');  
         }
         
         public function index()
@@ -32,12 +31,28 @@
             if($this->akta_kelahiran_model->hapusData($id_akta) == false)
             {
                 $this->session->set_flashdata('flashdata', 'gagal');
-                $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Gagal Di hapus, Karena Data User di pakai ! 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>'
+            );
                 redirect('admin/akta_kelahiran');
             }else{
                 $this->load->library('session');
                 $this->session->set_flashdata('flashdata', 'dihapus');
-                $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Data Berhasil Dihapus ! 
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>'
+            );
                 redirect('admin/akta_kelahiran','refresh');
             } 
         }
@@ -57,9 +72,18 @@
                 $this->load->view('template admin/footer',$data);
             }
             else{
-                    $this->akta_kelahiran_model->ubahAkta($id_akta);
+            $this->akta_kelahiran_model->ubahDataAkta($id_akta);
                     $this->session->set_flashdata('pesan3','Data Berhasil Di edit');
                     $this->load->library('session');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                       Data Telah Diajukan Ke Kepala Desa ! 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>'
+            );
                     redirect('admin/akta_kelahiran','refresh');
             }
         }

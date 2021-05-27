@@ -31,12 +31,28 @@
             if($this->Ktp_model->hapusDataKtp($id_ktp) == false)
             {
                 $this->session->set_flashdata('flashdata', 'gagal');
-                $this->session->set_flashdata('pesan2','Gagal Di hapus, Karena Data User di pakai');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Gagal Di hapus, Karena Data User di pakai ! 
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>'
+            );
                 redirect('admin/Pelayanan_ktp');
             }else{
                 $this->load->library('session');
                 $this->session->set_flashdata('flashdata', 'dihapus');
-                $this->session->set_flashdata('pesan2','Data Berhasil Di hapus');
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Data Berhasil Dihapus ! 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>'
+            );
                 redirect('admin/Pelayanan_ktp','refresh');
             } 
         }

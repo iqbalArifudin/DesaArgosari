@@ -29,14 +29,14 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="tempat_lahir"><strong>Tempat Lahir</strong></label>
-                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                            required>
+                                        <label for="tempat_lahir_akta"><strong>Tempat Lahir</strong></label>
+                                        <input type="text" class="form-control" id="tempat_lahir_akta"
+                                            name="tempat_lahir_akta" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tanggal_lahir"><strong>Tanggal Lahir</strong></label>
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                            required>
+                                        <label for="tanggal_lahir_akta"><strong>Tanggal Lahir</strong></label>
+                                        <input type="date" class="form-control" id="tanggal_lahir_akta"
+                                            name="tanggal_lahir_akta" required>
                                     </div>
                                 </div>
 
@@ -61,8 +61,8 @@
                                 <div class="form-row">
                                     <label for="satuan"><strong>Upload Foto Ktp Ayah</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="fc_ktp_ayah" name="fc_ktp_ayah" required
-                                            autofocus>
+                                        <input type="file" class="custom-file-input" id="fc_ktp_ayah" name="fc_ktp_ayah"
+                                            required autofocus>
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                         <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                     </div>
@@ -72,8 +72,8 @@
                                 <div class="form-row">
                                     <label for="satuan"><strong>Upload Foto Ktp Ibu</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="fc_ktp_ibu" name="fc_ktp_ibu" required
-                                            autofocus>
+                                        <input type="file" class="custom-file-input" id="fc_ktp_ibu" name="fc_ktp_ibu"
+                                            required autofocus>
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                         <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                     </div>
@@ -83,8 +83,8 @@
                                 <div class="form-row">
                                     <label for="satuan"><strong>Upload Foto Ktp Saksi</strong></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="fc_ktp_saksi" name="fc_ktp_saksi" required
-                                            autofocus>
+                                        <input type="file" class="custom-file-input" id="fc_ktp_saksi"
+                                            name="fc_ktp_saksi" required autofocus>
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                         <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                     </div>
@@ -93,10 +93,12 @@
 
 
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-success "><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

@@ -41,12 +41,14 @@
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Tempat Lahir</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
-                                            class="form-control" required value="<?= $a->tempat_lahir; ?>" readonly>
+                                            class="form-control" required value="<?= $a->tempat_lahir_akta; ?>"
+                                            readonly>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Tanggal Lahir</strong></label>
                                         <input type="text" name="NIK" placeholder="" autocomplete="off"
-                                            class="form-control" required value="<?= $a->tanggal_lahir; ?>" readonly>
+                                            class="form-control" required value="<?= $a->tanggal_lahir_akta; ?>"
+                                            readonly>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -81,25 +83,26 @@
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Ayah</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ayah ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Ibu</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_ibu ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <hr>
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Saksi</strong></label>
-                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>" class="card-img"
-                                        alt="..." width="100px">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>
