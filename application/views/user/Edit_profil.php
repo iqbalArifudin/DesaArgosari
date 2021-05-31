@@ -165,6 +165,10 @@
                                             class="form-control" required value="<?= $penduduk->hak_akses; ?>" readonly>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <a href="<?= base_url("user/Profil"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                                </div>
 
                                 <p>
                             </form>

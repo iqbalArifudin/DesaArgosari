@@ -15,15 +15,11 @@
                         </div>
                         <div class="card-body">
                             <form action="" method="post" enctype="multipart/form-data">
-                                <?php foreach($pegawai as $pegawai):?>
+                                <?php foreach ($pegawai as $pegawai) : ?>
                                 <div class="form-row">
                                     <div class="form-group col-md-5">
                                         <img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
                                             class="card-img-top" style="height: 370px;">
-                                        <p>
-                                            <center><button type="button" class="btn btn-outline-secondary"><i
-                                                        class="fas fa-edit"></i>Edit Foto Profil</button>
-                                            </center>
                                     </div>
                                     <div class="form-group col-md-7">
                                         <label for="nama"><strong>Nama</strong></label>
@@ -57,14 +53,17 @@
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
-                                <div class="form-group">
-                                    <a href="<?=base_url("admin/pegawai");?>" class="btn btn-info">Kembali</a>
-                                </div>
-                            </form>
+                                    <center>
+                                        <div class="form-group">
+                                            <a href="<?= base_url("admin/pegawai"); ?>" class="btn btn-info"><i
+                                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                                    </center>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -20,6 +20,14 @@ class KK_model extends CI_Model
         return $this->db->get('keluarga')->result();
     }
 
+    public function tampilKelsaja($id_kepala_kel)
+    {
+        $this->db->select('keluarga.*, kepala_keluarga.nama_kpl, kepala_keluarga.NIK_kpl');
+        $this->db->join('kepala_keluarga', 'keluarga.id_kepala_kel = kepala_keluarga.id_kepala_kel');
+        $this->db->where('kepala_keluarga.id_kepala_kel', $id_kepala_kel);
+        return $this->db->get('keluarga')->result();
+    }
+
     public function tampilKKPegawai()
     {
         $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
@@ -106,11 +114,40 @@ class KK_model extends CI_Model
     }
 
 
+    public function ubahKeluarga($id_keluarga)
+    {
+        $data = [
+            'NIK_kel' => $this->input->post('NIK_kel', true),
+            'nama_kel' => $this->input->post('nama_kel', true),
+            'tempat_lahir' => $this->input->post('tempat_lahir', true),
+            'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+            'agama' => $this->input->post('agama', true),
+            'status_perkawinan' => $this->input->post('status_perkawinan', true),
+            'pekerjaan' => $this->input->post('pekerjaan', true),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin', true),
+            'pendidikan' => $this->input->post('pendidikan', true),
+        ];
+        $this->db->where('id_keluarga', $id_keluarga);
+        $this->db->update('keluarga', $data);
+    }
+
     public function hapusDataKK($id_kepala_kel)
     {
         $this->db->where('id_kepala_kel', $id_kepala_kel);
         if (
             $this->db->delete('kepala_keluarga')
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function hapusDataKel($id_keluarga)
+    {
+        $this->db->where('id_keluarga', $id_keluarga);
+        if (
+            $this->db->delete('keluarga')
         ) {
             return true;
         } else {

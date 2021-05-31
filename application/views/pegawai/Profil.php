@@ -9,12 +9,12 @@
             <div class="card-header bg-white py-3">
                 <div class="row">
                     <div class="col">
-                    <?= $this->session->flashdata('message'); ?>
+                        <?= $this->session->flashdata('message'); ?>
                         <div class="card-header">
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($penduduk as $penduduk):?>
+                            <?php foreach ($penduduk as $penduduk) : ?>
                             <form action="" method="post" enctype="multipart/form-data">
 
                                 <div class="form-row">
@@ -25,7 +25,7 @@
                                         <div class="">
                                             <center>
                                                 <a class='btn btn-outline-secondary'
-                                                    href="<?= base_url().'pegawai/Profil/edit/'.$penduduk->id_penduduk ?>">
+                                                    href="<?= base_url() . 'pegawai/Profil/edit/' . $penduduk->id_penduduk ?>">
                                                     <i class="fas fa-edit" aria-hidden="true"><span> Edit Foto
                                                             Profil</span></i>
                                                 </a>
@@ -152,20 +152,22 @@
                                     </div>
                                 </div>
                                 <div class="form-row ">
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Password</strong></label>
-                                            <input type="password" name="NIK" placeholder="" autocomplete="off"
-                                                class="form-control" required value="<?= $penduduk->password; ?>"
-                                                readonly>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Edit Password</strong></label>
-                                            <br>
-                                            <button type="button" class="btn btn-outline-secondary"><i
-                                                    class="fas fa-edit"></i>Edit Password</button>
-                                        </div>
-
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Password</strong></label>
+                                        <input type="password" name="NIK" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->password; ?>" readonly>
                                     </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Edit Password</strong></label>
+                                        <br>
+                                        <a class='btn btn-outline-secondary'
+                                            href="<?= base_url() . 'pegawai/Profil/changePassword/' . $penduduk->id_penduduk ?>">
+                                            <i class="fas fa-edit" aria-hidden="true"><span> Edit
+                                                    Password</span></i>
+                                        </a>
+                                    </div>
+
+                                </div>
                                 <p>
                             </form>
 

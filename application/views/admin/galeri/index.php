@@ -21,7 +21,6 @@
                                 <th>NO</th>
                                 <th>KETERANGAN</th>
                                 <th>TANGGAL</th>
-                                <th>FOTO</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -31,8 +30,6 @@
                                 <td><?= $no++ ?></td>
                                 <td><?= $galeri->keterangan ?></td>
                                 <td><?= $galeri->tanggal ?></td>
-                                <td><img src="<?= base_url('assets/galeri/') . $galeri->foto ?>"
-                                        style="width:50px; height:50px;"></td>
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"

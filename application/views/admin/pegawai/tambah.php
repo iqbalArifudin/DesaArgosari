@@ -25,7 +25,7 @@
                             Form Tambah Data Pegawai
                         </div>
                         <div class="card-body">
-                            <?php if (validation_errors()): ?>
+                            <?php if (validation_errors()) : ?>
                             <div class="alert alert-danger" role="alert">
                                 <?= validation_errors(); ?>
                             </div>
@@ -93,14 +93,20 @@
                                         autofocus>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                     <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
-                                </div>
-                                <br>
 
-                                <button type="submit" name="submit" class="btn btn-success ">Submit</button>
-                                <a href="<?=base_url("admin/pegawai");?>" class="btn btn-info">Cancel</a>
-                            </form>
+                                </div>
+                                <p>
+                                    <center>
+                                        <button type="submit" name="submit" class="btn btn-success "><i
+                                                class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
+                                        <a href="<?= base_url("admin/pegawai"); ?>" class="btn btn-info"><i
+                                                class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                                    </center>
                         </div>
+
                     </div>
+
+                    </form>
 
                 </div>
 

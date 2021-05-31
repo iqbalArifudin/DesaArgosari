@@ -14,7 +14,7 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="index.html">
+               <a class="nav-link" href="<?php echo base_url() . 'pegawai/home' ?>">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Beranda</span></a>
            </li>
@@ -30,19 +30,19 @@
 
            <li class="nav-item">
                <a href="<?php echo base_url() . 'pegawai/Pelayanan_ktp' ?>" class="nav-link">
-                   <i class="fas fa-fw fa-table"></i>
+                   <i class="fas fa-address-card"></i>
                    <span>Pelayanan KTP</span></a>
            </li>
 
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'pegawai/pegawai' ?>" class="nav-link">
-                   <i class="fas fa-fw fa-table"></i>
+               <a href="<?php echo base_url() . 'pegawai/LayananKK' ?>" class="nav-link">
+                   <i class="fas fa-newspaper"></i>
                    <span>Pelayanan KK</span></a>
            </li>
 
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'pegawai/pegawai' ?>" class="nav-link">
-                   <i class="fas fa-fw fa-table"></i>
+               <a href="<?php echo base_url() . 'pegawai/akta_kelahiran' ?>" class="nav-link">
+                   <i class="fas fa-id-badge"></i>
                    <span>Pelayanan Akta Kelahiran</span></a>
            </li>
 

@@ -14,9 +14,9 @@
                             <center><strong>Profil Penduduk</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($penduduk1 as $penduduk):?>
+                            <?php foreach ($penduduk1 as $penduduk) : ?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk;?>">
+                                <input type="hidden" name="id_penduduk" value="<?= $penduduk->id_penduduk; ?>">
 
 
                                 <div class="form-row">
@@ -165,6 +165,10 @@
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
                                             class="form-control" required value="<?= $penduduk->hak_akses; ?>" readonly>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <a href="<?= base_url("admin/Profil"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
 
                                 <p>

@@ -8,28 +8,25 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <table id="dataTable" class="table table-bordered">
-                        <thead class="table table-bordered">
-                            <tr>
-                                <th>NO</th>
-                                <th>NAMA</th>
-                                <th>KRITIK / SARAN</th>
-                                <th>TANGGAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no  =  1;
-                        
-                               foreach ($saran as $s)  : ?>
-                            <tr>
-                                <td><?= $no++ ?></td>
-                                <td><?= $s->nama ?></td>
-                                <td><?= $s->keterangan ?></td>
-                                <td><?= $s->tanggal ?></td>
-                            </tr>
-                            <?php endforeach ?>
-                        </tbody>
-                    </table>
+                    <?= $this->session->flashdata('message'); ?>
+                    <p>
+                        <?php
+            foreach ($saran as $s) : ?>
+                    <div class="card">
+                        <div class="card-header">
+                            <td><b>Nama : </b> <?= $s->nama ?></td>
+                        </div>
+                        <div class="card-body">
+                            <td><b>Tanggal : </b><?= $s->tanggal ?></td>
+                            <p>
+                                <hr>
+                                <td><b>Keterangan : </b><?= $s->keterangan ?></td>
+                            <p>
+
+                        </div>
+                    </div>
+                    <p>
+                        <?php endforeach ?>
                 </div>
             </div>
         </div>

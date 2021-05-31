@@ -20,7 +20,6 @@
                                 <th>NAMA</th>
                                 <th>TANGGAL</th>
                                 <th>JENIS PENGADUAN</th>
-                                <th>KETERANGAN PENGADUAN</th>
                                 <th>STATUS</th>
                                 <th>AKSI</th>
                             </tr>
@@ -32,7 +31,6 @@
                                 <td><?= $pengaduan->nama ?></td>
                                 <td><?= $pengaduan->tanggal ?></td>
                                 <td><?= $pengaduan->jenis_pengaduan ?></td>
-                                <td><?= $pengaduan->keterangan ?></td>
                                 <td><span class="badge badge-warning"><?= $pengaduan->status ?></span></td>
                                 <td>
 

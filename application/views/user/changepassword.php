@@ -32,7 +32,10 @@
                                     <?= form_error('new_password2', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Change Password</button>
+                                    <button type="submit" class="btn btn-warning"><i
+                                            class="fa fa-save"></i>&nbsp;&nbsp;Simpan Password</button>
+                                    <a href="<?= base_url("user/Profil"); ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

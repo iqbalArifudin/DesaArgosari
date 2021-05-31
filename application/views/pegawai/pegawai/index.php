@@ -14,7 +14,6 @@
                                 <th>NIK / NO KTP</th>
                                 <th>JENIS KELAMIN</th>
                                 <th>NO HP</th>
-                                <th>FOTO</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -27,11 +26,8 @@
                                 <td><?= $pegawai->NIK ?></td>
                                 <td><?= $pegawai->jenis_kelamin ?></td>
                                 <td><?= $pegawai->no_hp ?></td>
-
-                                <td><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
-                                        style="width:50px; height:50px;"></td>
                                 <td>
-                                    <a class='btn btn-danger'
+                                    <!-- <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
                                         href="<?= base_url().'pegawai/pegawai/hapus/'.$pegawai->id_pegawai ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
@@ -39,7 +35,7 @@
                                     <a class='btn btn-warning'
                                         href="<?= base_url().'pegawai/pegawai/edit/'.$pegawai->id_pegawai ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
-                                    </a>
+                                    </a> -->
                                     <a class='btn btn-info'
                                         href='<?= base_url().'pegawai/pegawai/detail/'.$pegawai->id_pegawai?>'
                                         class='btn btn-biru'>

@@ -21,9 +21,7 @@
                             <tr>
                                 <th>NO</th>
                                 <th>JUDUL</th>
-                                <th>KETERANGAN BERITA</th>
                                 <th>TANGGAL UPDATE</th>
-                                <th>FOTO BERITA</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -32,10 +30,7 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $berita->judul ?></td>
-                                <td><?= $berita->keterangan ?></td>
                                 <td><?= $berita->tanggal ?></td>
-                                <td><img src="<?= base_url('assets/foto_berita/') . $berita->foto_berita ?>"
-                                        style="width:50px; height:50px;"></td>
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"

@@ -35,7 +35,7 @@ class LayananKK extends CI_Controller
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nama', 'nama', 'required');
         $data['kk1'] = $this->KK_model->tampilKK($this->session->userdata('id_penduduk'));
-        $data['kk'] = $this->KK_model->tampilKel();
+        $data['keluarga'] = $this->KK_model->tampilKel();
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('template_layanan/header', $data);
@@ -115,11 +115,39 @@ class LayananKK extends CI_Controller
         }
     }
 
+    public function hapusKel($id_keluarga)
+    {
+        if ($this->KK_model->hapusDataKel($id_keluarga) == false) {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data tidak dapat dihapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+            );
+            redirect('user/LayananKK/tambahKel');
+        } else {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Data Berhasil di hapus !
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>'
+            );
+            redirect('user/LayananKK/tambahKel', 'refresh');
+        }
+    }
+
     public function edit($id_kepala_kel)
     {
-        $data['kk'] = $this->KK_model->getKK($id_kepala_kel);
+        $data['kk1'] = $this->KK_model->tampilKK($this->session->userdata('id_penduduk'));
+        $data['keluarga'] = $this->KK_model->tampilKel();
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $this->form_validation->set_rules('keterangan', 'keterangan', 'required|trim');
+        $this->form_validation->set_rules('nama_kpl', 'nama_kpl', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('template_layanan/header', $data);
@@ -130,6 +158,7 @@ class LayananKK extends CI_Controller
         } else {
             //check jika ada gambar yang akan di upload
             $upload_file = $_FILES['suratnikah_l']['name'];
+            $upload_file1 = $_FILES['suratnikah_p']['name'];
             if ($upload_file) {
                 $config['upload_path'] = './assets/foto_kk/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
@@ -146,12 +175,46 @@ class LayananKK extends CI_Controller
                 } else {
                     echo $this->upload->display_errors();
                 }
+            } else if ($upload_file1) {
+                $config['upload_path'] = './assets/foto_kk/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '10000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('suratnikah_p')) {
+                    $old_file = $data['kepala_keluarga']['suratnikah_p'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/foto_kk/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('suratnikah_p', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
             }
 
             $id_kepala_kel = $this->input->post('id_kepala_kel');
-            $keterangan = $this->input->post('keterangan');
+            $nama_kpl = $this->input->post('nama_kpl');
+            $NIK_kpl = $this->input->post('NIK_kpl');
+            $alamat_kpl = $this->input->post('alamat_kpl');
+            $kode_pos_kpl = $this->input->post('kode_pos_kpl');
+            $RT_kpl = $this->input->post('RT_kpl');
+            $RW_kpl = $this->input->post('RW_kpl');
+            $provinsi_kpl = $this->input->post('provinsi_kpl');
+            $kabupaten_kpl = $this->input->post('kabupaten_kpl');
+            $kecamatan_kpl = $this->input->post('kecamatan_kpl');
+            $kelurahan_kpl = $this->input->post('kelurahan_kpl');
 
-            $this->db->set('keterangan', $keterangan);
+            $this->db->set('nama_kpl', $nama_kpl);
+            $this->db->set('NIK_kpl', $NIK_kpl);
+            $this->db->set('alamat_kpl', $alamat_kpl);
+            $this->db->set('kode_pos_kpl', $kode_pos_kpl);
+            $this->db->set('RT_kpl', $RT_kpl);
+            $this->db->set('RW_kpl', $RW_kpl);
+            $this->db->set('provinsi_kpl', $provinsi_kpl);
+            $this->db->set('kabupaten_kpl', $kabupaten_kpl);
+            $this->db->set('kecamatan_kpl', $kecamatan_kpl);
+            $this->db->set('kelurahan_kpl', $kelurahan_kpl);
             $this->db->where('id_kepala_kel', $id_kepala_kel);
             $this->db->update('kepala_keluarga');
 
@@ -165,6 +228,36 @@ class LayananKK extends CI_Controller
                 </div>'
             );
             redirect('user/LayananKK');
+        }
+    }
+
+
+    public function editKel($id_keluarga)
+    {
+        $this->load->library('form_validation');
+        $data['kk1'] = $this->KK_model->tampilKK($this->session->userdata('id_penduduk'));
+        $data['keluarga'] = $this->KK_model->tampilKel($id_keluarga);
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $this->form_validation->set_rules('nama_kel', 'nama_kel', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template_layanan/header', $data);
+            $this->load->view('template_layanan/sidebar', $data);
+            $this->load->view('template_layanan/topbar', $data);
+            $this->load->view('user/Pelayanan/KK/editKel', $data);
+            $this->load->view('template_layanan/footer', $data);
+        } else {
+            $this->KK_model->ubahKeluarga($id_keluarga);
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                         Kritik atau Saran Berhasil Diedit !
+                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>'
+            );
+            redirect('user/LayananKK/editKel/', 'refresh');
         }
     }
 

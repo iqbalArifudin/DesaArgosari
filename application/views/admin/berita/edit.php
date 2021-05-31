@@ -14,32 +14,32 @@
                         Form Edit Berita
                     </div>
                     <div class="card-body">
-                        <?php if (validation_errors()): ?>
+                        <?php if (validation_errors()) : ?>
                         <div class="alert alert-danger" role="alert">
                             <?= validation_errors(); ?>
                         </div>
                         <?php endif; ?>
 
-                        <?php foreach($berita as $berita):?>
+                        <?php foreach ($berita as $berita) : ?>
                         <form action="" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="id_berita" value="<?= $berita->id_berita;?>">
+                            <input type="hidden" name="id_berita" value="<?= $berita->id_berita; ?>">
 
                             <div class="form-group">
                                 <label for="merk">Judul Berita</label>
                                 <input type="text" class="form-control" id="judul" name="judul"
-                                    value="<?=$berita->judul;?>">
+                                    value="<?= $berita->judul; ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="merk">Keterangan</label>
                                 <input type="text" class="form-control" id="keterangan" name="keterangan"
-                                    value="<?=$berita->keterangan;?>">
+                                    value="<?= $berita->keterangan; ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="merk">Tanggal Update</label>
                                 <input type="date" class="form-control" id="tanggal" name="tanggal"
-                                    value="<?=$berita->tanggal;?>">
+                                    value="<?= $berita->tanggal; ?>">
                             </div>
 
                             <label for="file_surat">Foto Berita</label>
@@ -59,8 +59,10 @@
                             <br>
                             <br>
                             <?php endforeach ?>
-                            <button type="submit" name="submit" class="btn btn-success ">Simpan</button>
-                            <a href="<?=base_url("admin/berita");?>" class="btn btn-info">Kembali</a>
+                            <button type="submit" name="submit" class="btn btn-success "><i
+                                    class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+                            <a href="<?= base_url("admin/berita"); ?>" class="btn btn-info"><i
+                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </form>
 
                     </div>

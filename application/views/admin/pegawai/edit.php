@@ -15,15 +15,15 @@
                         Edit Data Penduduk
                     </div>
                     <div class="card-body">
-                        <?php if (validation_errors()): ?>
+                        <?php if (validation_errors()) : ?>
                         <div class="alert alert-danger" role="alert">
                             <?= validation_errors(); ?>z
                         </div>
                         <?php endif; ?>
 
-                        <?php foreach($pegawai as $pegawai):?>
+                        <?php foreach ($pegawai as $pegawai) : ?>
                         <form action="" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="id_pegawai" value="<?= $pegawai->id_pegawai;?>">
+                            <input type="hidden" name="id_pegawai" value="<?= $pegawai->id_pegawai; ?>">
 
                             <div class=" form-group">
                                 <label class="" for="penduduk">Nama</label>
@@ -43,7 +43,7 @@
 
                             <div class="form-group">
                                 <label for="nim">Jabatan</label>
-                                <?php if($pegawai->jabatan == "Kepala Desa"): ?>
+                                <?php if ($pegawai->jabatan == "Kepala Desa") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa" checked>Kepala Desa
                                 </div>
@@ -78,7 +78,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Sekretaris Desa"): ?>
+                                <?php elseif ($pegawai->jabatan == "Sekretaris Desa") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -113,7 +113,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kasi Pemerintahan"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kasi Pemerintahan") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -149,7 +149,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kasi Kesra"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kasi Kesra") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -185,7 +185,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kasi Pelayanan"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kasi Pelayanan") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -221,7 +221,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kaur TU & Umum"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kaur TU & Umum") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -257,7 +257,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kaur Keuangan"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kaur Keuangan") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -293,7 +293,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kaur Perencanaan"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kaur Perencanaan") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -330,7 +330,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kasun Pateguhan"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kasun Pateguhan") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -367,7 +367,7 @@
                                     <input type="radio" name="jabatan" value="Kasun Bendrong"> Kasun Bendrong
                                 </div>
 
-                                <?php elseif($pegawai->jabatan == "Kasun Gentong"): ?>
+                                <?php elseif ($pegawai->jabatan == "Kasun Gentong") : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -405,7 +405,7 @@
                                 </div>
 
 
-                                <?php else: ?>
+                                <?php else : ?>
                                 <div class="form-check">
                                     <input type="radio" name="jabatan" value="Kepala Desa">Kepala Desa
                                 </div>
@@ -448,7 +448,7 @@
                             <div class="form-group">
                                 <label for="merk">No Hp</label>
                                 <input type="text" class="form-control" id="no_hp" name="no_hp"
-                                    value="<?=$pegawai->no_hp;?>">
+                                    value="<?= $pegawai->no_hp; ?>">
                             </div>
 
                             <label for="file_penduduk">Foto</label>
@@ -463,7 +463,8 @@
                             <?php endforeach ?>
                             <button type="submit" class=" btn btn-success"><i
                                     class="fas fa-save"></i>&nbsp;Simpan</button>
-                            <a href="<?=base_url("admin/pegawai");?>" class="btn btn-info">Kembali</a>
+                            <a href="<?= base_url("admin/pegawai"); ?>" class="btn btn-info"><i
+                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </form>
 
                     </div>

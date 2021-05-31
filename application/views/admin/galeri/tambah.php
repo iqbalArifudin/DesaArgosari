@@ -24,7 +24,7 @@
                             Form Tambah Galeri
                         </div>
                         <div class="card-body">
-                            <?php if (validation_errors()): ?>
+                            <?php if (validation_errors()) : ?>
                             <div class="alert alert-danger" role="alert">
                                 <?= validation_errors(); ?>
                             </div>
@@ -48,9 +48,13 @@
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                     <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                 </div>
-
-                                <button type="submit" name="submit" class="btn btn-success ">Submit</button>
-                                <a href="<?=base_url("admin/galeri");?>" class="btn btn-info">Cancel</a>
+                                <p>
+                                    <center>
+                                        <button type="submit" name="submit" class="btn btn-success "><i
+                                                class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+                                        <a href="<?= base_url("admin/galeri"); ?>" class="btn btn-info"><i
+                                                class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                                    </center>
                             </form>
                         </div>
                     </div>

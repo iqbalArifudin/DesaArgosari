@@ -21,6 +21,7 @@
                             <tr>
                                 <th>NO</th>
                                 <th>PENANGGUNG JAWAB</th>
+                                <th>NAMA KEPALA KELUARGA</th>
                                 <th>TANGGAL MENGAJUKAN</th>
                                 <th>STATUS</th>
                                 <th>ALASAN</th>
@@ -33,21 +34,22 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $kk->nama ?></td>
+                                <td><?= $kk->nama_kpl ?></td>
                                 <td><?= $kk->tgl_mengajukan ?></td>
                                 <td><span class="badge badge-warning"><?= $kk->status ?></span></td>
                                 <td><?= $kk->alasan ?></td>
                                 <td>
                                     <a class='btn btn-danger'
                                         onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url() . 'user/LayananKK/hapus/' . $kk->id_kk ?>">
+                                        href="<?= base_url() . 'user/LayananKK/hapus/' . $kk->id_kepala_kel ?>">
                                         <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
                                     </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url() . 'user/LayananKK/edit/' . $kk->id_kk ?>">
+                                        href="<?= base_url() . 'user/LayananKK/edit/' . $kk->id_kepala_kel ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url() . 'user/LayananKK/detail/' . $kk->id_kk ?>'
+                                        href='<?= base_url() . 'user/LayananKK/detail/' . $kk->id_kepala_kel ?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>Detail</span></i>
                                     </a>

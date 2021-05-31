@@ -138,26 +138,26 @@
                                             class="form-control" required value="<?= $penduduk->hak_akses; ?>" readonly>
                                     </div>
                                 </div>
-                                <div class="form-row ">
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Password</strong></label>
-                                            <input type="password" name="NIK" placeholder="" autocomplete="off"
-                                                class="form-control" required value="<?= $penduduk->password; ?>"
-                                                readonly>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="nama"><strong>Edit Password</strong></label>
-                                            <br>
-                                            <button type="button" class="btn btn-outline-secondary"><i
-                                                    class="fas fa-edit"></i>Edit Password</button>
-                                        </div>
-
+                                <!-- <div class="form-row ">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Password</strong></label>
+                                        <input type="password" name="NIK" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $penduduk->password; ?>" readonly>
                                     </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="nama"><strong>Edit Password</strong></label>
+                                        <br>
+                                        <button type="button" class="btn btn-outline-secondary"><i
+                                                class="fas fa-edit"></i>Edit Password</button>
+                                    </div>
+
+                                </div> -->
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
                                 <div class="form-group">
-                                    <a href="<?=base_url("admin/penduduk");?>" class="btn btn-info">Kembali</a>
+                                    <a href="<?=base_url("admin/penduduk");?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>
                         </div>

@@ -30,7 +30,7 @@
                                 </center>
                                 <div class="card-body">
                                     <?php foreach ($kk1 as $j) : ?>
-                                    <form action="<?= base_url('user/LayananKK/tambahKel/').$this->uri->segment(4) ?>"
+                                    <form action="<?= base_url('user/LayananKK/tambahKel/') . $this->uri->segment(4) ?>"
                                         method="POST" enctype="multipart/form-data">
                                         <h5>Kepala Keluarga</h5>
                                         <hr>
@@ -121,8 +121,8 @@
                                             </div>
                                             <p>
                                             <div class="form-group">
-                                                <button type="submit" name="submit"
-                                                    class="btn btn-success ">Submit</button>
+                                                <button type="submit" name="submit" class="btn btn-success "><i
+                                                        class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                                 <button type="reset" class="btn btn-danger"><i
                                                         class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
                                             </div>
@@ -152,7 +152,7 @@
                                                     <td>
                                                         <a class='btn btn-danger'
                                                             onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                                            href="<?= base_url() . 'user/LayananKK/hapus/' . $kk->id_keluarga ?>">
+                                                            href="<?= base_url() . 'user/LayananKK/hapusKel/' . $kk->id_keluarga ?>">
                                                             <i class="fa fa-trash" aria-hidden="true"><span>
                                                                     Hapus</span></i>
                                                         </a>

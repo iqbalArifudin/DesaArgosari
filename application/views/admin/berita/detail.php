@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-body">
                             <form action="" method="post" enctype="multipart/form-data">
-                                <?php foreach($berita as $pmj):?>
+                                <?php foreach ($berita as $pmj) : ?>
                                 <div class="form-row">
                                     <div class="form-group col-md-5">
                                         <img src="<?= base_url('assets/foto_berita/') . $pmj->foto_berita ?>"
@@ -30,7 +30,8 @@
                                 </div>
                                 <?php endforeach ?>
                                 <p>
-                                    <center><a href="<?=base_url("admin/berita/");?>" class="btn btn-info">Kembali</a>
+                                    <center><a href="<?= base_url("admin/berita/"); ?>" class="btn btn-info"> <i
+                                                class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                     </center>
                             </form>
                         </div>

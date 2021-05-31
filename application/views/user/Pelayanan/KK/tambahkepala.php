@@ -24,6 +24,7 @@
                     <hr>
                     <div class="row">
                         <div class="col">
+                            <?= $this->session->flashdata('message'); ?>
                             <div class="card shadow">
                                 <center>
                                     <div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
@@ -126,8 +127,8 @@
 
                                             <p>
                                             <div class="form-group">
-                                                <button type="submit" name="submit"
-                                                    class="btn btn-success ">Submit</button>
+                                                <button type="submit" name="submit" class="btn btn-success "><i
+                                                        class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                                 <button type="reset" class="btn btn-danger"><i
                                                         class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
                                             </div>

@@ -22,20 +22,8 @@
                                 <th>NIK</th>
                                 <th>NAMA</th>
                                 <th>NO KK</th>
-                                <!-- <th>TEMPAT LAHIR</th>
-                                <th>TANGGAL LAHIR</th> -->
-                                <!-- <th>AGAMA</th> -->
-                                <!-- <th>STATUS</th>
-                                <th>PEKERJAAN</th>
-                                <th>GOL DARAH</th> -->
                                 <th>JENIS KELAMIN</th>
-                                <th>ALAMAT</th>
-                                <th>RT</th>
-                                <th>RW</th>
                                 <th>AKSES</th>
-                                <!-- <th>DESA</th>
-                                <th>FOTO</th>
-                                <th>PASSWORD</th> -->
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -53,9 +41,6 @@
                                 <td><?= $penduduk->pekerjaan ?></td>
                                 <td><?= $penduduk->gol_darah ?></td> -->
                                 <td><?= $penduduk->jenis_kelamin ?></td>
-                                <td><?= $penduduk->alamat ?></td>
-                                <td><?= $penduduk->RT ?></td>
-                                <td><?= $penduduk->RW ?></td>
                                 <td><?= $penduduk->hak_akses ?></td>
                                 <!-- <td><?= $penduduk->desa ?></td> -->
                                 <!-- <td><img src="<?= base_url('assets/foto_penduduk/') . $penduduk->foto ?>"
