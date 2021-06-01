@@ -1,4 +1,4 @@
-<div class="bgded overlay row4" style="background-image:url('images/demo/backgrounds/05.png');">
+<div class="bgded overlay row4" style="background-image:url('assets/images/Desa.jpg');">
     <footer id="footer" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="center btmspace-50">

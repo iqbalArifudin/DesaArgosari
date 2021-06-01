@@ -124,7 +124,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
                                             </video>
                                         </center>
                                     </div>
@@ -166,7 +166,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
                                             </video>
                                         </center>
                                     </div>
@@ -209,7 +209,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
                                             </video>
                                         </center>
                                     </div>
@@ -273,7 +273,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/b.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
                                             </video>
                                         </center>
                                     </div>

@@ -6,7 +6,7 @@ class Ktp_model extends CI_Model {
 
     public function tampilKtp()
     {
-        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+        $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         return $this->db->get('ktp')->result();
     }

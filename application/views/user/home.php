@@ -1,3 +1,15 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
 <body id="top">
     <div id="pageintro" class="hoc clear">
         <!-- ################################################################################################ -->
@@ -18,9 +30,9 @@
     <!-- ################################################################################################ -->
     </div>
 
-
     <div class="wrapper row3">
         <main class="hoc container clear">
+
             <?php foreach ($berita as $berita): ?>
             <div class="excerpt">
                 <article><a class="" href="#"><img src="<?= base_url('assets/foto_berita/') . $berita->foto_berita ?>"
@@ -44,25 +56,32 @@
         </main>
     </div>
 
-    <!-- ################################################################################################ -->
-    <div class="wrapper row2">
-        <div class="hoc container clear">
-            <!-- ################################################################################################ -->
-            <div class="sectiontitle">
-                <p class="heading underline font-x2">Struktur Organisasi Desa Argosari</p>
+    <div class="row justify-content-center">
+        <div class="row justify-content-center">
+            <!-- <div class=" d-flex flex-wrap"> -->
+            <?php foreach ($pegawai as $pegawai) : ?>
+            <div class="card-page mr-3 ml-3 mb-3 " style="width:340px; height:500px">
+                <center><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
+                        style="width:240px; height:250px;">
+                    <br>
+
+                </center>
+                <center>
+                    <hr width="90%">
+                </center>
+                <div class="text-muted">
+
+                    &nbsp; &nbsp;<b>Nama</b> :&nbsp;<?= $pegawai->nama ?>
+                    <br>
+                    &nbsp; &nbsp;<b>Nama Wali</b> :&nbsp;<?= $pegawai->jabatan ?>
+                    <br>
+                </div>
             </div>
-            <?php foreach ($pegawai as $pegawai): ?>
-            <ul class="nospace group team">
-                <li class="one_quarter">
-                    <figure><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>" alt=""></a>
-                        <figcaption><strong><?= $pegawai->nama ?></strong> <em><?= $pegawai->jabatan ?></em>
-                        </figcaption>
-                    </figure>
-                    <p>
-                </li>
-            </ul>
             <?php endforeach ?>
+
         </div>
+        <br>
+
     </div>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->

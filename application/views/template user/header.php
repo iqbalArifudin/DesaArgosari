@@ -17,7 +17,8 @@ Licence URI: https://www.os-templates.com/template-terms
     <link href="<?= base_url(); ?>assets/Template_user/layout/styles/layout.css" rel="stylesheet" type="text/css"
         media="all">
 </head>
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="background-image:url('<?php echo base_url().'assets/images/Desa.jpg';?>');">
+
     <!-- ################################################################################################ -->
     <div class="wrapper row0">
         <div id="topbar" class="hoc clear">
@@ -59,7 +60,7 @@ Licence URI: https://www.os-templates.com/template-terms
         <header id="header" class="hoc clear">
             <div id="logo" class="fl_left">
                 <!-- ################################################################################################ -->
-                <img src="<?php echo base_url('assets/images/logo kab.png')?>" style="width: 40px;">
+                <img src="<?php echo base_url('assets/images/logo kab.png') ?>" style="width: 40px;">
                 <!-- ################################################################################################ -->
             </div>
             <div id="logo" class="fl_left">
@@ -70,7 +71,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <nav id="mainav" class="fl_right">
                 <!-- ################################################################################################ -->
                 <ul class="clear">
-                    <li class="active"><a href="<?php echo base_url().'user/home' ?>">Beranda</a></li>
+                    <li class="active"><a href="<?php echo base_url() . 'user/home' ?>">Beranda</a></li>
                     <li><a href="#">Berita</a></li>
                     <li><a href="#">Galeri</a></li>
                     <li><a class="drop" href="#">Profil Desa</a>
@@ -93,7 +94,7 @@ Licence URI: https://www.os-templates.com/template-terms
                             <li><a href="#">Pengaduan</a></li>
                         </ul>
                     </li> -->
-                    <li><a href="<?php echo base_url().'user/Pelayanan' ?>">Pelayanan</a></li>
+                    <li><a href="<?php echo base_url() . 'user/Pelayanan' ?>">Pelayanan</a></li>
                     <li><a class="drop" href="#">Pemerintahan Desa</a>
                         <ul>
                             <li><a href="<?= base_url(); ?>assets/Template_user/pages/gallery.html">Visi dan Misi</a>
