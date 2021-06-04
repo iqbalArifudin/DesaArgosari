@@ -162,6 +162,12 @@
                                     <div class="form-check">
                                         <input type="radio" name="hak_akses" value="Penduduk"> PENDUDUK
                                     </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="hak_akses" value="RT"> RT
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="hak_akses" value="RW"> RW
+                                    </div>
                                 </div>
 
 

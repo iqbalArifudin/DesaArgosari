@@ -13,6 +13,13 @@ class KK_model extends CI_Model
         return $this->db->get('kepala_keluarga')->result();
     }
 
+    public function tampilKK_all()
+    {
+        $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get('kepala_keluarga')->result();
+    }
+
     public function tampilKel()
     {
         $this->db->select('keluarga.*, kepala_keluarga.nama_kpl, kepala_keluarga.NIK_kpl');
@@ -117,6 +124,7 @@ class KK_model extends CI_Model
     public function ubahKeluarga($id_keluarga)
     {
         $data = [
+            'id_keluarga' => $this->input->post('id_keluarga', true),
             'NIK_kel' => $this->input->post('NIK_kel', true),
             'nama_kel' => $this->input->post('nama_kel', true),
             'tempat_lahir' => $this->input->post('tempat_lahir', true),
@@ -164,6 +172,17 @@ class KK_model extends CI_Model
         $this->db->where('id_kepala_kel', $id_kepala_kel);
         $this->db->update('kepala_keluarga', $data);
     }
+
+    public function ubahDataKK($id_kepala_kel)
+    {
+        $data = [
+            'status' => $this->input->post('status', true),
+            'alasan' => $this->input->post('alasan', true),
+        ];
+        $this->db->where('id_kepala_kel', $id_kepala_kel);
+        $this->db->update('kepala_keluarga', $data);
+    }
+
 
 
     public function getKK($id_kepala_kel)

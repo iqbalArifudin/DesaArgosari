@@ -12,28 +12,30 @@ class Ktp_model extends CI_Model {
     }
 
     public function tampilKtpPenduduk($id_penduduk){
-        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+        $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('ktp.id_penduduk', $id_penduduk);
         return $this->db->get('ktp')->result();
     }
     public function tampilKtpPegawai()
     {
-        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+        $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('status !=', 'Diajukan');
         return $this->db->get('ktp')->result();
     }
 
 
-    public function tambahKtp($upload){
+    public function tambahKtp($upload, $upload1)
+    {
 		$data=[
             'id_ktp'=>$this->input->post('id_ktp', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
             'status'=>'Diajukan',
             'keterangan'=>$this->input->post('keterangan', true),
-            'alasan'=>'Belum Diterima',
+            'alasan' => 'Belum Diterima', 
             'fc_kk'=>$upload['file']['file_name'],
+            'surat_rt_rw' => $upload1['file']['file_name'],
 		];
 	$this->db->insert('ktp', $data);
     }
@@ -51,6 +53,23 @@ class Ktp_model extends CI_Model {
         }else{    
             $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());      return $return;   
         }  
+    }
+
+    public function upload1()
+    {
+        $config['upload_path'] = './assets/surat_rt_rw_ktp/';
+        $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
+        $config['max_size']     = '750000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('surat_rt_rw')) {
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
     }
     
    
@@ -76,15 +95,16 @@ class Ktp_model extends CI_Model {
     }
 
 
-    public function getKtp($id_ktp){  
-        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+    public function getKtp($id_ktp)
+    {
+        $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('id_ktp', $id_ktp);
         return $this->db->get('ktp')->result();
     }
     
     public function getDetailKtp($id_ktp){
-        $this->db->select('ktp.*, penduduk.nama, penduduk.NIK');
+        $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('id_ktp', $id_ktp);
         return $this->db->get('ktp')->result();

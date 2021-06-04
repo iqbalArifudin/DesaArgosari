@@ -23,6 +23,13 @@
            <hr class="sidebar-divider">
 
            <li class="nav-item">
+               <a href="<?php echo base_url() . 'user/Surat' ?>" class="nav-link">
+                   <i class="fas fa-envelope-square"></i>
+                   <span>Surat Pengajuan</span></a>
+           </li>
+
+
+           <li class="nav-item">
                <a href="<?php echo base_url() . 'user/LayananKtp' ?>" class="nav-link">
                    <i class="fas fa-address-card"></i>
                    <span>Pelayanan KTP</span></a>

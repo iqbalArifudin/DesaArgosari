@@ -29,6 +29,12 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
+                                    <label for="nama"><strong>NO KK</strong></label>
+                                    <input type="text" name="NIK" placeholder="" autocomplete="off" class="form-control"
+                                        required value="<?= $j->no_KK; ?>" readonly>
+                                </div>
+                                <p>
+                                <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Tempat</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
@@ -40,8 +46,9 @@
                                             class="form-control" required value="<?= $j->tanggal_lahir; ?>" readonly>
                                     </div>
                                 </div>
+
                                 <?php endforeach ?>
-                                <p>
+
 
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>keterangan</strong></label>
@@ -60,6 +67,17 @@
                                         <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                     </div>
                                 </div>
+                                <p>
+
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Upload Surat Pengantar RT / RW</strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_rt_rw" name="surat_rt_rw"
+                                            required autofocus>
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+
 
                                 <hr>
                                 <div class="form-group">

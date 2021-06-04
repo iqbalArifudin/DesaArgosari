@@ -14,8 +14,8 @@
                 <div class="container-fluid">
                     <div class="clearfix">
                         <div class="float-right">
-                            <a href="<?= base_url('user/LayananKK/editKel/') ?>" class="btn btn-primary btn-sm"><i
-                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                            <a href="<?= base_url('user/LayananKK/detail/') . $this->uri->segment(4) ?>"
+                                class="btn btn-primary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </div>
                     </div>
                     <hr>
@@ -27,7 +27,7 @@
                                 </center>
                                 <div class="card-body">
                                     <?php foreach ($keluarga as $j) : ?>
-                                    <form action="<?= base_url('user/LayananKK/tambahKel/') . $this->uri->segment(4) ?>"
+                                    <form action="<?= base_url('user/LayananKK/editKel/') . $this->uri->segment(4) ?>"
                                         method="POST" enctype="multipart/form-data">
                                         <input type="hidden" name="id_keluarga" value="<?= $j->id_keluarga; ?>">
                                         <?php endforeach ?>

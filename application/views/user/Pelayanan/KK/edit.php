@@ -147,41 +147,11 @@
 
                                         </div>
 
-                                        <table class="table table-bordered" id="keranjang">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama</th>
-                                                    <th>NIK</th>
-                                                    <th>Alamat</th>
-                                                    <th>Kelurahan</th>
-                                                    <th>Keluarga</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
 
-                                            </tbody>
-                                            <tfoot>
-                                                <?php foreach ($kk1 as $kk) : ?>
-                                                <tr>
-                                                    <td><?= $kk->nama_kpl ?></td>
-                                                    <td><?= $kk->NIK_kpl ?></td>
-                                                    <td><?= $kk->alamat_kpl ?>
-                                                    </td>
-                                                    <td><?= $kk->kelurahan_kpl ?></td>
-                                                    <td>
-                                                        <?php foreach ($keluarga as $j) : ?>
-                                                        <?= $j->nama_kel ?>
-                                                        <hr>
-                                                        <?php endforeach ?>
-                                                    </td>
-                                                </tr>
-                                                <?php endforeach ?>
-                                            </tfoot>
-                                        </table>
                                         <p>
                                             <hr>
                                             <center>
-                                                <h5>Data Keluarga</h5>
+                                                <h2>Data Keluarga</h2>
                                             </center>
                                             <hr>
                                         <table class="table table-bordered" id="keranjang">
@@ -191,7 +161,8 @@
                                                     <th>NIK</th>
                                                     <th>Tanggal Lahir</th>
                                                     <th>Jenis Kelamin</th>
-                                                    <th>Aksi</th>
+                                                    <th>Status</th>
+                                                    <th>Agama</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -204,25 +175,8 @@
                                                     <td><?= $kk->NIK_kel ?></td>
                                                     <td><?= $kk->tanggal_lahir ?></td>
                                                     <td><?= $kk->jenis_kelamin ?></td>
-                                                    <td>
-                                                        <a class='btn btn-danger'
-                                                            onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                                            href="<?= base_url() . 'user/LayananKK/hapusKel/' . $kk->id_keluarga ?>">
-                                                            <i class="fa fa-trash" aria-hidden="true"><span>
-                                                                    Hapus</span></i>
-                                                        </a>
-                                                        <a class='btn btn-warning'
-                                                            href="<?= base_url() . 'user/LayananKK/editKel/' . $kk->id_keluarga ?>">
-                                                            <i class="fas fa-edit" aria-hidden="true"><span>
-                                                                    Edit</span></i>
-                                                        </a>
-                                                        <a class='btn btn-info'
-                                                            href='<?= base_url() . 'user/LayananKK/detail/' . $kk->id_keluarga ?>'
-                                                            class='btn btn-biru'>
-                                                            <i class="fas fa-eye"
-                                                                aria-hidden="true"><span>Detail</span></i>
-                                                        </a>
-                                                    </td>
+                                                    <td><?= $kk->status_perkawinan ?></td>
+                                                    <td><?= $kk->agama ?></td>
                                                 </tr>
                                                 <?php endforeach ?>
                                             </tfoot>

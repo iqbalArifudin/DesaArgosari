@@ -57,10 +57,26 @@
                                 </div>
                                 <br>
                                 <div class="form-row">
+                                    <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
+                                    <input type="text" name="surat_rt_rw" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $penduduk->surat_rt_rw; ?>" readonly>
+                                </div>
+                                <br>
+                                <a class='btn btn-dark'
+                                    href="<?php echo base_url() . 'pegawai/Pelayanan_ktp/download1/' . $penduduk->id_ktp; ?>">
+                                    <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                </a>
+                                <p>
+                                <div class="form-row">
                                     <label for="nama"><strong>Persyaratan FC KK</strong></label>
                                     <img src="<?= base_url('assets/foto_ktp/') . $penduduk->fc_kk ?>" class="card-img"
                                         alt="..." width="100px">
                                 </div>
+                                <br>
+                                <a class='btn btn-dark'
+                                    href="<?php echo base_url() . 'pegawai/Pelayanan_ktp/download/' . $penduduk->id_ktp; ?>">
+                                    <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                </a>
 
                                 <?php endforeach ?>
                                 <p>
@@ -68,10 +84,6 @@
 
                                     <a href="<?= base_url("pegawai/Pelayanan_ktp/pdf"); ?>" class="btn btn-success"><i
                                             class="fa fa-print"></i>&nbsp;&nbsp;Cetak</a>
-                                    <a class='btn btn-dark'
-                                        href="<?php echo base_url() . 'pegawai/Pelayanan_ktp/download/' . $penduduk->id_ktp; ?>">
-                                        <i class="fas fa-download" aria-hidden="true"><span> Download Bukti</span></i>
-                                    </a>
                                     <a href="<?= base_url("pegawai/Pelayanan_ktp"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 

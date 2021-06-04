@@ -17,8 +17,8 @@
                             <h1 class="h3 m-0 text-gray-800">Tambah Data Anggota Keluarga</h1>
                         </div>
                         <div class="float-right">
-                            <a href="<?= base_url('user/LayananKK/tambahKK') ?>" class="btn btn-primary btn-sm"><i
-                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                            <a href="<?= base_url('user/LayananKK/detail/') . $this->uri->segment(4)  ?>"
+                                class="btn btn-primary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </div>
                     </div>
                     <hr>
@@ -29,7 +29,7 @@
                                     <div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
                                 </center>
                                 <div class="card-body">
-                                    <?php foreach ($kk1 as $j) : ?>
+                                    <?php foreach ($keluarga as $j) : ?>
                                     <form action="<?= base_url('user/LayananKK/tambahKel/') . $this->uri->segment(4) ?>"
                                         method="POST" enctype="multipart/form-data">
                                         <h5>Kepala Keluarga</h5>
@@ -127,52 +127,6 @@
                                                         class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
                                             </div>
                                         </div>
-
-
-                                        <table class="table table-bordered" id="keranjang">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama</th>
-                                                    <th>NIK</th>
-                                                    <th>Tanggal Lahir</th>
-                                                    <th>Jenis Kelamin</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                            <tfoot>
-                                                <?php foreach ($keluarga as $kk) : ?>
-                                                <tr>
-                                                    <td><?= $kk->nama_kel ?></td>
-                                                    <td><?= $kk->NIK_kel ?></td>
-                                                    <td><?= $kk->tanggal_lahir ?></td>
-                                                    <td><?= $kk->jenis_kelamin ?></td>
-                                                    <td>
-                                                        <a class='btn btn-danger'
-                                                            onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                                            href="<?= base_url() . 'user/LayananKK/hapusKel/' . $kk->id_keluarga ?>">
-                                                            <i class="fa fa-trash" aria-hidden="true"><span>
-                                                                    Hapus</span></i>
-                                                        </a>
-                                                        <a class='btn btn-warning'
-                                                            href="<?= base_url() . 'user/LayananKK/edit/' . $kk->id_keluarga ?>">
-                                                            <i class="fas fa-edit" aria-hidden="true"><span>
-                                                                    Edit</span></i>
-                                                        </a>
-                                                        <a class='btn btn-info'
-                                                            href='<?= base_url() . 'user/LayananKK/detail/' . $kk->id_keluarga ?>'
-                                                            class='btn btn-biru'>
-                                                            <i class="fas fa-eye"
-                                                                aria-hidden="true"><span>Detail</span></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <?php endforeach ?>
-                                            </tfoot>
-                                        </table>
-
                                     </form>
                                 </div>
                             </div>

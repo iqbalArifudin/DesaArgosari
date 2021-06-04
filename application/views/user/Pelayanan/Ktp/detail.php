@@ -64,6 +64,13 @@
                                     <input type="text" name="alasan" placeholder="" autocomplete="off"
                                         class="form-control" required value="<?= $k->alasan; ?>" readonly>
                                 </div>
+                                <br>
+
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
+                                    <input type="text" name="surat_rt_rw" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $k->surat_rt_rw; ?>" readonly>
+                                </div>
 
                                 <br>
                                 <div class="form-row">

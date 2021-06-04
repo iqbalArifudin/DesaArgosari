@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url().'user/LayananKtp' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'user/LayananKtp' ?>">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     Kartu Tanda Penduduk</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KTP</div>
@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url().'user/LayananKtp' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'user/LayananKK' ?>">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Kartu keluarga</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KK</div>
@@ -52,7 +52,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url().'user/akta_kelahiran' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'user/akta_kelahiran' ?>">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Akta Kelahiran
                                 </div>
                                 <div class="row no-gutters align-items-center">
@@ -77,7 +77,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url().'user/Pengaduan' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'user/Pengaduan' ?>">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     Pengaduan</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">PENGADUAN</div>
@@ -124,7 +124,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
                                             </video>
                                         </center>
                                     </div>
@@ -166,7 +166,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
                                             </video>
                                         </center>
                                     </div>
@@ -209,7 +209,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
                                             </video>
                                         </center>
                                     </div>
@@ -240,7 +240,7 @@
                 <div class="card-body">
                     <div class="text-center">
                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 26rem;"
-                            src="<?php echo base_url('assets/img/logo alur.svg')?>" alt="">
+                            src="<?php echo base_url('assets/img/logo alur.svg') ?>" alt="">
                     </div>
                     <p>Sebelum melakukan Pelayanan Pembuatan KTP (Kartu Tanda Penduduk), Kartu Keluarga (KK), Akta
                         Kelahiran dan Pengaduan. Pahami Dulu alur atau langkah-langkahnya, untuk menghindari kesalahan
@@ -273,7 +273,7 @@
                                         <center>
                                             <video controls width="950">
                                                 <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4')?>">
+                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
                                             </video>
                                         </center>
                                     </div>

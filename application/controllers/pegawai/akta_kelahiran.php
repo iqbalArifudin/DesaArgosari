@@ -122,9 +122,6 @@ class akta_kelahiran extends CI_Controller
         $file = './assets/persyaratan_akta/' . $fileinfo['fc_ktp_ibu'];
         // $file3 = './assets/persyaratan_akta/' . $fileinfo['fc_ktp_saksi'];
         force_download($file, NULL);
-        // force_download($file1, NULL);
-        // force_download($file2, NULL);
-        // force_download($file3, NULL);
     }
 
     public function downloadktp_s($id_akta)

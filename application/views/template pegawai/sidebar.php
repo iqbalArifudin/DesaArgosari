@@ -35,7 +35,7 @@
            </li>
 
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'pegawai/LayananKK' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'pegawai/PelayananKK' ?>" class="nav-link">
                    <i class="fas fa-newspaper"></i>
                    <span>Pelayanan KK</span></a>
            </li>

@@ -336,6 +336,12 @@
                                 <div class="form-check">
                                     <input type="radio" name="hak_akses" value="Penduduk"> PENDUDUK
                                 </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RT"> RT
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RW"> RW
+                                </div>
 
                                 <?php elseif ($penduduk->hak_akses == "Pegawai") : ?>
                                 <div class="form-check">
@@ -347,6 +353,46 @@
                                 <div class="form-check">
                                     <input type="radio" name="hak_akses" value="Penduduk"> PENDUDUK
                                 </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RT"> RT
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RW"> RW
+                                </div>
+
+                                <?php elseif ($penduduk->hak_akses == "RT") : ?>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Admin">ADMIN
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Pegawai"> PEGAWAI
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Penduduk"> PENDUDUK
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RT" checked> RT
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RW"> RW
+                                </div>
+
+                                <?php elseif ($penduduk->hak_akses == "RW") : ?>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Admin">ADMIN
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Pegawai"> PEGAWAI
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="Penduduk"> PENDUDUK
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RT"> RT
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RW" checked> RW
+                                </div>
 
                                 <?php else : ?>
                                 <div class="form-check">
@@ -357,6 +403,12 @@
                                 </div>
                                 <div class="form-check">
                                     <input type="radio" name="hak_akses" value="Penduduk" checked> PENDUDUK
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RT"> RT
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="hak_akses" value="RW"> RW
                                 </div>
                                 <?php endif ?>
                             </div>

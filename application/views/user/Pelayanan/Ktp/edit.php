@@ -54,6 +54,16 @@
                                         class="form-control" value="<?= $p->keterangan; ?>" required>
                                 </div>
                                 <p>
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Surat Pengantar RT / RW</strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_rt_rw"
+                                            name="surat_rt_rw">
+                                        <label class="custom-file-label" for="customFile"><?= $p->surat_rt_rw ?></label>
+                                        <?= form_error('surat_rt_rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                </div>
+                                <p>
 
                                 <div class="form-row">
                                     <label for="satuan"><strong>Foto Copy KK</strong></label>

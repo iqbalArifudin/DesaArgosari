@@ -60,6 +60,10 @@ class Login extends CI_Controller
                         redirect('user/home_pelayanan');
                     }else if ($penduduk['hak_akses'] == 'Pegawai') {
 						redirect('pegawai/home');
+                } else if ($penduduk['hak_akses'] == 'RT') {
+                    redirect('RT/home');
+                } else if ($penduduk['hak_akses'] == 'RW') {
+                    redirect('RW/home');
 					}
 					else {
                         redirect('admin/home');

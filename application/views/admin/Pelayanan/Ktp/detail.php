@@ -32,6 +32,12 @@
                                 </div>
                                 <br>
                                 <div class="form-row">
+                                    <label for="nama"><strong>NO KK</strong></label>
+                                    <input type="text" name="no_KK" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $penduduk->no_KK; ?>" readonly>
+                                </div>
+                                <br>
+                                <div class="form-row">
                                     <label for="nama"><strong>Tanggal Mengajukan</strong></label>
                                     <input type="text" name="nama" placeholder="" autocomplete="off"
                                         class="form-control" required value="<?= $penduduk->tanggal_buat; ?>" readonly>
@@ -66,7 +72,7 @@
 
                                     <?php else : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">AjukanKe
+                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">Ajukan Ke
                                         Kepala Desa
                                     </div>
                                     <?php endif ?>

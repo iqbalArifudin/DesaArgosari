@@ -57,7 +57,7 @@ class LayananKK extends CI_Controller
                         </button>
                     </div>'
                 );
-                redirect('user/LayananKK/tambahKK', 'refresh');
+                redirect('user/LayananKK', 'refresh');
             } else {
                 echo $upload['error'];
             }
@@ -81,7 +81,7 @@ class LayananKK extends CI_Controller
         } else {
             // print_r($this->uri->segment(3));die;
             $this->KK_model->tambahDataKel($this->uri->segment(4));
-            redirect('user/LayananKK/tambahKel', 'refresh');
+            redirect('user/LayananKK/detail/' . $this->uri->segment(4), 'refresh');
             $this->session->set_flashdata('flash-data', 'ditambahkan');
             echo "data berhasil ditambah";
         }
@@ -127,7 +127,7 @@ class LayananKK extends CI_Controller
                     </button>
                     </div>'
             );
-            redirect('user/LayananKK/tambahKel');
+            redirect('user/LayananKK/edit/' . $this->uri->segment(4));
         } else {
             $this->session->set_flashdata(
                 'message',
@@ -138,14 +138,14 @@ class LayananKK extends CI_Controller
                     </button>
                     </div>'
             );
-            redirect('user/LayananKK/tambahKel', 'refresh');
+            redirect('user/LayananKK/edit/' . $this->uri->segment(4), 'refresh');
         }
     }
 
     public function edit($id_kepala_kel)
     {
-        $data['kk1'] = $this->KK_model->tampilKK($this->session->userdata('id_penduduk'));
-        $data['keluarga'] = $this->KK_model->tampilKel();
+        $data['kk1'] = $this->KK_model->getKK($id_kepala_kel);
+        $data['keluarga'] = $this->KK_model->tampilKelsaja($id_kepala_kel);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $this->form_validation->set_rules('nama_kpl', 'nama_kpl', 'required|trim');
 
@@ -257,7 +257,7 @@ class LayananKK extends CI_Controller
                         </button>
                         </div>'
             );
-            redirect('user/LayananKK/editKel/', 'refresh');
+            redirect('user/LayananKK/detailKel/' . $this->uri->segment(3), 'refresh');
         }
     }
 
@@ -265,10 +265,36 @@ class LayananKK extends CI_Controller
     {
         $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data['keluarga'] = $this->KK_model->tampilKel();
+        // $this->KK_model->getDetailKK($this->uri->segment(3));
         $this->load->view('template_layanan/header', $data);
         $this->load->view('template_layanan/sidebar');
         $this->load->view('template_layanan/topbar');
-        $this->load->view('user/Pelayanan/KK/detail', $data);
+        $this->load->view('user/Pelayanan/KK/detail_kpl', $data);
+        $this->load->view('template_layanan/footer');
+    }
+
+    public function detailKel($id_kepala_kel)
+    {
+        $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data['keluarga'] = $this->KK_model->tampilKel();
+        $this->load->view('template_layanan/header', $data);
+        $this->load->view('template_layanan/sidebar');
+        $this->load->view('template_layanan/topbar');
+        $this->load->view('user/Pelayanan/KK/detail_keluarga', $data);
+        $this->load->view('template_layanan/footer');
+    }
+
+    public function detail_all($id_kepala_kel)
+    {
+        $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data['keluarga'] = $this->KK_model->tampilKel();
+        $this->load->view('template_layanan/header', $data);
+        $this->load->view('template_layanan/sidebar');
+        $this->load->view('template_layanan/topbar');
+        $this->load->view('user/Pelayanan/KK/detail_all', $data);
         $this->load->view('template_layanan/footer');
     }
 }

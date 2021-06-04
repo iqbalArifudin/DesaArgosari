@@ -43,8 +43,9 @@
             }         
             else{
                 $upload = $this->Ktp_model->upload();
+            $upload1 = $this->Ktp_model->upload1();
                 if ($upload['result'] == 'success'){
-                    $this->Ktp_model->tambahKtp($upload);
+                $this->Ktp_model->tambahKtp($upload, $upload1);
                     $this->session->set_flashdata(
                         'message',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -108,6 +109,7 @@
 
             //check jika ada gambar yang akan di upload
             $upload_file = $_FILES['fc_kk']['name'];
+            $upload_file1 = $_FILES['surat_rt_rw']['name'];
             if ($upload_file) {
                 $config['upload_path'] = './assets/foto_ktp/';    
                 $config['allowed_types'] = 'jpg|png|jpeg';
@@ -121,6 +123,22 @@
                     }
                     $new_file = $this->upload->data('file_name');
                     $this->db->set('fc_kk', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            } else if ($upload_file1) {
+                $config['upload_path'] = './assets/surat_rt_rw_ktp/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '10000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('surat_rt_rw')) {
+                    $old_file = $data['surat']['surat_rt_rw'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/surat_rt_rw_ktp/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('surat_rt_rw', $new_file);
                 } else {
                     echo $this->upload->display_errors();
                 }

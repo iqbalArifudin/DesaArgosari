@@ -97,6 +97,14 @@
             force_download($file, NULL);
         }
 
+    public function download1($id_ktp)
+    {
+        $this->load->helper('download');
+        $fileinfo = $this->Ktp_model->download($id_ktp);
+        $file = './assets/surat_pengajuan/' . $fileinfo['surat_rt_rw'];
+        force_download($file, NULL);
+    }
+
         public function pdf()
     {
     
