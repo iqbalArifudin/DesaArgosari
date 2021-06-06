@@ -68,8 +68,8 @@
 
                                 <div class="form-row">
                                     <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
-                                    <input type="text" name="surat_rt_rw" placeholder="" autocomplete="off"
-                                        class="form-control" required value="<?= $k->surat_rt_rw; ?>" readonly>
+                                    <img src="<?= base_url('assets/surat_rt_rw_ktp/') . $k->surat_rt_rw ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
 
                                 <br>

@@ -9,10 +9,11 @@
         {
             parent::__construct();
             $this->load->helper('url');
-            $this->load->model('pegawai_model');  
-            $this->load->model('penduduk_model');  
-            $this->load->model('Pengaduan_model');  
-            $this->load->model('Ktp_model');  
+        $this->load->model('pegawai_model');
+        $this->load->model('penduduk_model');
+        $this->load->model('Pengaduan_model');
+        $this->load->model('Ktp_model');
+        $this->load->library('pdf');
         }
         
         public function index()
@@ -30,8 +31,7 @@
         public function tambahKtp(){
             $this->load->library('form_validation');
             $this->form_validation->set_rules('keterangan', 'keterangan', 'required');
-            $data['ktp'] = $this->Ktp_model->tampilKtpPenduduk($this->session->userdata('id_penduduk'));
-            // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+        $data['ktp'] = $this->Ktp_model->tampilKtpPenduduk($this->session->userdata('id_penduduk'));
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             if($this->form_validation->run() == FALSE){
                 $this->load->view('template_layanan/header',$data);
@@ -171,9 +171,18 @@
             $this->load->view('template_layanan/sidebar');
             $this->load->view('template_layanan/topbar'); 
             $this->load->view('user/Pelayanan/Ktp/detail' ,$data);
-            $this->load->view('template_layanan/footer'); 
-        } 
+        $this->load->view('template_layanan/footer');
+    }
 
+    public function pdf()
+    {
+        $data['ktp'] = $this->Ktp_model->tampilSuratKtp();
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Surat Penerbitan KTP RT/RW.pdf";
+        $this->pdf->set_option('isRemoteEnabled', true);
+        $this->pdf->load_view('user/Pelayanan/surat_rt_rw_pdf', $data);
+    }
     }
         /* End of fils admin.php */
 ?>

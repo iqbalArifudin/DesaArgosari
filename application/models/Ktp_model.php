@@ -11,6 +11,13 @@ class Ktp_model extends CI_Model {
         return $this->db->get('ktp')->result();
     }
 
+    public function tampilSuratKtp()
+    {
+        $this->db->select('ktp.*, penduduk.*');
+        $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
+        return $this->db->get('ktp')->result();
+    }
+
     public function tampilKtpPenduduk($id_penduduk){
         $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
@@ -22,6 +29,14 @@ class Ktp_model extends CI_Model {
         $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('status !=', 'Diajukan');
+        return $this->db->get('ktp')->result();
+    }
+
+    public function tampilKtpRW()
+    {
+        $this->db->select('ktp.*, penduduk.*');
+        $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('status =', 'Diajukan Ke Ketua RW');
         return $this->db->get('ktp')->result();
     }
 
@@ -114,5 +129,7 @@ class Ktp_model extends CI_Model {
         $query = $this->db->get_where('ktp',array('id_ktp'=>$id_ktp));
         return $query->row_array();
     }
+
+
     
 }    

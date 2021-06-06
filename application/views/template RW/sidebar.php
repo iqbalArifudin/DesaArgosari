@@ -14,7 +14,7 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="<?php echo base_url() . 'RT/home' ?>">
+               <a class="nav-link" href="<?php echo base_url() . 'RW/home' ?>">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Beranda</span></a>
            </li>
@@ -23,31 +23,31 @@
            <hr class="sidebar-divider">
 
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'RT/Pelayanan_ktp' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'RW/Pelayanan_ktp' ?>" class="nav-link">
                    <i class="fas fa-address-card"></i>
                    <span>Pelayanan KTP</span></a>
            </li>
            <hr class="sidebar-divider">
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'RT/Pelayanan_kk' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'RW/Pelayanan_kk' ?>" class="nav-link">
                    <i class="fas fa-newspaper"></i>
                    <span>Pelayanan KK</span></a>
            </li>
            <hr class="sidebar-divider">
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'RT/akta_kelahiran' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'RW/akta_kelahiran' ?>" class="nav-link">
                    <i class="fas fa-id-badge"></i>
                    <span>Pelayanan Akta Kelahiran</span></a>
            </li>
            <hr class="sidebar-divider">
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'RT/pegawai' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'RW/pegawai' ?>" class="nav-link">
                    <i class="fas fa-fw fa-table"></i>
                    <span>Data Pegawai</span></a>
            </li>
            <hr class="sidebar-divider">
            <li class="nav-item">
-               <a href="<?php echo base_url() . 'RT/penduduk' ?>" class="nav-link">
+               <a href="<?php echo base_url() . 'RW/penduduk' ?>" class="nav-link">
                    <i class="fas fa-fw fa-table"></i>
                    <span>Data Penduduk</span></a>
            </li>
@@ -57,7 +57,7 @@
 
            <!-- Sidebar Toggler (Sidebar) -->
            <div class="text-center d-none d-md-inline">
-               <button class="rounded-circle border-0" id="sidebarToggle"></button>
+               <button class="rounded-circle border-0" id="sidebaRWoggle"></button>
            </div>
        </ul>
        <!-- End of Sidebar -->

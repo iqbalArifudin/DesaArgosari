@@ -19,11 +19,11 @@
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['ktp'] = $this->Ktp_model->tampilKtp();
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
-        $this->load->view('template admin/header',$data);
-        $this->load->view('template admin/sidebar',$data);
-        $this->load->view('template admin/topbar',$data); 
-        $this->load->view('admin/Pelayanan/Ktp/index',$data);
-        $this->load->view('template admin/footer',$data);  
+        $this->load->view('template RT/header', $data);
+        $this->load->view('template RT/sidebar', $data);
+        $this->load->view('template RT/topbar', $data);
+        $this->load->view('RT/Pelayanan/Ktp/index', $data);
+        $this->load->view('template RT/footer', $data);  
         }
 
         public function hapus($id_ktp)
@@ -40,7 +40,7 @@
                                 </button>
                             </div>'
             );
-                redirect('admin/Pelayanan_ktp');
+            redirect('RT/Pelayanan_ktp');
             }else{
                 $this->load->library('session');
                 $this->session->set_flashdata('flashdata', 'dihapus');
@@ -53,7 +53,7 @@
                                     </button>
                                 </div>'
             );
-                redirect('admin/Pelayanan_ktp','refresh');
+            redirect('RT/Pelayanan_ktp', 'refresh');
             } 
         }
 
@@ -66,11 +66,11 @@
             // $this->form_validation->set_rules('status', 'status', 'required');
 
             if($this->form_validation->run() == FALSE){
-                $this->load->view('template admin/header',$data);
-                $this->load->view('template admin/sidebar',$data);
-                $this->load->view('template admin/topbar',$data); 
-                $this->load->view('admin/Pelayanan/Ktp/detail' ,$data);
-                $this->load->view('template admin/footer',$data);
+            $this->load->view('template RT/header', $data);
+            $this->load->view('template RT/sidebar', $data);
+            $this->load->view('template RT/topbar', $data);
+            $this->load->view('RT/Pelayanan/Ktp/detail', $data);
+            $this->load->view('template RT/footer', $data);
             }
             else{
                     $this->Ktp_model->ubahKtp($id_ktp);
@@ -79,29 +79,29 @@
             $this->session->set_flashdata(
                 'message',
                 '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                       Data Telah Diajukan Ke Kepala Desa ! 
+                       Data Telah Di update ! 
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>'
             );
-                    redirect('admin/Pelayanan_ktp','refresh');
+            redirect('RT/Pelayanan_ktp', 'refresh');
             }
         }
     
         public function detail($id_ktp){
             $data['ktp']=$this->Ktp_model->getDetailKtp($id_ktp);
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-            $this->load->view('template admin/header',$data);
-            $this->load->view('template admin/sidebar');
-            $this->load->view('template admin/topbar'); 
-            $this->load->view('admin/Pelayanan/Ktp/detail' ,$data);
-            $this->load->view('template admin/footer'); 
+        $this->load->view('template RT/header', $data);
+        $this->load->view('template RT/sidebar');
+        $this->load->view('template RT/topbar');
+        $this->load->view('RT/Pelayanan/Ktp/detail', $data);
+        $this->load->view('template RT/footer'); 
         } 
 
 
     }
-        /* End of fils admin.php */
+        /* End of fils RT.php */
     
 
 ?>

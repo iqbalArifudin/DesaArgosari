@@ -64,10 +64,10 @@
 
                                 <div class="form-group">
                                     <label for="nim"><strong>Ajukan</strong></label>
-                                    <?php if ($penduduk->status == "Diajukan Ke Ketua RW") : ?>
+                                    <?php if ($penduduk->status == "Diajukan Ke Pelayanan") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Ketua RW" checked>Diajukan
-                                        Ke Ketua RW
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
+                                        Ke Pelayanan
                                     </div>
                                     <br>
                                     <div class="form-check">
@@ -76,8 +76,8 @@
 
                                     <?php elseif ($penduduk->status == "Ditolak") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Ketua RW">Diajukan
-                                        Ke Ketua RW
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
+                                        Ke Pelayanan
                                     </div>
                                     <br>
                                     <div class="form-check">
@@ -86,8 +86,8 @@
 
                                     <?php else : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Ketua RW">Diajukan
-                                        Ke Ketua RW
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
+                                        Ke Pelayanan
                                     </div>
                                     <br>
                                     <div class="form-check">
@@ -108,7 +108,7 @@
 
                                     <button type=" submit" name="submit" class="btn btn-success "><i
                                             class="fa fa-save"></i>&nbsp;&nbsp;Ajukan</button>
-                                    <a href="<?= base_url("RT/Pelayanan_ktp"); ?>" class="btn btn-info"><i
+                                    <a href="<?= base_url("RW/Pelayanan_ktp"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>

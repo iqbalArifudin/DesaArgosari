@@ -37,42 +37,42 @@
 
                                     <?php if ($ktp->status == "Ditolak") : ?>
                                     <a btn btn-info href="#modalDelete2" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($ktp->status == "Diproses") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($ktp->status == "Selesai") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($ktp->status == "Diajukan Ke Kepala Desa") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
-                                    <?php elseif ($ktp->status == "Diajukan Ke Ketua RW") : ?>
+                                    <?php elseif ($ktp->status == "Diajukan Ke Ketua RT") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($ktp->status == "Diajukan Ke Pelayanan") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RT/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
@@ -80,7 +80,7 @@
                                     <?php else : ?>
 
                                     <a class='btn btn-info'
-                                        href='<?= base_url() . 'RT/Pelayanan_ktp/edit/' . $ktp->id_ktp ?>'
+                                        href='<?= base_url() . 'RW/Pelayanan_ktp/edit/' . $ktp->id_ktp ?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-hourglass-half"
                                             aria-hidden="true"><span>&nbsp;Proses</span></i>

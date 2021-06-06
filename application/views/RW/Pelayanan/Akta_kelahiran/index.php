@@ -1,8 +1,8 @@
 <div class="alert alert-primary" role="alert">
-    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i
-        class="fas fa-envelope-square"></i>
-    Surat Pengajuan
+    <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-id-badge"></i>
+    Pelayanan Akta Kelahiran
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="content-wrapper">
     <div class="content">
         <div class="container-fluid">
@@ -14,32 +14,28 @@
                         <thead class="table table-striped">
                             <tr>
                                 <th>NO</th>
-                                <th>NAMA</th>
-                                <th>TANGGAL MENGAJUKAN</th>
+                                <th>NAMA AKTA</th>
                                 <th>KETERANGAN</th>
+                                <th>TANGGAL MENGAJUKAN</th>
                                 <th>STATUS</th>
-                                <th>FILE SURAT</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($surat as $s) : ?>
+                            foreach ($akta as $akta) : ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-                                <td><?= $s->nama ?></td>
-                                <td><?= $s->tanggal ?></td>
-                                <td><?= $s->keterangan ?></td>
-                                <td><span class="badge badge-warning"><?= $s->status_surat ?></span></td>
-                                <td><?= $s->file_surat ?></td>
+                                <td><?= $akta->nama_akta ?></td>
+                                <td><?= $akta->keterangan ?></td>
+                                <td><?= $akta->tgl_mengajukan ?></td>
+                                <td><span class="badge badge-warning"><?= $akta->status ?></span></td>
                                 <td>
-                                    <a class='btn btn-info' href='<?= base_url() . 'RT/Surat/edit/' . $s->id_surat ?>'
+                                    <a class='btn btn-info'
+                                        href='<?= base_url() . 'admin/akta_kelahiran/edit/' . $akta->id_akta ?>'
                                         class='btn btn-biru'>
-                                        <i class="fas fa-hourglass-half"
-                                            aria-hidden="true"><span>&nbsp;Proses</span></i>
+                                        <i class="fas fa-eye" aria-hidden="true"><span>&nbsp;Detail</span></i>
                                     </a>
-                                    <a href="<?= base_url() . 'RT/Surat/pdf/' . $s->id_penduduk ?>"
-                                        class="btn btn-success"><i class="fa fa-print"></i>&nbsp;&nbsp;Cetak</a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
