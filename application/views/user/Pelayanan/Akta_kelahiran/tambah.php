@@ -14,7 +14,7 @@
                             <center><strong>Form Tambah Data Akta Kelahiran </strong></center>
                         </div>
                         <div class="card-body">
-                            <?php if (validation_errors()): ?>
+                            <?php if (validation_errors()) : ?>
                             <div class="alert alert-danger" role="alert">
                                 <?= validation_errors(); ?>
                             </div>
@@ -91,13 +91,25 @@
                                 </div>
                                 <p>
 
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Upload Foto Surat Kelahiran dari Rumah
+                                            Sakit</strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_kelahiran"
+                                            name="surat_kelahiran" required autofocus>
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                                    </div>
+                                </div>
+                                <p>
+
 
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-success "><i
                                             class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                    <a href="<?= base_url("user/akta_kelahiran"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>

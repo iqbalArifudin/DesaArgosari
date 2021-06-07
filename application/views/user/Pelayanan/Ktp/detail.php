@@ -17,6 +17,12 @@
                             <form action="" method="post" enctype="multipart/form-data">
                                 <?php foreach ($penduduk as $j) : ?>
                                 <div class="form-row">
+                                    <label for="nama"><strong>NO. Kartu Keluarga</strong></label>
+                                    <input type="text" name="keterangan" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $j->no_KK; ?>" readonly>
+                                </div>
+                                <P>
+                                <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>NAMA</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"

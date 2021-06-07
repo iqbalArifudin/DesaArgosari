@@ -86,7 +86,7 @@
 
                                     <?php else : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan">Diajukan
                                         Ke Pelayanan
                                     </div>
                                     <br>

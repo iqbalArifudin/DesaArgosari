@@ -44,7 +44,7 @@ class KK_model extends CI_Model
     }
 
 
-    public function tambahKepalaKel($upload, $upload1)
+    public function tambahKepalaKel($upload, $upload1, $upload2, $upload3)
     {
         $data = [
             'id_kepala_kel' => $this->input->post('id_kepala_kel', true),
@@ -61,6 +61,8 @@ class KK_model extends CI_Model
             'kelurahan_kpl' => $this->input->post('kelurahan_kpl', true),
             'suratnikah_l' => $upload['file']['file_name'],
             'suratnikah_p' => $upload1['file']['file_name'],
+            'kk1' => $upload2['file']['file_name'],
+            'kk2' => $upload3['file']['file_name'],
             'status' => 'Diajukan',
             'alasan' => 'Belum Diterima',
 
@@ -120,6 +122,39 @@ class KK_model extends CI_Model
         }
     }
 
+    public function upload2()
+    {
+        $config['upload_path'] = './assets/foto_kk/';
+        $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
+        $config['max_size']     = '750000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('kk1')) {
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
+    }
+
+    public function upload3()
+    {
+        $config['upload_path'] = './assets/foto_kk/';
+        $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
+        $config['max_size']     = '750000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('kk2')) {
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
+    }
 
     public function ubahKeluarga($id_keluarga)
     {

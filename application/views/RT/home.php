@@ -7,7 +7,7 @@
     <!-- Content Row -->
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -27,7 +27,7 @@
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -47,7 +47,7 @@
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -70,26 +70,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url() . 'RT/Pengaduan' ?>">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Pengaduan</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">PENGADUAN</div>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-3x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -106,10 +86,10 @@
                 </center>
                 <div class="card-body text-primary">
                     <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KTP</h5>
-                    <h5 class="card-title">2. Kemudian Terdapat Tombol Hapus , Proses , Detail pada kolom aksi, Silahkan
+                    <h5 class="card-title">2. Kemudian Terdapat Tombol Proses, Silahkan
                         Klik Proses</h5>
                     <h5 class="card-title">3. Identifikasi Data Data, Kemudian ubah status</h5>
-                    <h5 class="card-title">4. Klik Simpan</h5>
+                    <h5 class="card-title">4. Klik Ajukan</h5>
 
                 </div>
             </div>

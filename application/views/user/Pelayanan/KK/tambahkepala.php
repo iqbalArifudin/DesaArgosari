@@ -31,8 +31,14 @@
                             <div class="card-body">
                                 <?php foreach ($penduduk as $j) : ?>
                                 <form action="" method="POST" enctype="multipart/form-data">
-                                    <h5>Penanggung Jawab</h5>
+                                    <h4>Penanggung Jawab</h4>
                                     <hr>
+                                    <div class="form-row">
+                                        <label>No Kartu Keluarga</label>
+                                        <input type="text" name="nama" placeholder="" autocomplete="off"
+                                            class="form-control" required value="<?= $j->no_KK; ?>" readonly>
+                                    </div>
+                                    <p>
                                     <div class="form-row">
                                         <div class="form-group col-6">
                                             <label>Nama</label>
@@ -47,7 +53,8 @@
                                     </div>
                                     <?php endforeach ?>
                                     <p>
-                                    <h5>Data Kepala Keluarga</h5>
+                                        <hr>
+                                    <h4>Data Kepala Keluarga</h4>
                                     <hr>
                                     <div class="form-row">
                                         <div class="form-group col-6">
@@ -122,16 +129,39 @@
                                                 <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
                                             </div>
                                         </div>
+                                    </div>
+                                    <p>
 
-                                        <p>
-                                        <div class="form-group">
-                                            <button type="submit" name="submit" class="btn btn-success "><i
-                                                    class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
-                                            <button type="reset" class="btn btn-danger"><i
-                                                    class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
+                                    <div class="form-row">
+                                        <div class="form-group col-6">
+                                            <label for="satuan">Upload Foto Kartu Keluarga Suami</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="kk1" name="kk1"
+                                                    required autofocus>
+                                                <label class="custom-file-label" for="customFile">Choose
+                                                    file</label>
+                                                <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                                            </div>
                                         </div>
 
+                                        <div class="form-group col-6">
+                                            <label for="satuan">Upload Foto Kartu Keluarga Istri</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="kk2" name="kk2"
+                                                    required autofocus>
+                                                <label class="custom-file-label" for="customFile">Choose
+                                                    file</label>
+                                                <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                        <button type="submit" name="submit" class="btn btn-success "><i
+                                                class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
+                                        <button type="reset" class="btn btn-danger"><i
+                                                class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
+                                    </div>
+
 
                                 </form>
                             </div>

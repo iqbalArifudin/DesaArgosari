@@ -20,6 +20,12 @@
                                 <?php endforeach ?>
                                 <?php foreach ($penduduk as $j) : ?>
                                 <div class="form-row">
+                                    <label for="nama"><strong>NO. Kartu Keluarga</strong></label>
+                                    <input type="text" name="keterangan" placeholder="" autocomplete="off"
+                                        class="form-control" required value="<?= $j->no_KK; ?>" readonly>
+                                </div>
+                                <P>
+                                <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>NAMA</strong></label>
                                         <input type="text" name="nama" placeholder="" autocomplete="off"
@@ -62,6 +68,11 @@
                                         <label class="custom-file-label" for="customFile"><?= $p->surat_rt_rw ?></label>
                                         <?= form_error('surat_rt_rw', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
+                                </div>
+                                <p>
+                                <div class="form-row">
+                                    <img src="<?= base_url('assets/surat_rt_rw_ktp/') . $p->surat_rt_rw ?>"
+                                        style="width:400px; ">
                                 </div>
                                 <p>
 

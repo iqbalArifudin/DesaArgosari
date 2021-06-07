@@ -26,7 +26,8 @@ class akta_kelahiran_model extends CI_Model {
     }
 
 
-    public function tambahAkta($upload, $upload1, $upload2, $upload3){
+    public function tambahAkta($upload, $upload1, $upload2, $upload3, $upload4)
+    {
 		$data=[
             'id_akta'=>$this->input->post('id_akta', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
@@ -37,6 +38,7 @@ class akta_kelahiran_model extends CI_Model {
             'fc_ktp_saksi'=>$upload1['file']['file_name'],
             'fc_ktp_ayah'=>$upload2['file']['file_name'],
             'fc_ktp_ibu'=>$upload3['file']['file_name'],
+            'surat_kelahiran' => $upload4['file']['file_name'],
             'status'=>'Diajukan',
             'keterangan'=>$this->input->post('keterangan', true),
             'alasan'=>'Belum Diterima',
@@ -102,6 +104,23 @@ class akta_kelahiran_model extends CI_Model {
         }else{    
             $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());      return $return;   
         }  
+    }
+
+    public function upload4()
+    {
+        $config['upload_path'] = './assets/persyaratan_akta/';
+        $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
+        $config['max_size']     = '750000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('surat_kelahiran')) {
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
     }
 
    

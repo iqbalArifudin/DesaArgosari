@@ -17,7 +17,7 @@
         public function index()
         {
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $data['ktp'] = $this->Ktp_model->tampilKtp();
+        $data['ktp'] = $this->Ktp_model->tampilKtpAdmin();
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template admin/header',$data);
         $this->load->view('template admin/sidebar',$data);

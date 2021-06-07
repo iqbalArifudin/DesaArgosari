@@ -33,8 +33,6 @@
                                 <td><?= $ktp->keterangan ?></td>
                                 <td><?= $ktp->alasan ?></td>
                                 <td>
-
-
                                     <?php if ($ktp->status == "Ditolak") : ?>
                                     <a btn btn-info href="#modalDelete2" data-toggle="modal"
                                         onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
@@ -63,7 +61,7 @@
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
-                                    <?php elseif ($ktp->status == "Diajukan Ke Ketua RT") : ?>
+                                    <?php elseif ($ktp->status == "Diajukan") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
                                         onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-info'>

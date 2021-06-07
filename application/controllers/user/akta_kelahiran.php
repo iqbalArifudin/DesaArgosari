@@ -46,8 +46,9 @@
                 $upload1 = $this->akta_kelahiran_model->upload1();
                 $upload2 = $this->akta_kelahiran_model->upload2();
                 $upload3 = $this->akta_kelahiran_model->upload3();
+            $upload4 = $this->akta_kelahiran_model->upload4();
                 if ($upload['result'] == 'success'){
-                    $this->akta_kelahiran_model->tambahAkta($upload, $upload1, $upload2, $upload3);
+                $this->akta_kelahiran_model->tambahAkta($upload, $upload1, $upload2, $upload3, $upload4);
                     $this->session->set_flashdata(
                         'message',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -112,8 +113,9 @@
             $upload_file1 = $_FILES['fc_ktp_saksi']['name'];
             $upload_file2 = $_FILES['fc_ktp_ayah']['name'];
             $upload_file3 = $_FILES['fc_ktp_ibu']['name'];
+            $upload_file4 = $_FILES['surat_kelahiran']['name'];
             if ($upload_file) {
-                $config['upload_path'] = './assets/persyaratan_akta/';    
+                $config['upload_path'] = './assets/persyaratan_akta/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['max_size']     = '50000';
                 $this->load->library('upload', $config);
@@ -125,11 +127,10 @@
                     }
                     $new_file = $this->upload->data('file_name');
                     $this->db->set('fc_kk', $new_file);
-                } 
-                else {
+                } else {
                     echo $this->upload->display_errors();
                 }
-            } else if ($upload_file1) {
+            } elseif ($upload_file1) {
                 $config['upload_path'] = './assets/persyaratan_akta/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['max_size']     = '50000';
@@ -145,7 +146,7 @@
                 } else {
                     echo $this->upload->display_errors();
                 }
-            } else if ($upload_file2) {
+            } elseif ($upload_file2) {
                 $config['upload_path'] = './assets/persyaratan_akta/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['max_size']     = '50000';
@@ -161,7 +162,7 @@
                 } else {
                     echo $this->upload->display_errors();
                 }
-            } else if ($upload_file3) {
+            } elseif ($upload_file3) {
                 $config['upload_path'] = './assets/persyaratan_akta/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['max_size']     = '50000';
@@ -177,31 +178,47 @@
                 } else {
                     echo $this->upload->display_errors();
                 }
-            }
+            } elseif ($upload_file4) {
+                $config['upload_path'] = './assets/persyaratan_akta/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '50000';
+                $this->load->library('upload', $config);
 
-            $id_akta = $this->input->post('id_akta');
-            $nama_akta = $this->input->post('nama_akta');
-            $tempat_lahir_akta = $this->input->post('tempat_lahir_akta');
-            $tanggal_lahir_akta = $this->input->post('tanggal_lahir_akta');
-            $keterangan = $this->input->post('keterangan');
+                if ($this->upload->do_upload('surat_kelahiran')) {
+                    $old_file = $data['akta_kelahiran']['surat_kelahiran'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('surat_kelahiran', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
 
-            $this->db->set('nama_akta', $nama_akta);
-            $this->db->set('tempat_lahir_akta', $tempat_lahir_akta);
-            $this->db->set('tanggal_lahir_akta', $tanggal_lahir_akta);
-            $this->db->set('keterangan', $keterangan);
-            $this->db->where('id_akta', $id_akta);
-            $this->db->update('akta_kelahiran');
+                $id_akta = $this->input->post('id_akta');
+                $nama_akta = $this->input->post('nama_akta');
+                $tempat_lahir_akta = $this->input->post('tempat_lahir_akta');
+                $tanggal_lahir_akta = $this->input->post('tanggal_lahir_akta');
+                $keterangan = $this->input->post('keterangan');
 
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                $this->db->set('nama_akta', $nama_akta);
+                $this->db->set('tempat_lahir_akta', $tempat_lahir_akta);
+                $this->db->set('tanggal_lahir_akta', $tanggal_lahir_akta);
+                $this->db->set('keterangan', $keterangan);
+                $this->db->where('id_akta', $id_akta);
+                $this->db->update('akta_kelahiran');
+
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-success alert-dismissible fade show" role="alert">
                Data berhasil di edit ! 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>'
-            );
-            redirect('user/akta_kelahiran');
+                );
+                redirect('user/akta_kelahiran');
+            }
         }
     }
     

@@ -106,38 +106,13 @@
                 </center>
                 <div class="card-body text-primary">
                     <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KTP</h5>
-                    <h5 class="card-title">2. Kemudian Terdapat Button Tambah Data KTP, Silahkan Klik</h5>
-                    <h5 class="card-title">3. Isi dan Lengkapi Form Pengajuan KTP, klik Submit</h5>
-                    <h5 class="card-title">4. Pengajuan Anda Sedang Diproses</h5>
-                    <h5 class="card-title">5. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
+                    <h5 class="card-title">2. Kemudian download Surat Pengantar dari RT / RW Pada tombol donwload</h5>
+                    <h5 class="card-title">3. Lakukan Tanda tangan Offline ke Ketua RT / RW</h5>
+                    <h5 class="card-title">4. Kemudian Terdapat Button Tambah Data KTP, Silahkan Klik</h5>
+                    <h5 class="card-title">5. Isi dan Lengkapi Form Pengajuan KTP, klik Submit</h5>
+                    <h5 class="card-title">6. Pengajuan Anda Sedang Diproses</h5>
+                    <h5 class="card-title">7. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
                     <div class="form-group">
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#myModal">
-                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
-                        <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <center>
-                                            <video controls width="950">
-                                                <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
-                                            </video>
-                                        </center>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-dismiss="modal">Kembali</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -152,35 +127,7 @@
                         the
                         card's
                         content.</p>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#myModal">
-                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
-                        <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
 
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <center>
-                                            <video controls width="950">
-                                                <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
-                                            </video>
-                                        </center>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-dismiss="modal">Kembali</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -195,35 +142,7 @@
                     <h5 class="card-title">4. Pastikan Upload Persyaratan Dengan Benar</h5>
                     <h5 class="card-title">5. Pengajuan Anda Sedang Diproses</h5>
                     <h5 class="card-title">6. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#myModal">
-                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
-                        <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
 
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <center>
-                                            <video controls width="950">
-                                                <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
-                                            </video>
-                                        </center>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-dismiss="modal">Kembali</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -259,35 +178,7 @@
                     <h5 class="card-title">4. Tambahkan Bukti Pengaduan Dengan Benar</h5>
                     <h5 class="card-title">5. Pengajuan Anda Sedang Diproses</h5>
                     <h5 class="card-title">6. Untuk Mengetahui Proses Pengaduan Anda, Lihat Kolom Status Pada Tabel</h5>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#myModal">
-                            <i class="fas fa-video"></i> Lihat Petunjuk</button>
-                        <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
 
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <center>
-                                            <video controls width="950">
-                                                <!-- <source src="assets/video/a.mp4"> -->
-                                                <source src="<?php echo base_url('assets/video/Ktp.mp4') ?>">
-                                            </video>
-                                        </center>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-dismiss="modal">Kembali</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

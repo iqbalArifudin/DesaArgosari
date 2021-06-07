@@ -14,7 +14,7 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="<?php echo base_url() . 'RW/home' ?>">
+               <a class="nav-link" href="<?php echo base_url() . 'RT/home' ?>">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Beranda</span></a>
            </li>
@@ -57,7 +57,7 @@
 
            <!-- Sidebar Toggler (Sidebar) -->
            <div class="text-center d-none d-md-inline">
-               <button class="rounded-circle border-0" id="sidebaRWoggle"></button>
+               <button class="rounded-circle border-0" id="sidebarToggle"></button>
            </div>
        </ul>
        <!-- End of Sidebar -->
