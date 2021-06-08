@@ -20,7 +20,9 @@
             <div class="col-md-4">
                 <?php foreach ($pengaduan as $p) : ?>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_pengaduan" value="<?= $p->id_pengaduan;?>">
+                    <input type="hidden" name="id_pengaduan" value="<?= $p->id_pengaduan; ?>">
+                    <input type="hidden" name="id_penduduk" value="<?= $p->id_penduduk; ?>">
+                    <input type="hidden" name="NIK" value="<?= $p->NIK; ?>">
                     <img src="<?= base_url('assets/foto_pengaduan/') . $p->bukti ?>" class="card-img" alt="..."
                         width="100px">
             </div>
@@ -49,13 +51,13 @@
                                 <p>
                                 <div class="form-group">
                                     <label for="nim"><strong>Ajukan</strong></label>
-                                    <?php if($p->status == "Diajukan Ke Kepala Desa"): ?>
+                                    <?php if ($p->status == "Diajukan Ke Kepala Desa") : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Diajukan Ke Kepala Desa"
                                             checked>AjukanKe Kepala Desa
                                     </div>
 
-                                    <?php else: ?>
+                                    <?php else : ?>
                                     <div class="form-check">
                                         <input type="radio" name="status" value="Diajukan Ke Kepala Desa">AjukanKe
                                         Kepala Desa

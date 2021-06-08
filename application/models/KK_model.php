@@ -228,9 +228,28 @@ class KK_model extends CI_Model
         return $this->db->get('kepala_keluarga')->result();
     }
 
+
+    public function getDetailKeluarga($id_keluarga)
+    {
+        $this->db->select('keluarga.*, kepala_keluarga.*');
+        $this->db->join('kepala_keluarga', 'keluarga.id_kepala_kel = kepala_keluarga.id_kepala_kel');
+        $this->db->where('id_keluarga', $id_keluarga);
+        return $this->db->get('keluarga')->result();
+    }
+
     public function getDetailKK($id_kepala_kel)
     {
-        $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
+        $this->db->select('keluarga.*, penduduk.*,  kepala_keluarga.*');
+        $this->db->join('kepala_keluarga', 'keluarga.id_kepala_kel = kepala_keluarga.id_kepala_kel');
+        $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('keluarga.id_kepala_kel', $id_kepala_kel);
+        return $this->db->get('keluarga')->result();
+    }
+
+
+    public function getTampilKepala($id_kepala_kel)
+    {
+        $this->db->select('kepala_keluarga.*, penduduk.*');
         $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
         $this->db->where('id_kepala_kel', $id_kepala_kel);
         return $this->db->get('kepala_keluarga')->result();

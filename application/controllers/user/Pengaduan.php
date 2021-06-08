@@ -11,13 +11,15 @@
             $this->load->helper('url');
             $this->load->model('pegawai_model');  
             $this->load->model('penduduk_model');  
-            $this->load->model('Pengaduan_model');  
+            $this->load->model('Pengaduan_model');
+        $this->load->model('Notif_model');  
         }
         
         public function index()
         {
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         // $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+        $data['notifikasi'] = $this->Notif_model->tampilNotif();
         $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduanPenduduk($this->session->userdata('id_penduduk'));
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template_layanan/header',$data);

@@ -15,13 +15,13 @@
         <!-- ################################################################################################ -->
         <article>
             <h3 class="heading">DESA ARGOSARI - JABUNG</h3>
-            <p>Desa Argosari adalah sebuah desa terdiri tiga padukuhan Yakni pateguhan, gentong, dan bendrong yang
+            <p>Desa Argosari adalah sebuah desa terdiri dari 3 Padukuhan yakni pateguhan, gentong, dan bendrong yang
                 berada di
                 wilayah Kecamatan Jabung, Kabupaten Malang, Provinsi Jawa Timur. </p>
             <footer>
                 <ul class="nospace inline pushright">
                     <li><a class="btn" href="#">Tentang Kami</a></li>
-                    <li><a class="btn inverse" href="<?php echo base_url().'Login' ?>">Masuk</a></li>
+                    <li><a class="btn inverse" href="<?php echo base_url() . 'Login' ?>">Masuk</a></li>
                 </ul>
             </footer>
         </article>
@@ -32,8 +32,7 @@
 
     <div class="wrapper row3">
         <main class="hoc container clear">
-
-            <?php foreach ($berita as $berita): ?>
+            <?php foreach ($berita as $berita) : ?>
             <div class="excerpt">
                 <article><a class="" href="#"><img src="<?= base_url('assets/foto_berita/') . $berita->foto_berita ?>"
                             alt="" style="width: 500px;"></a>
@@ -56,32 +55,34 @@
         </main>
     </div>
 
+    <div class="sectiontitle">
+        <p class="heading underline font-x2">STRUKTUR DESA ARGOSARI</p>
+    </div>
     <div class="row justify-content-center">
         <div class="row justify-content-center">
             <!-- <div class=" d-flex flex-wrap"> -->
             <?php foreach ($pegawai as $pegawai) : ?>
             <div class="card-page mr-3 ml-3 mb-3 " style="width:340px; height:500px">
-                <center><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
-                        style="width:240px; height:250px;">
-                    <br>
-
+                <center>
+                    <figure><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
+                            style="width:240px; height:250px;"></figure>
                 </center>
                 <center>
-                    <hr width="90%">
-                </center>
-                <div class="text-muted">
 
-                    &nbsp; &nbsp;<b>Nama</b> :&nbsp;<?= $pegawai->nama ?>
-                    <br>
-                    &nbsp; &nbsp;<b>Nama Wali</b> :&nbsp;<?= $pegawai->jabatan ?>
-                    <br>
-                </div>
+                    <div class="text-muted">
+                        <figcaption><strong>
+                                &nbsp;<?= $pegawai->nama ?>
+                                <br>
+                            </strong>
+                            &nbsp;<?= $pegawai->jabatan ?>
+                            <br>
+                        </figcaption>
+                    </div>
+                </center>
             </div>
             <?php endforeach ?>
 
         </div>
-        <br>
-
     </div>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->

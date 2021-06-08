@@ -268,6 +268,7 @@ class LayananKK extends CI_Controller
         $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['keluarga'] = $this->KK_model->tampilKel();
+        $data['kepala'] = $this->KK_model->getTampilKepala($id_kepala_kel);
         // $this->KK_model->getDetailKK($this->uri->segment(3));
         $this->load->view('template_layanan/header', $data);
         $this->load->view('template_layanan/sidebar');
@@ -276,9 +277,9 @@ class LayananKK extends CI_Controller
         $this->load->view('template_layanan/footer');
     }
 
-    public function detailKel($id_kepala_kel)
+    public function detailKel($id_keluarga)
     {
-        $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
+        $data['kk1'] = $this->KK_model->getDetailKeluarga($id_keluarga);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['keluarga'] = $this->KK_model->tampilKel();
         $this->load->view('template_layanan/header', $data);
@@ -293,6 +294,7 @@ class LayananKK extends CI_Controller
         $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['keluarga'] = $this->KK_model->tampilKel();
+        $data['kepala'] = $this->KK_model->getTampilKepala($id_kepala_kel);
         $this->load->view('template_layanan/header', $data);
         $this->load->view('template_layanan/sidebar');
         $this->load->view('template_layanan/topbar');

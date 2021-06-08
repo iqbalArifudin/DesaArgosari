@@ -9,15 +9,17 @@
         {
             parent::__construct();
             $this->load->helper('url');
-            $this->load->model('pegawai_model');  
-            $this->load->model('penduduk_model');  
-            $this->load->model('Pengaduan_model');  
+        $this->load->model('pegawai_model');
+        $this->load->model('penduduk_model');
+        $this->load->model('Pengaduan_model');
+        $this->load->model('Notif_model');  
         }
         
         public function index()
         {
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['pengaduan'] = $this->Pengaduan_model->tampilPengaduan();
+        $data['notifikasi'] = $this->Notif_model->tampilNotif();
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
         $this->load->view('template admin/header',$data);
         $this->load->view('template admin/sidebar',$data);
@@ -62,12 +64,14 @@
             $this->session->set_flashdata(
                 'message',
                 '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                               Data Telah Diajukan Ke Kepala Desa ! 
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>'
+                                    Data Telah Diajukan Ke Kepala Desa ! 
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>'
             );
+            $text = 'Pengaduan Anda Diajukan Ke Kepala Desa';
+            $this->Notif_model->tambahNotifPengaduan($text);
                     redirect('admin/Pengaduan','refresh');
             }
         }

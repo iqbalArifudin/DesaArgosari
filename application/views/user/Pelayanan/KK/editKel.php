@@ -14,8 +14,8 @@
                 <div class="container-fluid">
                     <div class="clearfix">
                         <div class="float-right">
-                            <a href="<?= base_url('user/LayananKK/detail/') . $this->uri->segment(4) ?>"
-                                class="btn btn-primary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                            <a href="<?= base_url('user/LayananKK/') ?>" class="btn btn-primary btn-sm"><i
+                                    class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                         </div>
                     </div>
                     <hr>

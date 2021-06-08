@@ -102,5 +102,14 @@ class Pengaduan_model extends CI_Model {
         $query = $this->db->get_where('pengaduan',array('id_pengaduan'=>$id_pengaduan));
         return $query->row_array();
     }
+
+    public function getIdPenduduk($id_pengaduan)
+    {
+        $this->db->select('pengaduan.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'pengaduan.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('id_pengaduan', $id_pengaduan);
+        $hasil = $this->db->get('pengaduan')->row();
+        return $hasil->id_penduduk;
+    }
     
 }    

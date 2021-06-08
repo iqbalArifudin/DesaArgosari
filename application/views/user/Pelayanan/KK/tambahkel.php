@@ -29,7 +29,7 @@
                                     <div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
                                 </center>
                                 <div class="card-body">
-                                    <?php foreach ($keluarga as $j) : ?>
+                                    <?php foreach ($kk1 as $j) : ?>
                                     <form action="<?= base_url('user/LayananKK/tambahKel/') . $this->uri->segment(4) ?>"
                                         method="POST" enctype="multipart/form-data">
                                         <h5>Kepala Keluarga</h5>
