@@ -110,11 +110,26 @@
                                     <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
                                         style="width:400px; ">
                                 </div>
-                                <hr>
                                 <p>
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Foto Surat Kelahiran</strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_kelahiran"
+                                            name="surat_kelahiran">
+                                        <label class="custom-file-label"
+                                            for="customFile"><?= $a->surat_kelahiran ?></label>
+                                        <?= form_error('surat_kelahiran', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
+                                        style="width:400px; ">
+                                </div>
+                                <hr>
 
 
-                                    <?php endforeach ?>
+                                <?php endforeach ?>
                                 <p>
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-success "><i

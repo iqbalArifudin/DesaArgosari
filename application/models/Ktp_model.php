@@ -40,8 +40,8 @@ class Ktp_model extends CI_Model {
         $this->db->select('ktp.*, penduduk.*');
         $this->db->join('penduduk', 'ktp.id_penduduk = penduduk.id_penduduk');
         $this->db->where('status !=', 'Diajukan');
-        $this->db->where('status !=', 'Ditolak');
-        $this->db->where('status !=', 'Diajukan Ke Ketua RW');
+        $this->db->or_where('status !=', 'Ditolak');
+        $this->db->or_where('status !=', 'Diajukan Ke Ketua RW');
         return $this->db->get('ktp')->result();
     }
 
@@ -85,7 +85,7 @@ class Ktp_model extends CI_Model {
 
     public function upload1()
     {
-        $config['upload_path'] = './assets/surat_rt_rw_ktp/';
+        $config['upload_path'] = './assets/foto_ktp/';
         $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
         $config['max_size']     = '750000';
 

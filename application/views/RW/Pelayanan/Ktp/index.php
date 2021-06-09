@@ -76,14 +76,12 @@
                                     </a>
 
                                     <?php else : ?>
-
                                     <a class='btn btn-info'
                                         href='<?= base_url() . 'RW/Pelayanan_ktp/edit/' . $ktp->id_ktp ?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-hourglass-half"
                                             aria-hidden="true"><span>&nbsp;Proses</span></i>
                                     </a>
-
                                     <?php endif ?>
                                 </td>
                             </tr>

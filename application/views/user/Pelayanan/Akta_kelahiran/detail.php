@@ -14,10 +14,10 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($akta as $a):?>
+                            <?php foreach ($akta as $a) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_akta" value="<?= $a->id_akta;?>">
+                                <input type="hidden" name="id_akta" value="<?= $a->id_akta; ?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Nama Yang Mengajukan</strong></label>
@@ -98,10 +98,16 @@
                                     <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
                                         class="card-img" alt="..." width="100px">
                                 </div>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Persyaratan Surat Kelahiran</strong></label>
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
+                                        class="card-img" alt="..." width="100px">
+                                </div>
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                    <a href="<?= base_url("user/akta_kelahiran"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>

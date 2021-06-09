@@ -31,17 +31,109 @@
                                 <td><?= $akta->tgl_mengajukan ?></td>
                                 <td><span class="badge badge-warning"><?= $akta->status ?></span></td>
                                 <td>
-                                    <a class='btn btn-info'
-                                        href='<?= base_url() . 'admin/akta_kelahiran/edit/' . $akta->id_akta ?>'
-                                        class='btn btn-biru'>
-                                        <i class="fas fa-eye" aria-hidden="true"><span>&nbsp;Detail</span></i>
+
+
+                                    <?php if ($akta->status == "Ditolak") : ?>
+                                    <a btn btn-info href="#modalDelete2" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
+
+                                    <?php elseif ($akta->status == "Diproses") : ?>
+                                    <a btn btn-info href="#modalDelete3" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
+                                    </a>
+
+                                    <?php elseif ($akta->status == "Selesai") : ?>
+                                    <a btn btn-info href="#modalDelete3" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
+                                    </a>
+
+                                    <?php elseif ($akta->status == "Diajukan Ke Kepala Desa") : ?>
+                                    <a btn btn-info href="#modalDelete3" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
+                                    </a>
+
+                                    <?php elseif ($akta->status == "Diajukan") : ?>
+                                    <a btn btn-info href="#modalDelete3" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
+                                    </a>
+
+                                    <?php elseif ($akta->status == "Diajukan Ke Ketua RW") : ?>
+                                    <a btn btn-info href="#modalDelete3" data-toggle="modal"
+                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('admin/akta_kelahiran/edit/' . $akta->id_akta) ?>')"
+                                        class='btn btn-info'>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
+                                    </a>
+
+                                    <?php else : ?>
+                                    <a class='btn btn-info'
+                                        href='<?= base_url().'admin/akta_kelahiran/edit/'.$akta->id_akta?>'
+                                        class='btn btn-biru'>
+                                        <i class="fas fa-hourglass-half"
+                                            aria-hidden="true"><span>&nbsp;Proses</span></i>
+                                    </a>
+
+
+                                    <?php endif ?>
                                 </td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDelete2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <div class="text-danger"><b>Peringatan !</b></div>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Mohon maaf data pengajuan tidak dapat di Proses karena telah ditolak.
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalDelete3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <div class="text-danger"><b>Peringatan !</b></div>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Mohon maaf data pengajuan tidak dapat Diproses.
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
     </div>

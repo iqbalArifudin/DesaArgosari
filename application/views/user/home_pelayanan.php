@@ -122,12 +122,12 @@
                     <div class="card-header">Alur Pembuatan KK (Kartu Keluarga)</div>
                 </center>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
-
+                    <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KK</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Button Tambah Data KK, Silahkan Klik</h5>
+                    <h5 class="card-title">3. Isi dan Lengkapi Form Pengajuan Data Kartu Keluarga, klik Submit</h5>
+                    <h5 class="card-title">4. Pastikan Upload Persyaratan Dengan Benar</h5>
+                    <h5 class="card-title">5. Pengajuan Anda Sedang Diproses</h5>
+                    <h5 class="card-title">6. Untuk Mengetahui Proses Pengajuan Anda, Lihat Kolom Status Pada Tabel</h5>
                 </div>
             </div>
 

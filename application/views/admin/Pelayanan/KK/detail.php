@@ -13,7 +13,7 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach ($kk as $k) : ?>
+                            <?php foreach ($kepala as $k) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id_kepala_kel" value="<?= $k->id_kepala_kel; ?>">
@@ -112,7 +112,7 @@
 
                                     </tbody>
                                     <tfoot>
-                                        <?php foreach ($keluarga as $kel) : ?>
+                                        <?php foreach ($kk as $kel) : ?>
                                         <tr>
                                             <td><?= $kel->nama_kel ?></td>
                                             <td><?= $kel->NIK_kel ?></td>

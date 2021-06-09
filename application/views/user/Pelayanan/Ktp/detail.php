@@ -74,8 +74,8 @@
 
                                 <div class="form-row">
                                     <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
-                                    <img src="<?= base_url('assets/surat_rt_rw_ktp/') . $k->surat_rt_rw ?>"
-                                        class="card-img" alt="..." width="100px">
+                                    <img src="<?= base_url('assets/foto_ktp/') . $k->surat_rt_rw ?>" class="card-img"
+                                        alt="..." width="100px">
                                 </div>
 
                                 <br>

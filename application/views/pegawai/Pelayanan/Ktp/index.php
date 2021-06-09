@@ -42,12 +42,6 @@
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
-                                    <?php elseif ($ktp->status == "Diproses") : ?>
-                                    <a btn btn-warning href="#modalDelete3" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('pegawai/Pelayanan_ktp/edit/' . $ktp->id_ktp) ?>')"
-                                        class='btn btn-warning'>
-                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
-                                    </a>
 
                                     <?php elseif ($ktp->status == "Selesai") : ?>
                                     <a btn btn-warning href="#modalDelete3" data-toggle="modal"

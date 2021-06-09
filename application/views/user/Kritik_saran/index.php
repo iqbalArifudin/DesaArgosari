@@ -23,26 +23,49 @@
                             <td><b>Nama : </b> <?= $s->nama ?></td>
                         </div>
                         <div class="card-body">
-                        <td><b>Tanggal : </b><?= $s->tanggal ?></td>
+                            <td><b>Tanggal : </b><?= $s->tanggal ?></td>
                             <p>
                                 <hr>
-                            <td><b>Keterangan : </b><?= $s->keterangan ?></td>
+                                <td><b>Keterangan : </b><?= $s->keterangan ?></td>
                             <p>
                                 <hr>
-                                <a class='btn btn-danger'
-                                        onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url().'user/Kritik/hapus/'.$s->id_saran ?>">
-                                        <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
-                                    </a>
-                                    <a class='btn btn-warning'
+                                <a class='btn btn-danger' href="#modalDelete" data-toggle="modal"
+                                    onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('user/Kritik/hapus/' . $s->id_saran) ?>')"
+                                    class='btn btn-danger btn-circle'>
+                                    <i class="fa fa-trash" aria-hidden="true">&nbsp;Hapus</i>
+                                </a>
+                                <!-- <a class='btn btn-warning'
                                         href="<?= base_url().'user/Kritik/edit/'.$s->id_saran ?>">
                                         <i class="fas fa-edit" aria-hidden="true"><span> Edit</span></i>
-                                    </a>
+                                    </a> -->
                         </div>
                     </div>
                     <p>
-                    <?php endforeach ?>
+                        <?php endforeach ?>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDelete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Konfirmasi Hapus Data</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin akan menghapus data ini?
+            </div>
+            <div class="modal-footer">
+                <form id="formDelete" action="" method="post">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
             </div>
         </div>
     </div>

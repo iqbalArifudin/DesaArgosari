@@ -56,34 +56,37 @@
     </div>
 
     <div class="sectiontitle">
-        <p class="heading underline font-x2">STRUKTUR DESA ARGOSARI</p>
+        <p class="heading underline font-x3">STRUKTUR DESA ARGOSARI</p>
     </div>
-    <div class="row justify-content-center">
+
+    <main class="hoc container clear">
         <div class="row justify-content-center">
-            <!-- <div class=" d-flex flex-wrap"> -->
-            <?php foreach ($pegawai as $pegawai) : ?>
-            <div class="card-page mr-3 ml-3 mb-3 " style="width:340px; height:500px">
-                <center>
-                    <figure><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
-                            style="width:240px; height:250px;"></figure>
-                </center>
-                <center>
+            <div class="row justify-content-center">
+                <!-- <div class=" d-flex flex-wrap"> -->
+                <?php foreach ($pegawai as $pegawai) : ?>
+                <div class="card-page mr-3 ml-3 mb-3 " style="width:340px; height:500px">
+                    <center>
+                        <figure><img src="<?= base_url('assets/foto_pegawai/') . $pegawai->foto ?>"
+                                style="width:240px; height:250px;"></figure>
+                    </center>
+                    <center>
 
-                    <div class="text-muted">
-                        <figcaption><strong>
-                                &nbsp;<?= $pegawai->nama ?>
+                        <div class="card-body">
+                            <figcaption><strong>
+                                    &nbsp;<?= $pegawai->nama ?>
+                                    <br>
+                                </strong>
+                                &nbsp;<?= $pegawai->jabatan ?>
                                 <br>
-                            </strong>
-                            &nbsp;<?= $pegawai->jabatan ?>
-                            <br>
-                        </figcaption>
-                    </div>
-                </center>
+                            </figcaption>
+                        </div>
+                    </center>
+                </div>
+                <?php endforeach ?>
+                <hr>
             </div>
-            <?php endforeach ?>
-
         </div>
-    </div>
+    </main>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
@@ -91,12 +94,12 @@
         <section class="hoc container clear">
             <!-- ################################################################################################ -->
             <div class="sectiontitle">
-                <p class="heading underline font-x2">Jumlah Penduduk</p>
+                <p class="heading underline font-x3">Jumlah Penduduk</p>
             </div>
             <ul id="stats" class="nospace group">
                 <li><i class="fab fa-sticker-mule"></i>
                     <p><a href="#">123</a></p>
-                    <p>Phasellus tincidunt</p>
+                    <p>Laki - Laki</p>
                 </li>
                 <li><i class="fab fa-pied-piper-alt"></i>
                     <p><a href="#">1234</a></p>

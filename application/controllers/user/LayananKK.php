@@ -73,6 +73,7 @@ class LayananKK extends CI_Controller
         $data['kk1'] = $this->KK_model->tampilKK($this->session->userdata('id_penduduk'));
         $data['keluarga'] = $this->KK_model->tampilKel();
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('template_layanan/header', $data);

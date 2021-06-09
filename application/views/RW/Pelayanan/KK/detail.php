@@ -13,7 +13,7 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach ($kk as $k) : ?>
+                            <?php foreach ($kepala as $k) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id_kepala_kel" value="<?= $k->id_kepala_kel; ?>">
@@ -112,7 +112,7 @@
 
                                     </tbody>
                                     <tfoot>
-                                        <?php foreach ($keluarga as $kel) : ?>
+                                        <?php foreach ($kk as $kel) : ?>
                                         <tr>
                                             <td><?= $kel->nama_kel ?></td>
                                             <td><?= $kel->NIK_kel ?></td>
@@ -148,16 +148,16 @@
                                 <p>
                                 <div class="form-group">
                                     <label for="nim"><strong>Ajukan</strong></label>
-                                    <?php if ($k->status == "Diajukan Ke Kepala Desa") : ?>
+                                    <?php if ($k->status == "Diajukan Ke Pelayanan") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa" checked>Ajukan
-                                        Ke Kepala Desa
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Ajukan
+                                        Ke Pelayanan
                                     </div>
 
                                     <?php else : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Kepala Desa">Ajukan Ke
-                                        Kepala Desa
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan">Ajukan Ke
+                                        Pelayanan
                                     </div>
                                     <?php endif ?>
                                 </div>
@@ -166,7 +166,7 @@
                                     <hr>
                                     <button type="submit" name="submit" class="btn btn-success "><i
                                             class="fa fa-save"></i>&nbsp;&nbsp;Ajukan</button>
-                                    <a href="<?= base_url("admin/Pelayanan_kk") ?>" class="btn btn-info"><i
+                                    <a href="<?= base_url("RW/Pelayanan_kk") ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>

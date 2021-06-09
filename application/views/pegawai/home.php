@@ -94,6 +94,7 @@
 
 
     <!-- Content Row -->
+    <!-- Content Row -->
     <div class="row">
 
         <!-- Content Column -->
@@ -106,9 +107,9 @@
                 </center>
                 <div class="card-body text-primary">
                     <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KTP</h5>
-                    <h5 class="card-title">2. Kemudian Terdapat Tombol Hapus , Proses , Detail pada kolom aksi, Silahkan
-                        Klik Proses</h5>
-                    <h5 class="card-title">3. Identifikasi Data Data, Kemudian ubah status</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Tombol Detail pada kolom aksi, Silahkan
+                        Klik </h5>
+                    <h5 class="card-title">3. Identifikasi Data Data beserta persyaratan, Kemudian ubah status</h5>
                     <h5 class="card-title">4. Klik Simpan</h5>
 
                 </div>
@@ -119,11 +120,11 @@
                     <div class="card-header">Alur Proses KK (Kartu Keluarga)</div>
                 </center>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
+                    <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan KK</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Tombol Detail pada kolom aksi, Silahkan
+                        Klik </h5>
+                    <h5 class="card-title">3. Identifikasi Data Data beserta persyaratan , Kemudian ubah status</h5>
+                    <h5 class="card-title">4. Klik Simpan</h5>
                 </div>
             </div>
 
@@ -133,9 +134,9 @@
                 </center>
                 <div class="card-body text-primary">
                     <h5 class="card-title">1. Silahkan Pilih Fitur Pelayanan Akta Kelahiran</h5>
-                    <h5 class="card-title">2. Kemudian Terdapat Tombol Hapus , Proses , Detail pada kolom aksi, Silahkan
-                        Klik Proses</h5>
-                    <h5 class="card-title">3. Identifikasi Data Data, Kemudian ubah status</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Tombol Detail pada kolom aksi, Silahkan
+                        Klik</h5>
+                    <h5 class="card-title">3. Identifikasi Data Data beserta persyaratan, Kemudian ubah status</h5>
                     <h5 class="card-title">4. Klik Simpan</h5>
                 </div>
             </div>
@@ -155,7 +156,8 @@
                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 26rem;"
                             src="<?php echo base_url('assets/img/logo alur.svg') ?>" alt="">
                     </div>
-                    <p>Sebelum melakukan Pelayanan Pembuatan KTP (Kartu Tanda Penduduk), Kartu Keluarga (KK), Akta
+                    <p>Sebelum memproses pelayanan KTP (Kartu Tanda Penduduk),
+                        Kartu Keluarga (KK), Akta
                         Kelahiran dan Pengaduan. Pahami Dulu alur atau langkah-langkahnya, untuk menghindari kesalahan
                     </p>
                 </div>
@@ -167,15 +169,14 @@
                 </center>
                 <div class="card-body text-primary">
                     <h5 class="card-title">1. Silahkan Pilih Fitur Pengaduan</h5>
-                    <h5 class="card-title">2. Kemudian Terdapat Tombol Hapus , Proses , Detail pada kolom aksi, Silahkan
-                        Klik Proses</h5>
+                    <h5 class="card-title">2. Kemudian Terdapat Tombol Detail pada kolom aksi, Silahkan
+                        Klik </h5>
                     <h5 class="card-title">3. Identifikasi Data Data, Kemudian ubah status</h5>
                     <h5 class="card-title">4. Klik Simpan</h5>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->
 

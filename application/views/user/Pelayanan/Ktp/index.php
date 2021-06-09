@@ -85,13 +85,6 @@
                                         <i class="fa fa-trash" aria-hidden="true">&nbsp;Hapus</i>
                                     </a>
 
-                                    <?php elseif ($ktp->status == "Diajukan") : ?>
-                                    <a class='btn btn-danger' href="#modalDelete2" data-toggle="modal"
-                                        onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('user/LayananKtp/hapus/' . $ktp->id_ktp) ?>')"
-                                        class='btn btn-danger btn-circle'>
-                                        <i class="fa fa-trash" aria-hidden="true">&nbsp;Hapus</i>
-                                    </a>
-
                                     <?php elseif ($ktp->status == "Selesai") : ?>
                                     <a class='btn btn-danger' href="#modalDelete2" data-toggle="modal"
                                         onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('user/LayananKtp/hapus/' . $ktp->id_ktp) ?>')"
@@ -100,7 +93,7 @@
                                     </a>
 
                                     <?php else : ?>
-                                    <a class='btn btn-danger' href="#modalDelete2" data-toggle="modal"
+                                    <a class='btn btn-danger' href="#modalDelete" data-toggle="modal"
                                         onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('user/LayananKtp/hapus/' . $ktp->id_ktp) ?>')"
                                         class='btn btn-danger btn-circle'>
                                         <i class="fa fa-trash" aria-hidden="true">&nbsp;Hapus</i>

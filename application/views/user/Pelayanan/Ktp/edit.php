@@ -71,7 +71,7 @@
                                 </div>
                                 <p>
                                 <div class="form-row">
-                                    <img src="<?= base_url('assets/surat_rt_rw_ktp/') . $p->surat_rt_rw ?>"
+                                    <img src="<?= base_url('assets/foto_ktp/') . $p->surat_rt_rw ?>"
                                         style="width:400px; ">
                                 </div>
                                 <p>

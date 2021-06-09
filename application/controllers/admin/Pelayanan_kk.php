@@ -18,7 +18,7 @@
         {
             $data['title'] = 'Halaman Admin';
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
-        $data['kk'] = $this->KK_model->tampilKK_all();
+        $data['kk'] = $this->KK_model->tampilKKAdmin();
            $this->load->view('template admin/header',$data);
            $this->load->view('template admin/sidebar');
            $this->load->view('template admin/topbar'); 
@@ -29,10 +29,11 @@
     public function edit($id_kepala_kel)
     {
         $this->load->library('form_validation');
-        $data['kk'] = $this->KK_model->getKK($id_kepala_kel);
+        $data['kk'] = $this->KK_model->getDetailKK($id_kepala_kel);
         $data['keluarga'] = $this->KK_model->tampilKel();
         $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
         $data['penduduk1'] = $this->penduduk_model->tampilPendudukSaja($this->session->userdata('id_penduduk'));
+        $data['kepala'] = $this->KK_model->getTampilKepala($id_kepala_kel);
         $this->form_validation->set_rules('status', 'status', 'required');
 
         if ($this->form_validation->run() == FALSE) {

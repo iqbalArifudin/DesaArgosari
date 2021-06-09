@@ -5,11 +5,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class KK_model extends CI_Model
 {
 
-    public function tampilKK($id_penduduk)
+    public function tampilKK()
     {
         $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
         $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
-        $this->db->where('kepala_keluarga.id_penduduk', $id_penduduk);
         return $this->db->get('kepala_keluarga')->result();
     }
 
@@ -22,14 +21,14 @@ class KK_model extends CI_Model
 
     public function tampilKel()
     {
-        $this->db->select('keluarga.*, kepala_keluarga.nama_kpl, kepala_keluarga.NIK_kpl');
+        $this->db->select('keluarga.*, kepala_keluarga.*');
         $this->db->join('kepala_keluarga', 'keluarga.id_kepala_kel = kepala_keluarga.id_kepala_kel');
         return $this->db->get('keluarga')->result();
     }
 
     public function tampilKelsaja($id_kepala_kel)
     {
-        $this->db->select('keluarga.*, kepala_keluarga.nama_kpl, kepala_keluarga.NIK_kpl');
+        $this->db->select('keluarga.*, kepala_keluarga.*');
         $this->db->join('kepala_keluarga', 'keluarga.id_kepala_kel = kepala_keluarga.id_kepala_kel');
         $this->db->where('kepala_keluarga.id_kepala_kel', $id_kepala_kel);
         return $this->db->get('keluarga')->result();
@@ -43,6 +42,23 @@ class KK_model extends CI_Model
         return $this->db->get('kepala_keluarga')->result();
     }
 
+    public function tampilKKAdmin()
+    {
+        $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('status !=', 'Diajukan');
+        $this->db->where('status !=', 'Ditolak');
+        $this->db->where('status !=', 'Diajukan Ke Ketua RW');
+        return $this->db->get('kepala_keluarga')->result();
+    }
+
+    public function tampilKKRW()
+    {
+        $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
+        $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
+        $this->db->where('status !=', 'Diajukan');
+        return $this->db->get('kepala_keluarga')->result();
+    }
 
     public function tambahKepalaKel($upload, $upload1, $upload2, $upload3)
     {
