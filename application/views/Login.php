@@ -29,8 +29,8 @@
 
 </head>
 
-<body class="bg-gradient-dark">
-    <!-- <body background="<?=base_url();?>./assets/img/background.jpg"> -->
+<div class="bg" style="background-image:url('<?php echo base_url().'assets/images/Desa.jpg';?>');">
+    <!-- <body background="<?= base_url(); ?>./assets/img/background.jpg"> -->
     <div class="container">
 
         <!-- Outer Row -->
@@ -47,27 +47,11 @@
                                 <?= $this->session->flashdata('message'); ?>
                                 <div class="p-5">
                                     <div class="text-center">
-                                    <h1><font color="gray">Silahkan Login</font><br></h1>
+                                        <h1>
+                                            <font color="black">Silahkan Login</font><br>
+                                        </h1>
                                     </div>
                                     <br>
-                                    <?php
-                                    $pesan = $this->session->flashdata('pesan');
-                                    if(!empty($pesan)){
-                                        echo $pesan;
-                                    }
-                                    ?>
-                                    <form class="user" action="<?= base_url('Login'); ?>" role="form" autocomplete="off"
-                                        id="formlogin" method="POST">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="NIK"
-                                                id="NIK" required="" placeholder="NIK">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                name="password" id="password" required="" placeholder="Password">
-                                        </div>
-                                        <button class="btn btn-dark btn-user btn-block" type="submit">Login</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -78,17 +62,42 @@
         </div>
 
     </div>
+    <!-- footer section start -->
+    <div class="footer_section layout_padding">
+        <div class="footer_section_2">
+            <div class="container">
+                <div class="row map_addres">
+                    <div class="col-sm-12 col-lg-4">
+                        <div class="map_text"><img src="<?= base_url(); ?>assets/images/map-icon.png"><span
+                                class="map_icon">Desa Argosari Kecamatan Jabung Kabupaten Malang</span></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4">
+                        <div class="map_text"><img src="<?= base_url(); ?>assets/images/phone-icon.png"><span
+                                class="map_icon">( +71 7986543234
+                                )</span></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4">
+                        <div class="map_text"><img src="<?= base_url(); ?>assets/images/email-icon.png"><span
+                                class="map_icon">desa-argosari@malangkab.go.id</span></div>
+                    </div>
+                </div>
+                <p class="copyright_text">Copyright Desa Argosari - Jabung</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url('assets/js/sb-admin-2.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/sb-admin-2.min.js') ?>"></script>
 
-</body>
+    </body>
 
 </html>

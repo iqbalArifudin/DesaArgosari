@@ -1,221 +1,372 @@
-/******************************************
+/*---------------------------------------------------------------------
     File Name: custom.js
-/****************************************** */
+---------------------------------------------------------------------*/
 
-(function($) {
-    "use strict";
+$(function () {
 
-    /* ==============================================
-    AFFIX
-    =============================================== */
-    $('.megamenu').affix({
-        offset: {
-            top: 0,
-            bottom: function() {
-                return (this.bottom = $('.footer').outerHeight(true))
-            }
-        }
-    })
+	"use strict";
 
-    /* ==============================================
-    BACK TOP
-    =============================================== */
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > 1) {
-            jQuery('.dmtop').css({
-                bottom: "75px"
-            });
-        } else {
-            jQuery('.dmtop').css({
-                bottom: "-100px"
-            });
-        }
-    });
+	/* Preloader
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-    /* ==============================================
-       LOADER -->
-        =============================================== */
+	setTimeout(function () {
+		$('.loader_bg').fadeToggle();
+	}, 1500);
 
-    $(window).load(function() {
-        $("#preloader").on(500).fadeOut();
-        $(".preloader").on(600).fadeOut("slow");
-    });
+	/* JQuery Menu
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-    /* ==============================================
-     FUN FACTS -->
-     =============================================== */
+	$(document).ready(function () {
+		$('header nav').meanmenu();
+	});
 
-    function count($this) {
-        var current = parseInt($this.html(), 10);
-        current = current + 50; /* Where 50 is increment */
-        $this.html(++current);
-        if (current > $this.data('count')) {
-            $this.html($this.data('count'));
-        } else {
-            setTimeout(function() {
-                count($this)
-            }, 30);
-        }
-    }
-    $(".stat_count, .stat_count_download").each(function() {
-        $(this).data('count', parseInt($(this).html(), 10));
-        $(this).html('0');
-        count($(this));
-    });
+	/* Tooltip
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-    /* ==============================================
-     TOOLTIP -->
-     =============================================== */
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[data-toggle="popover"]').popover()
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
 
-    /* ==============================================
-     CONTACT -->
-     =============================================== */
-    jQuery(document).ready(function() {
-        $('#contactform').submit(function() {
-            var action = $(this).attr('action');
-            $("#message").slideUp(750, function() {
-                $('#message').hide();
-                $('#submit')
-                    .after('<img src="images/ajax-loader.gif" class="loader" />')
-                    .attr('disabled', 'disabled');
-                $.post(action, {
-                        first_name: $('#first_name').val(),
-                        last_name: $('#last_name').val(),
-                        email: $('#email').val(),
-                        phone: $('#phone').val(),
-                        select_service: $('#select_service').val(),
-                        select_price: $('#select_price').val(),
-                        comments: $('#comments').val(),
-                        verify: $('#verify').val()
-                    },
-                    function(data) {
-                        document.getElementById('message').innerHTML = data;
-                        $('#message').slideDown('slow');
-                        $('#contactform img.loader').fadeOut('slow', function() {
-                            $(this).remove()
-                        });
-                        $('#submit').removeAttr('disabled');
-                        if (data.match('success') != null) $('#contactform').slideUp('slow');
-                    }
-                );
-            });
-            return false;
-        });
-    });
+	/* sticky
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-    /* ==============================================
-     CODE WRAPPER -->
-     =============================================== */
+	$(document).ready(function () {
+		$(".sticky-wrapper-header").sticky({ topSpacing: 0 });
+	});
 
-    $('.code-wrapper').on("mousemove", function(e) {
-        var offsets = $(this).offset();
-        var fullWidth = $(this).width();
-        var mouseX = e.pageX - offsets.left;
+	/* Mouseover
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-        if (mouseX < 0) {
-            mouseX = 0;
-        } else if (mouseX > fullWidth) {
-            mouseX = fullWidth
-        }
+	$(document).ready(function () {
+		$(".main-menu ul li.megamenu").mouseover(function () {
+			if (!$(this).parent().hasClass("#wrapper")) {
+				$("#wrapper").addClass('overlay');
+			}
+		});
+		$(".main-menu ul li.megamenu").mouseleave(function () {
+			$("#wrapper").removeClass('overlay');
+		});
+	});
 
-        $(this).parent().find('.divider-bar').css({
-            left: mouseX,
-            transition: 'none'
-        });
-        $(this).find('.design-wrapper').css({
-            transform: 'translateX(' + (mouseX) + 'px)',
-            transition: 'none'
-        });
-        $(this).find('.design-image').css({
-            transform: 'translateX(' + (-1 * mouseX) + 'px)',
-            transition: 'none'
-        });
-    });
-    $('.divider-wrapper').on("mouseleave", function() {
-        $(this).parent().find('.divider-bar').css({
-            left: '50%',
-            transition: 'all .3s'
-        });
-        $(this).find('.design-wrapper').css({
-            transform: 'translateX(50%)',
-            transition: 'all .3s'
-        });
-        $(this).find('.design-image').css({
-            transform: 'translateX(-50%)',
-            transition: 'all .3s'
-        });
-    });
+	/* NiceScroll
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-})(jQuery);
+	$(".brand-box").niceScroll({
+		cursorcolor: "#9b9b9c",
+	});
 
-/*= text auto writer ==*/
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
+	/* NiceSelect
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+	$(document).ready(function () {
+		$('select').niceSelect();
+	});
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+	/* OwlCarousel - Blog Post slider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+	$(document).ready(function () {
+		var owl = $('.carousel-slider-post');
+		owl.owlCarousel({
+			items: 1,
+			loop: true,
+			margin: 10,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			autoplayHoverPause: true
+		});
+	});
 
-        var that = this;
-        var delta = 200 - Math.random() * 100;
+	/* OwlCarousel - Banner Rotator Slider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-        if (this.isDeleting) { delta /= 2; }
+	$(document).ready(function () {
+		var owl = $('.banner-rotator-slider');
+		owl.owlCarousel({
+			items: 1,
+			loop: true,
+			margin: 10,
+			nav: true,
+			dots: false,
+			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+			autoplay: true,
+			autoplayTimeout: 3000,
+			autoplayHoverPause: true
+		});
+	});
 
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
+	/* OwlCarousel - Product Slider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
+	$(document).ready(function () {
+		var owl = $('#product-in-slider');
+		owl.owlCarousel({
+			loop: true,
+			nav: true,
+			margin: 10,
+			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 2
+				},
+				960: {
+					items: 3
+				},
+				1200: {
+					items: 4
+				}
+			}
+		});
+		owl.on('mousewheel', '.owl-stage', function (e) {
+			if (e.deltaY > 0) {
+				owl.trigger('next.owl');
+			} else {
+				owl.trigger('prev.owl');
+			}
+			e.preventDefault();
+		});
+	});
 
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
 
-/*== map js ==*/
-
-    function myMap() {
-        var mapProp= {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
 	
-/*== map js ==*/	
+	/* Scroll to Top
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$(window).on('scroll', function () {
+		scroll = $(window).scrollTop();
+		if (scroll >= 100) {
+			$("#back-to-top").addClass('b-show_scrollBut')
+		} else {
+			$("#back-to-top").removeClass('b-show_scrollBut')
+		}
+	});
+	$("#back-to-top").on("click", function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 1000);
+	});
+
+	/* Contact-form
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	$.validator.setDefaults({
+		submitHandler: function () {
+			alert("submitted!");
+		}
+	});
+
+	$(document).ready(function () {
+		$("#contact-form").validate({
+			rules: {
+				firstname: "required",
+				email: {
+					required: true,
+					email: true
+				},
+				lastname: "required",
+				message: "required",
+				agree: "required"
+			},
+			messages: {
+				firstname: "Please enter your firstname",
+				email: "Please enter a valid email address",
+				lastname: "Please enter your lastname",
+				username: {
+					required: "Please enter a username",
+					minlength: "Your username must consist of at least 2 characters"
+				},
+				message: "Please enter your Message",
+				agree: "Please accept our policy"
+			},
+			errorElement: "div",
+			errorPlacement: function (error, element) {
+				// Add the `help-block` class to the error element
+				error.addClass("help-block");
+
+				if (element.prop("type") === "checkbox") {
+					error.insertAfter(element.parent("input"));
+				} else {
+					error.insertAfter(element);
+				}
+			},
+			highlight: function (element, errorClass, validClass) {
+				$(element).parents(".col-md-4, .col-md-12").addClass("has-error").removeClass("has-success");
+			},
+			unhighlight: function (element, errorClass, validClass) {
+				$(element).parents(".col-md-4, .col-md-12").addClass("has-success").removeClass("has-error");
+			}
+		});
+	});
+
+	/* heroslider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	var swiper = new Swiper('.heroslider', {
+		spaceBetween: 30,
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		paginationClickable: true,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			dynamicBullets: true
+		},
+	});
+
+
+	/* Product Filters
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	var swiper = new Swiper('.swiper-product-filters', {
+		slidesPerView: 3,
+		slidesPerColumn: 2,
+		spaceBetween: 30,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+				slidesPerColumn: 1,
+			},
+			640: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+				slidesPerColumn: 1,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				slidesPerColumn: 1,
+			}
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			dynamicBullets: true
+		}
+	});
+
+	/* Countdown
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$('[data-countdown]').each(function () {
+		var $this = $(this),
+			finalDate = $(this).data('countdown');
+		$this.countdown(finalDate, function (event) {
+			var $this = $(this).html(event.strftime(''
+				+ '<div class="time-bar"><span class="time-box">%w</span> <span class="line-b">weeks</span></div> '
+				+ '<div class="time-bar"><span class="time-box">%d</span> <span class="line-b">days</span></div> '
+				+ '<div class="time-bar"><span class="time-box">%H</span> <span class="line-b">hr</span></div> '
+				+ '<div class="time-bar"><span class="time-box">%M</span> <span class="line-b">min</span></div> '
+				+ '<div class="time-bar"><span class="time-box">%S</span> <span class="line-b">sec</span></div>'));
+		});
+	});
+
+	/* Deal Slider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$('.deal-slider').slick({
+		dots: false,
+		infinite: false,
+		prevArrow: '.previous-deal',
+		nextArrow: '.next-deal',
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		infinite: false,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 2,
+				infinite: true,
+				dots: false
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+
+	/* News Slider
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$('#news-slider').slick({
+		dots: false,
+		infinite: false,
+		prevArrow: '.previous',
+		nextArrow: '.next',
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: false
+			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+
+	/* Fancybox
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$(".fancybox").fancybox({
+		maxWidth: 1200,
+		maxHeight: 600,
+		width: '70%',
+		height: '70%',
+	});
+
+	/* Toggle sidebar
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	$(document).ready(function () {
+		$('#sidebarCollapse').on('click', function () {
+			$('#sidebar').toggleClass('active');
+			$(this).toggleClass('active');
+		});
+	});
+
+	/* Product slider 
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	// optional
+	$('#blogCarousel').carousel({
+		interval: 5000
+	});
+
+
+});
