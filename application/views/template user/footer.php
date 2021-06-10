@@ -1,76 +1,59 @@
-<!-- contact section end -->
-<!-- footer section start -->
-<div class="footer_section layout_padding">
-    <div class="footer_section_2">
+<!-- ======= Footer ======= -->
+<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="footer-top">
         <div class="container">
-            <div class="row map_addres">
-                <div class="col-sm-12 col-lg-4">
-                    <div class="map_text"><img src="<?= base_url(); ?>assets/images/map-icon.png"><span
-                            class="map_icon">Desa Argosari Kecamatan Jabung Kabupaten Malang</span></div>
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <ul>
+                        <li><img src="<?= base_url(); ?>assets/img/logo kab.png" alt="" width="100">
+                            <h4>Desa Argosari</h4>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-12 col-lg-4">
-                    <div class="map_text"><img src="<?= base_url(); ?>assets/images/phone-icon.png"><span
-                            class="map_icon">( +71 7986543234
-                            )</span></div>
+
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <ul>
+                        <li><img src="<?= base_url(); ?>assets/img/email.png" alt="" width="100">
+                            <h4>desa-argosari@malangkab.go.id</h4>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-12 col-lg-4">
-                    <div class="map_text"><img src="<?= base_url(); ?>assets/images/email-icon.png"><span
-                            class="map_icon">desa-argosari@malangkab.go.id</span></div>
+
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <ul>
+                        <li><img src="<?= base_url(); ?>assets/img/tlp.png" alt="" width="140">
+                            <h4>0341000000</h4>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <p class="copyright_text">Copyright Desa Argosari - Jabung</p>
         </div>
     </div>
-</div>
-<!-- footer section end -->
 
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Desa Argosari</span></strong>
+        </div>
+    </div>
+</footer><!-- End Footer -->
 
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+<!-- Vendor JS Files -->
+<script src="<?= base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/php-email-form/validate.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/venobox/venobox.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/counterup/counterup.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/aos/aos.js"></script>
 
-
-
-<!-- Javascript files-->
-<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery-3.0.0.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/plugin.js"></script>
-<!-- sidebar -->
-<script src="<?= base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/custom.js"></script>
-<!-- javascript -->
-<script src="<?= base_url(); ?>assets/js/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-<script>
-$(document).ready(function() {
-    $(".fancybox").fancybox({
-        openEffect: "none",
-        closeEffect: "none"
-    });
-
-    $(".zoom").hover(function() {
-
-        $(this).addClass('transition');
-    }, function() {
-
-        $(this).removeClass('transition');
-    });
-});
-</script>
-
-
-<script>
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-</script>
-
-
-
+<!-- Template Main JS File -->
+<script src="<?= base_url(); ?>assets/js/main.js"></script>
 
 </body>
 

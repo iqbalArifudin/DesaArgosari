@@ -1,158 +1,122 @@
-        <div class="banner_section layout_padding bgded overlay"
-            style="background-image:url('<?php echo base_url().'assets/images/Desa.jpg';?>');">
-            <div id=" my_Controls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="banner_taital">
-                                <h1 class="find_text">DESA ARGOSARI - JABUNG</h1>
-                                <p class="long_text">Desa Argosari adalah sebuah desa terdiri dari 3 Padukuhan yakni
-                                    pateguhan, gentong, dan bendrong yang
-                                    berada di
-                                    wilayah Kecamatan Jabung, Kabupaten Malang, Provinsi Jawa Timur. </p>
-                            </div>
-                            <div class="contact">
-                                <div class="contact_bt"><a href="<?php echo base_url() . 'Login' ?>">LOGIN</a></div>
-                            </div>
-                        </div>
+    <main id="main">
+
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>INFORMASI</h2>
+                </div>
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5 order-1 order-md-2">
+                        <img src="<?= base_url(); ?>assets/img/features-3.svg" class="img-fluid" alt="">
                     </div>
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="banner_taital">
-                                <h1 class="find_text">DESA ARGOSARI - JABUNG</h1>
-                                <p class="long_text">Desa Argosari adalah sebuah desa terdiri dari 3 Padukuhan yakni
-                                    pateguhan, gentong, dan bendrong yang
-                                    berada di
-                                    wilayah Kecamatan Jabung, Kabupaten Malang, Provinsi Jawa Timur. </p>
-                            </div>
-                            <div class="contact">
-                                <div class="contact_bt"><a href="<?php echo base_url() . 'Login' ?>">LOGIN</a></div>
-                            </div>
-                        </div>
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <h3>Corporis temporibus maiores provident</h3>
+                        <p class="font-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>VISI dan MISI</h2>
+                </div>
+
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5">
+                        <img src="<?= base_url(); ?>assets/img/visi.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <h3>VISI :</h3>
+                        <p class="font-italic">
+                            1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
+                        <h3>MISI :</h3>
+                        <p class="font-italic">
+                            1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-        <!-- about section start -->
-        <div class="our_section layout_padding">
-            <div class="row">
-                <div class="col-lg-5 py-3 wow fadeInUp">
-                    <div class="img-place wow zoomIn">
-                        <img src="<?= base_url(); ?>assets/images/visi.png" alt="" width="50px">
-                    </div>
-                </div>
-
-                <div class="col-lg-6 py-3 mt-lg-5">
-                    <center>
-                        <p class="heading  font-x2">
-                            <font color="black">VISI dan MISI</font>
-                            <HR>
-                        </p>
+        <section class="services">
+            <div class="section-title">
+                <h2>BERITA - BERITA</h2>
+            </div>
+            <div class="row justify-content-center">
+                <?php foreach ($berita as $ad) : ?>
+                <div class="card-page  mr-3 mb-3" style="width:440px; height:600px">
+                    <center><img src="<?= base_url('assets/foto_berita/') . $ad->foto_berita ?>"
+                            style="width:300px; height:330px;">
+                        <br>
                     </center>
 
-                    <div class="iconic-list">
-                        <div class="iconic-item wow fadeInUp">
-                            <div class="iconic-content">
-                                <div class="text-primary">
-                                    <h1 class=""><strong>
-                                            <font color="black">VISI :</font>
-                                        </strong></h1>
-                                </div>
-                                <div class="text-muted">
-                                    <p class="fs-small">1. It is a long established fact that a reader will be
-                                        distracted by
-                                        the
-                                        readable content of a page when looking at its layout. The point of using Lorem
-                                        Ipsum is</p>
-                                </div>
-                                <div class="text-primary">
-                                    <h1 class=""><strong>
-                                            <font color="black">MISI :</font>
-                                        </strong></h1>
-                                </div>
-                                <div class="text-muted">
-                                    <p class="fs-small">1. It is a long established fact that a reader will be
-                                        distracted by
-                                        the
-                                        readable content of a page when looking at its layout. The point of using Lorem
-                                        Ipsum is</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="our_section layout_padding">
-            <h1 class="our_text"><strong>INFORMASI</strong></h1>
-        </div>
-        <div class="our_section layout_padding">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="about_taital">
-                        <h1 class="about_text">
-                            <font color="black">ABOUT OUR GYM
-                        </h1>
-                        <p class="long_text_2">It is a long established fact that a reader will be distracted by the
-                            readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                            that it
-                            has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                            content
-                            here', making it look like readable English. Many desktop publishing packages and webIt
-                            is a
-                            long established fact that a reader will be distracted by the readable content of a page
-                            when
-                            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                            normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it
-                            look
-                            like
-                            readable English. Many desktop publishing packages and web</font>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <br>
-                    <div class="about_img"><img src="<?= base_url(); ?>assets/images/about-bg.png" width="50px"></div>
-                    <br>
-                </div>
-            </div>
-        </div>
-        <!-- about section end -->
-        <!-- our service section start -->
-        <div class="our_section layout_padding">
-            <div class="container">
-                <h1 class="our_text"><strong>Berita</strong></h1>
-                <p>
-                <div class="row justify-content-center">
-                    <?php foreach ($berita as $ad) : ?>
-                    <div class="card-page  mr-3 mb-3" style="width:340px; height:530px">
-                        <center><img src="<?= base_url('assets/foto_berita/') . $ad->foto_berita ?>"
-                                style="width:270px; height:300px;">
-                            <br>
-                        </center>
-
+                    <center>
+                        <hr width="90%">
+                    </center>
+                    <div class="text-muted">
                         <center>
-                            <hr width="90%">
-                        </center>
-                        <div class="text-muted">
-                            <h6><?= $ad->judul ?></h6>
-                            <small>Tanggal
+                            <h5><?= $ad->judul ?></h5>
+                            <small>Tanggal Pembuatan
                                 :&nbsp; <?=  date('d-m-Y H:i:s', strtotime($ad->tanggal)); ?></small>
-                            <hr>
-                            <a href='<?= base_url() . 'berita/detail/' . $ad->id_berita ?>'
-                                class="btn btn-primary">Selengkapnya</a>
-                        </div>
-                        <center>
                             <br>
+                            <br>
+
+                            <a class="btn btn-primary rounded-pill fixed"
+                                href='<?= base_url() . 'berita/detail/' . $ad->id_berita ?>'>
+                                <i class="fas fa-eye"></i> Baca Selengkapnya
+                            </a>
                         </center>
                     </div>
-                    <?php endforeach ?>
 
+                    <center>
+                        <br>
+                    </center>
+                </div>
+                <?php endforeach ?>
+
+            </div>
+        </section>
+
+        <!-- ======= Why Us Section ======= -->
+        <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6 video-box">
+                        <img src="<?= base_url(); ?>assets/img/why-us.jpg" class="img-fluid" alt="">
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
+                            data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+                        <div class="icon-box">
+                            <h4 class="title"><a href="">SEJARAH DAN PROFIL DESA ARGOSARI</a></h4>
+                            <p class="description">Desa Argosari berlokasi di daerah Kecamatan Jabung Kabupaten
+                                Malang Jawa Timur. Desa Argosari memiliki 3 padukuhan yaitu Pateguhan, Gentong, dan
+                                Bendrong. Desa Argosari terletak di daerah pegunungan dan perbukitan. Nama
+                                Argosari diambil dari kata Argo berarti gunung dan sari diambil dari nama pedagang
+                                terkenal di desa yaitu Ki Ageng Sari dan Nyi Ageng Sari.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </div>
-
-        <!-- project section end --
+        </section><!-- End Why Us Section -->
+    </main><!-- End #main -->
