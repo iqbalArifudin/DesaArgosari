@@ -17,12 +17,12 @@
                 <center>
                     <h5><?= $ad->judul ?></h5>
                     <small>Tanggal Pembuatan
-                        :&nbsp; <?=  date('d-m-Y H:i:s', strtotime($ad->tanggal)); ?></small>
+                        :&nbsp; <?= date('d-m-Y H:i:s', strtotime($ad->tanggal)); ?></small>
                     <br>
                     <br>
 
                     <a class="btn btn-primary rounded-pill fixed"
-                        href='<?= base_url() . 'berita/detail/' . $ad->id_berita ?>'>
+                        href='<?= base_url() . 'user/Berita/detail/' . $ad->id_berita ?>'>
                         <i class="fas fa-eye"></i> Baca Selengkapnya
                     </a>
                 </center>

@@ -41,35 +41,35 @@
                                     <a class='btn btn-info' href="#modalEdit2" data-toggle="modal"
                                         onclick="$('#modalEdit #formDelete').attr('action', '<?= site_url('admin/Pengaduan/edit/' . $pengaduan->id_pengaduan) ?>')"
                                         class='btn btn-info btn-circle'>
-                                        <i class="fa fa-eye" aria-hidden="true">&nbsp;Detail</i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($pengaduan->status == "Diproses") : ?>
                                     <a class='btn btn-info' href="#modalEdit2" data-toggle="modal"
                                         onclick="$('#modalEdit2 #formDelete').attr('action', '<?= site_url('user/Pengaduan/edit/' . $pengaduan->id_pengaduan) ?>')"
                                         class='btn btn-info btn-circle'>
-                                        <i class="fa fa-eye" aria-hidden="true">&nbsp;Detail</i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($pengaduan->status == "Diajukan Ke Kepala Desa") : ?>
                                     <a class='btn btn-info' href="#modalEdit2" data-toggle="modal"
                                         onclick="$('#modalEdit2 #formDelete').attr('action', '<?= site_url('user/Pengaduan/edit/' . $pengaduan->id_pengaduan) ?>')"
                                         class='btn btn-info btn-circle'>
-                                        <i class="fa fa-eye" aria-hidden="true">&nbsp;Detail</i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($pengaduan->status == "Selesai") : ?>
                                     <a class='btn btn-info' href="#modalEdit2" data-toggle="modal"
                                         onclick="$('#modalEdit #formDelete').attr('action', '<?= site_url('user/Pengaduan/edit/' . $pengaduan->id_pengaduan) ?>')"
                                         class='btn btn-info btn-circle'>
-                                        <i class="fa fa-eye" aria-hidden="true">&nbsp;Detail</i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php elseif ($pengaduan->status == "Ditolak") : ?>
                                     <a class='btn btn-info' href="#modalEdit3" data-toggle="modal"
                                         onclick="$('#modalEdit #formDelete').attr('action', '<?= site_url('user/Pengaduan/edit/' . $pengaduan->id_pengaduan) ?>')"
                                         class='btn btn-info btn-circle'>
-                                        <i class="fa fa-eye" aria-hidden="true">&nbsp;Detail</i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
                                     <?php else : ?>
@@ -77,7 +77,7 @@
                                     <a class='btn btn-info'
                                         href='<?= base_url() . 'admin/Pengaduan/edit/' . $pengaduan->id_pengaduan ?>'
                                         class='btn btn-biru'>
-                                        <i class="fas fa-eye" aria-hidden="true"><span>&nbsp;Detail</span></i>
+                                        <i class="fa fa-hourglass-half" aria-hidden="true"><span>&nbsp;Proses</span></i>
                                     </a>
 
                                     <?php endif ?>

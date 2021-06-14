@@ -39,6 +39,8 @@ class KK_model extends CI_Model
         $this->db->select('kepala_keluarga.*, penduduk.nama, penduduk.NIK');
         $this->db->join('penduduk', 'kepala_keluarga.id_penduduk = penduduk.id_penduduk');
         $this->db->where('status !=', 'Diajukan');
+        $this->db->where('status !=', 'Diajukan Ke Ketua RW');
+        $this->db->where('status !=', 'Diajukan Ke Pelayanan');
         return $this->db->get('kepala_keluarga')->result();
     }
 
@@ -60,7 +62,7 @@ class KK_model extends CI_Model
         return $this->db->get('kepala_keluarga')->result();
     }
 
-    public function tambahKepalaKel($upload, $upload1, $upload2, $upload3)
+    public function tambahKepalaKel($upload, $upload1, $upload2, $upload3, $upload4)
     {
         $data = [
             'id_kepala_kel' => $this->input->post('id_kepala_kel', true),
@@ -79,6 +81,7 @@ class KK_model extends CI_Model
             'suratnikah_p' => $upload1['file']['file_name'],
             'kk1' => $upload2['file']['file_name'],
             'kk2' => $upload3['file']['file_name'],
+            'surat_rt_rw' => $upload4['file']['file_name'],
             'status' => 'Diajukan',
             'alasan' => 'Belum Diterima',
 
@@ -172,6 +175,22 @@ class KK_model extends CI_Model
         }
     }
 
+    public function upload4()
+    {
+        $config['upload_path'] = './assets/foto_kk/';
+        $config['allowed_types'] = 'doc|docx|pdf|png|jpg|jpeg';
+        $config['max_size']     = '750000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('surat_rt_rw')) {
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
+    }
     public function ubahKeluarga($id_keluarga)
     {
         $data = [

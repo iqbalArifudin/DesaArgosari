@@ -23,7 +23,7 @@ table {
     <table>
         <tr>
             <td>
-                <img src="<?php echo base_url('assets/images/logo kab.png') ?>" alt="logo" width=15%>
+                <img src="<?php echo base_url('assets/img/logo kab.png') ?>" alt="logo" width=15%>
             </td>
             <td style=" text-align: center;">
                 <div class="kop-surat">

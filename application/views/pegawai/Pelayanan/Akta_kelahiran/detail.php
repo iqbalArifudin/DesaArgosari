@@ -123,13 +123,25 @@
                                             <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
                                         </a>
                                 </div>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Persyaratan Surat Kelahiran</strong></label>
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
+                                        class="card-img" alt="..." width="100px">
+                                    <p>
+                                        <br>
+                                        <a class='btn btn-dark'
+                                            href="<?php echo base_url() . 'pegawai/akta_kelahiran/downloadktp_sk/' . $a->id_akta; ?>">
+                                            <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                        </a>
+                                </div>
 
                                 <?php endforeach ?>
                                 <p>
                                     <hr>
 
-                                    <button type="submit" name="submit" class="btn btn-success "><i
-                                            class="fa fa-print"></i>&nbsp;&nbsp;Cetak</button>
+                                    <a href="<?= base_url("pegawai/akta_kelahiran/pdf"); ?>" class="btn btn-success"><i
+                                            class="fa fa-print"></i>&nbsp;&nbsp;Cetak</a>
                                     <a href="<?= base_url("pegawai/akta_kelahiran"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 

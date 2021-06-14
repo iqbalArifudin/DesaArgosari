@@ -103,6 +103,18 @@
                                 </div>
                                 <p>
 
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Upload Surat dari RT / RW
+                                        </strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_rt_rw" name="surat_rt_rw"
+                                            required autofocus>
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <!-- <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                                    </div>
+                                </div>
+                                <p>
+
 
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-success "><i

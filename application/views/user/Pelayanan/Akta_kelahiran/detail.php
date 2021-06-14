@@ -104,6 +104,12 @@
                                     <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
                                         class="card-img" alt="..." width="100px">
                                 </div>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Persyaratan Surat Pengantar RT / RW</strong></label>
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_rt_rw ?>"
+                                        class="card-img" alt="..." width="100px">
+                                </div>
                                 <?php endforeach ?>
                                 <p>
                                     <hr>

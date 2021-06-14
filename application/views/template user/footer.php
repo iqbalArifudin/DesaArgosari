@@ -7,7 +7,7 @@
                 <div class="col-lg-4 col-md-6 footer-links">
                     <ul>
                         <li><img src="<?= base_url(); ?>assets/img/logo kab.png" alt="" width="100">
-                            <h4>Desa Argosari</h4>
+                            <h4>Desa Argosari Kec. Jabung Kab. Malang</h4>
                         </li>
                     </ul>
                 </div>

@@ -23,7 +23,7 @@ table {
     <table>
         <tr>
             <td>
-                <img src="<?php echo base_url('assets/images/logo kab.png') ?>" alt="logo" width=15%>
+                <img src="<?php echo base_url('assets/img/logo kab.png') ?>" alt="logo" width=15%>
             </td>
             <td style=" text-align: center;">
                 <div class="kop-surat">
@@ -117,7 +117,7 @@ table {
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                                                                                        foreach ($ktp as $ktp) : ?>
+                    foreach ($ktp as $ktp) : ?>
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= $ktp->NIK ?></td>
@@ -146,7 +146,7 @@ table {
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
-                    src="<?php echo base_url('assets/images/ttd.jpg') ?>" alt="logo" width=20%>
+                    src="<?php echo base_url('assets/img/ttd.jpg') ?>" alt="logo" width=20%>
                 <br>
                 <a><b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -48,8 +48,9 @@ class LayananKK extends CI_Controller
             $upload1 = $this->KK_model->upload1();
             $upload2 = $this->KK_model->upload2();
             $upload3 = $this->KK_model->upload3();
+            $upload4 = $this->KK_model->upload4();
             if ($upload['result'] == 'success') {
-                $this->KK_model->tambahKepalaKel($upload, $upload1, $upload2, $upload3);
+                $this->KK_model->tambahKepalaKel($upload, $upload1, $upload2, $upload3, $upload4);
                 $this->session->set_flashdata(
                     'message',
                     '<div class="alert alert-success alert-dismissible fade show" role="alert">

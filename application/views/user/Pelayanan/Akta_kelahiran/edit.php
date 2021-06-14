@@ -14,22 +14,22 @@
                             <center><strong>Isi Form Akta Kelahiran Dibawah Ini!</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach($akta as $a):?>
+                            <?php foreach ($akta as $a) : ?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_akta" value="<?= $a->id_akta;?>">
+                                <input type="hidden" name="id_akta" value="<?= $a->id_akta; ?>">
                                 <p>
                                 <div class="form-row">
                                     <label for="nama_akta"><strong>Nama Akta Kelahiran</strong></label>
                                     <input type="text" name="nama_akta" id="nama_akta" autocomplete="off"
-                                        class="form-control" value="<?=$a->nama_akta;?>" required>
+                                        class="form-control" value="<?= $a->nama_akta; ?>" required>
                                 </div>
                                 <p>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="tempat_lahir_akta"><strong>Tempat Lahir</strong></label>
                                         <input type="text" name="tempat_lahir_akta" id="tempat_lahir_akta"
-                                            autocomplete="off" class="form-control" value="<?=$a->tempat_lahir_akta;?>"
-                                            required>
+                                            autocomplete="off" class="form-control"
+                                            value="<?= $a->tempat_lahir_akta; ?>" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="tanggal_lahir_akta"><strong>Tanggal Lahir</strong></label>
@@ -42,7 +42,7 @@
                                 <div class="form-row">
                                     <label for="nama_barang"><strong>Keterangan</strong></label>
                                     <input type="text" name="keterangan" id="keterangan" autocomplete="off"
-                                        class="form-control" value="<?=$a->keterangan;?>">
+                                        class="form-control" value="<?= $a->keterangan; ?>">
                                 </div>
                                 <p>
 
@@ -126,6 +126,21 @@
                                     <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
                                         style="width:400px; ">
                                 </div>
+                                <p>
+                                <div class="form-row">
+                                    <label for="satuan"><strong>Foto Surat RT / RW</strong></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="surat_rt_rw"
+                                            name="surat_rt_rw">
+                                        <label class="custom-file-label" for="customFile"><?= $a->surat_rt_rw ?></label>
+                                        <?= form_error('surat_rt_rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_rt_rw ?>"
+                                        style="width:400px; ">
+                                </div>
                                 <hr>
 
 
@@ -136,7 +151,7 @@
                                             class="fa fa-save"></i>&nbsp;&nbsp;Submit</button>
                                     <button type="reset" class="btn btn-danger"><i
                                             class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                    <a href="<?=base_url("user/akta_kelahiran");?>" class="btn btn-info"><i
+                                    <a href="<?= base_url("user/akta_kelahiran"); ?>" class="btn btn-info"><i
                                             class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
                                 </div>
                             </form>

@@ -47,8 +47,9 @@
                 $upload2 = $this->akta_kelahiran_model->upload2();
                 $upload3 = $this->akta_kelahiran_model->upload3();
             $upload4 = $this->akta_kelahiran_model->upload4();
+            $upload5 = $this->akta_kelahiran_model->upload5();
                 if ($upload['result'] == 'success'){
-                $this->akta_kelahiran_model->tambahAkta($upload, $upload1, $upload2, $upload3, $upload4);
+                $this->akta_kelahiran_model->tambahAkta($upload, $upload1, $upload2, $upload3, $upload4, $upload5);
                     $this->session->set_flashdata(
                         'message',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -114,6 +115,7 @@
             $upload_file2 = $_FILES['fc_ktp_ayah']['name'];
             $upload_file3 = $_FILES['fc_ktp_ibu']['name'];
             $upload_file4 = $_FILES['surat_kelahiran']['name'];
+            $upload_file5 = $_FILES['surat_rt_rw']['name'];
             if ($upload_file) {
                 $config['upload_path'] = './assets/persyaratan_akta/';
                 $config['allowed_types'] = 'jpg|png|jpeg';
@@ -191,6 +193,22 @@
                     }
                     $new_file = $this->upload->data('file_name');
                     $this->db->set('surat_kelahiran', $new_file);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            } elseif ($upload_file5) {
+                $config['upload_path'] = './assets/persyaratan_akta/';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size']     = '50000';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('surat_rt_rw')) {
+                    $old_file = $data['akta_kelahiran']['surat_rt_rw'];
+                    if ($old_file != 'default.png') {
+                        unlink(FCPATH . './assets/persyaratan_akta/' . $old_file);
+                    }
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('surat_rt_rw', $new_file);
                 } else {
                     echo $this->upload->display_errors();
                 }

@@ -1,6 +1,6 @@
 <div class="alert alert-primary" role="alert">
     <i class="fas fa-fw fa-tachometer-alt"></i> Beranda &nbsp; &nbsp; > &nbsp; &nbsp;<i class="fas fa-address-card"></i>
-    Data Penduduk &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>
+    Pelayanan KTP &nbsp; &nbsp; > &nbsp; &nbsp; <i class="fas fa-eye"></i>
     Detail
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -58,8 +58,8 @@
                                 <br>
                                 <div class="form-row">
                                     <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
-                                    <input type="text" name="surat_rt_rw" placeholder="" autocomplete="off"
-                                        class="form-control" required value="<?= $penduduk->surat_rt_rw; ?>" readonly>
+                                    <img src="<?= base_url('assets/foto_ktp/') . $penduduk->surat_rt_rw ?>"
+                                        class="card-img" alt="..." width="100px">
                                 </div>
                                 <br>
                                 <a class='btn btn-dark'

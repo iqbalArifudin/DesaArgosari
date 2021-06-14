@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?php echo base_url() . 'pegawai/LayananKtp' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'pegawai/PelayananKK' ?>">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Kartu keluarga</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">PELAYANAN KK</div>
@@ -154,7 +154,7 @@
                 <div class="card-body">
                     <div class="text-center">
                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 26rem;"
-                            src="<?php echo base_url('assets/img/logo alur.svg') ?>" alt="">
+                            src="<?php echo base_url('assets/img/pelayanan.png') ?>" alt="">
                     </div>
                     <p>Sebelum memproses pelayanan KTP (Kartu Tanda Penduduk),
                         Kartu Keluarga (KK), Akta

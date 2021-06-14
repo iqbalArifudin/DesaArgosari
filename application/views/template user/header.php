@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url(); ?>assets/img/favicon.png" rel="icon">
-    <link href="<?= base_url(); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?= base_url(); ?>assets/img/logo kab.png" rel="icon">
+    <link href="<?= base_url(); ?>assets/img/logo kab.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -45,7 +45,8 @@
         <div class="container">
 
             <div class="logo float-left">
-                <h1 class="text-light"><a href="index.html"><span>DESA ARGOSARI</span></a></h1>
+                <h1 class="text-light"><span>DESA ARGOSARI</span></>
+                </h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -54,23 +55,19 @@
                 <ul>
                     <li class="active"><a href="<?php echo base_url() . 'user/home' ?>">Home</a></li>
                     <li><a href="<?php echo base_url() . 'user/Berita' ?>">Berita</a></li>
-                    <li><a href="<?php echo base_url() . 'user/home' ?>">Galeri</a></li>
-                    <li><a href="<?php echo base_url() . 'user/home' ?>">Pelayanan dan Pengaduan</a></li>
-                    <li class="drop-down"><a href="">Profil Desa</a>
-                        <ul>
-                            <li><a href="<?php echo base_url() . 'user/home' ?>">Sejarah Desa</a></li>
-                            <li><a href="<?php echo base_url() . 'user/home' ?>">Profil Wilayah</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="<?php echo base_url() . 'user/Galeri' ?>">Galeri</a></li>
+                    <li><a href="<?php echo base_url() . 'user/Pelayanan_Pengaduan' ?>">Pelayanan dan Pengaduan</a></li>
+                    <li><a href="<?php echo base_url() . 'user/SejarahDesa' ?>">Profil Desa</a></li>
                     <li class="drop-down"><a href="">Pemerintahan Desa</a>
                         <ul>
-                            <li><a href="<?php echo base_url() . 'user/home' ?>">Visi dan Misi</a></li>
-                            <li><a href="<?php echo base_url() . 'user/home' ?>">Pemerintah Desa</a></li>
+                            <li><a href="<?php echo base_url() . 'user/VisiMisi' ?>">Visi dan Misi</a></li>
+                            <li><a href="<?php echo base_url() . 'user/Struktur' ?>">Pemerintah Desa</a></li>
                         </ul>
                     </li>
+                    <li><a href="<?php echo base_url() . 'user/Kontak' ?>">Contact</a></li>
                     <li>
                         <div class="float-right">
-                            <a href="<?= base_url('Login'); ?>" class="btn btn-primary rounded-pill">Login</a>
+                            <a href="<?php echo base_url() . 'Login' ?>" class="btn btn-primary rounded-pill">Login</a>
                         </div>
                     </li>
                 </ul>
@@ -90,7 +87,8 @@
                         Padukuhan yakni pateguhan, gentong, dan bendrong yang
                         berada di
                         wilayah Kecamatan Jabung, Kabupaten Malang, Provinsi Jawa Timur.</p>
-                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">LOGIN</a>
+                    <a href="<?php echo base_url() . 'Login' ?>"
+                        class="btn-get-started animate__animated animate__fadeInUp">LOGIN</a>
                 </div>
             </div>
 
@@ -102,7 +100,8 @@
                         Padukuhan yakni pateguhan, gentong, dan bendrong yang
                         berada di
                         wilayah Kecamatan Jabung, Kabupaten Malang, Provinsi Jawa Timur. </p>
-                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">LOGIN</a>
+                    <a href="<?php echo base_url() . 'Login' ?>"
+                        class="btn-get-started animate__animated animate__fadeInUp">LOGIN</a>
                 </div>
             </div>
 

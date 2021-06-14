@@ -153,7 +153,7 @@
                 <div class="card-body">
                     <div class="text-center">
                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 26rem;"
-                            src="<?php echo base_url('assets/img/logo alur.svg') ?>" alt="">
+                            src="<?php echo base_url('assets/img/pelayanan.png') ?>" alt="">
                     </div>
                     <p>Sebelum memproses atau mengajukan ke Kepala Desa untuk pelayanan KTP (Kartu Tanda Penduduk),
                         Kartu Keluarga (KK), Akta

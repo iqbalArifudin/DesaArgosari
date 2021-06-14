@@ -146,21 +146,73 @@
                                         class="form-control" required value="<?= $k->alasan; ?>" readonly>
                                 </div>
                                 <p>
+
                                 <div class="form-group">
                                     <label for="nim"><strong>Ajukan</strong></label>
                                     <?php if ($k->status == "Diajukan Ke Pelayanan") : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Ajukan
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
                                         Ke Pelayanan
+                                    </div>
+                                    <br>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Ditolak">Ditolak
+                                    </div>
+
+                                    <?php elseif ($k->status == "Ditolak") : ?>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan" checked>Diajukan
+                                        Ke Pelayanan
+                                    </div>
+                                    <br>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Ditolak" checked>Ditolak
                                     </div>
 
                                     <?php else : ?>
                                     <div class="form-check">
-                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan">Ajukan Ke
-                                        Pelayanan
+                                        <input type="radio" name="status" value="Diajukan Ke Pelayanan">Diajukan
+                                        Ke Pelayanan
+                                    </div>
+                                    <br>
+                                    <div class="form-check">
+                                        <input type="radio" name="status" value="Ditolak">Ditolak
                                     </div>
                                     <?php endif ?>
                                 </div>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Nikah Laki - Laki</strong></label>
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->suratnikah_l ?>" class="card-img"
+                                    style="width: 50%;">
+                                <br>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Nikah Perempuan</strong></label>
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->suratnikah_p ?>" class="card-img"
+                                    style="width: 50%;">
+                                <br>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Kartu Keluarga Suami</strong></label>
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->kk1 ?>" class="card-img"
+                                    style="width: 50%;">
+                                <br>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Kartu Keluarga Istri</strong></label>
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->kk2 ?>" class="card-img"
+                                    style="width: 50%;">
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->surat_rt_rw ?>" class="card-img"
+                                    style="width: 50%;">
+                                <br>
                                 <?php endforeach ?>
                                 <p>
                                     <hr>

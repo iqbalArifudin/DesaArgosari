@@ -31,17 +31,12 @@
                                 <td><?= $kk->tgl_mengajukan ?></td>
                                 <td><span class="badge badge-warning"><?= $kk->status ?></span></td>
                                 <td>
-                                    <a class='btn btn-danger'
-                                        onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')"
-                                        href="<?= base_url() . 'pegawai/Pelayanan_kk/hapus/' . $kk->id_kepala_kel ?>">
-                                        <i class="fa fa-trash" aria-hidden="true"><span> Hapus</span></i>
-                                    </a>
                                     <a class='btn btn-warning'
-                                        href="<?= base_url() . 'pegawai/Pelayanan_kk/edit/' . $kk->id_kepala_kel ?>">
+                                        href="<?= base_url() . 'pegawai/PelayananKK/edit/' . $kk->id_kepala_kel ?>">
                                         <i class="fas fa-hourglass-half" aria-hidden="true"><span> Proses</span></i>
                                     </a>
                                     <a class='btn btn-info'
-                                        href='<?= base_url() . 'pegawai/Pelayanan_kk/detail/' . $kk->id_kepala_kel ?>'
+                                        href='<?= base_url() . 'pegawai/PelayananKK/detail/' . $kk->id_kepala_kel ?>'
                                         class='btn btn-biru'>
                                         <i class="fas fa-eye" aria-hidden="true"><span>&nbsp;Detail</span></i>
                                     </a>

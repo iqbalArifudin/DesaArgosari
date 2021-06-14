@@ -56,6 +56,12 @@
                                 </div>
                                 <br>
                                 <div class="form-row">
+                                    <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
+                                    <img src="<?= base_url('assets/foto_ktp/') . $penduduk->surat_rt_rw ?>"
+                                        class="card-img" alt="..." width="100px">
+                                </div>
+                                <br>
+                                <div class="form-row">
                                     <label for="nama"><strong>Persyaratan FC KK</strong></label>
                                     <img src="<?= base_url('assets/foto_ktp/') . $penduduk->fc_kk ?>" class="card-img"
                                         alt="..." width="100px">

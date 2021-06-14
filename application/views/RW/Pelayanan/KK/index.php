@@ -16,6 +16,7 @@
                                 <th>NAMA KEPALA KELUARGA</th>
                                 <th>TANGGAL MENGAJUKAN</th>
                                 <th>STATUS</th>
+                                <th>ALASAN</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -27,6 +28,7 @@
                                 <td><?= $kk->nama_kpl ?></td>
                                 <td><?= $kk->tgl_mengajukan ?></td>
                                 <td><span class="badge badge-warning"><?= $kk->status ?></span></td>
+                                <td><?= $kk->alasan ?></td>
                                 <td>
 
                                     <?php if ($kk->status == "Ditolak") : ?>
@@ -57,7 +59,7 @@
                                         <i class="fa fa-hourglass-half" aria-hidden="true">&nbsp;Proses</i>
                                     </a>
 
-                                    <?php elseif ($kk->status == "Diajukan Ke Ketua RW") : ?>
+                                    <?php elseif ($kk->status == "Diajukan Ke Pelayanan") : ?>
                                     <a btn btn-info href="#modalDelete3" data-toggle="modal"
                                         onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('RW/Pelayanan_KK/edit/' . $kk->id_kepala_kel) ?>')"
                                         class='btn btn-info'>

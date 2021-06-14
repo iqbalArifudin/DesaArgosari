@@ -26,5 +26,14 @@ class Berita extends CI_Controller
         $this->load->view('user/Berita', $data);
         $this->load->view('template user/footer', $data);
     }
+
+    public function detail($id_berita)
+    {
+        $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
+        $data['berita'] = $this->berita_model->getDetail($id_berita);
+        $this->load->view('template user/header', $data);
+        $this->load->view('user/Detail_berita', $data);
+        $this->load->view('template user/footer', $data);
+    } 
 }
         /* End of fils konsep.php */

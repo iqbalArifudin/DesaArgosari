@@ -136,16 +136,30 @@
                                                         style="width:400px;" height="500px">
                                                 </div>
                                             </div>
-
-                                            <p>
-                                            <div class="form-group">
-                                                <button type="submit" name="submit"
-                                                    class="btn btn-success ">Submit</button>
-                                                <button type="reset" class="btn btn-danger"><i
-                                                        class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
-                                            </div>
-
                                         </div>
+                                        <div class="form-row">
+                                            <label for="satuan">Surat Pengantar RT /RW</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="surat_rt_rw"
+                                                    name="surat_rt_rw">
+                                                <label class="custom-file-label"
+                                                    for="customFile"><?= $k->surat_rt_rw ?></label>
+                                                <?= form_error('surat_rt_rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                            <br>
+                                            <div class="form-row">
+                                                <img src="<?= base_url('assets/foto_kk/') . $k->surat_rt_rw ?>"
+                                                    style="width:400px;" height="500px">
+                                            </div>
+                                        </div>
+                                        <p>
+                                        <div class="form-group">
+                                            <button type="submit" name="submit" class="btn btn-success ">Submit</button>
+                                            <button type="reset" class="btn btn-danger"><i
+                                                    class="fa fa-times"></i>&nbsp;&nbsp;Batal</button>
+                                        </div>
+
+
 
 
                                         <p>

@@ -13,7 +13,7 @@
                             <center><strong>Detail</strong></center>
                         </div>
                         <div class="card-body">
-                            <?php foreach ($kk as $k) : ?>
+                            <?php foreach ($kepala as $k) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id_kepala_kel" value="<?= $k->id_kepala_kel; ?>">
@@ -112,16 +112,16 @@
 
                                     </tbody>
                                     <tfoot>
-                                        <?php foreach ($keluarga as $kk) : ?>
+                                        <?php foreach ($kk as $kel) : ?>
                                         <tr>
-                                            <td><?= $kk->nama_kel ?></td>
-                                            <td><?= $kk->NIK_kel ?></td>
-                                            <td><?= $kk->tempat_lahir ?> / <?= $kk->tanggal_lahir ?></td>
-                                            <td><?= $kk->jenis_kelamin ?></td>
-                                            <td><?= $kk->agama ?></td>
-                                            <td><?= $kk->status_perkawinan ?></td>
-                                            <td><?= $kk->pekerjaan ?></td>
-                                            <td><?= $kk->pendidikan ?></td>
+                                            <td><?= $kel->nama_kel ?></td>
+                                            <td><?= $kel->NIK_kel ?></td>
+                                            <td><?= $kel->tempat_lahir ?> / <?= $kel->tanggal_lahir ?></td>
+                                            <td><?= $kel->jenis_kelamin ?></td>
+                                            <td><?= $kel->agama ?></td>
+                                            <td><?= $kel->status_perkawinan ?></td>
+                                            <td><?= $kel->pekerjaan ?></td>
+                                            <td><?= $kel->pendidikan ?></td>
                                         </tr>
                                         <?php endforeach ?>
                                     </tfoot>
@@ -145,12 +145,82 @@
                                     <input type="text" name="nama" placeholder="" autocomplete="off"
                                         class="form-control" required value="<?= $k->alasan; ?>" readonly>
                                 </div>
-                                <br>
-                                <?php endforeach ?>
+                                <p>
+                                    <br>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Pengantar RT / RW</strong></label>
+
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->surat_rt_rw ?>" class="card-img"
+                                    style="width: 50%;">
+                                <p>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url() . 'pegawai/PelayananKK/download/' . $k->id_kepala_kel; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                    </a>
+
+                                <p>
+                                    <br>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Nikah Laki-Laki</strong></label>
+
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->suratnikah_l ?>" class="card-img"
+                                    style="width: 50%;">
+                                <p>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url() . 'pegawai/PelayananKK/download1/' . $k->id_kepala_kel; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                    </a>
+
+                                <p>
+                                    <br>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Surat Nikah Perempuan</strong></label>
+
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->suratnikah_p ?>" class="card-img"
+                                    style="width: 50%;">
+                                <p>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url() . 'pegawai/PelayananKK/download2/' . $k->id_kepala_kel; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                    </a>
+
+                                <p>
+                                    <br>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Kartu Keluarga Suami</strong></label>
+
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->kk1 ?>" class="card-img"
+                                    style="width: 50%;">
+                                <p>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url() . 'pegawai/PelayananKK/download3/' . $k->id_kepala_kel; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                    </a>
+
+                                <p>
+                                    <br>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Kartu Keluarga Istri</strong></label>
+
+                                </div>
+                                <img src="<?= base_url('assets/foto_kk/') . $k->kk2 ?>" class="card-img"
+                                    style="width: 50%;">
+                                <p>
+                                    <a class='btn btn-dark'
+                                        href="<?php echo base_url() . 'pegawai/PelayananKK/download4/' . $k->id_kepala_kel; ?>">
+                                        <i class="fas fa-download" aria-hidden="true"><span> Download</span></i>
+                                    </a>
+                                    <?php endforeach ?>
                                 <p>
                                     <hr>
-                                    <a href="<?= base_url("pegawai/Pelayanan_kk") . $this->uri->segment(4) ?>"
-                                        class="btn btn-info"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
+                                    <a href="<?= base_url("pegawai/PelayananKK/pdf"); ?>" class="btn btn-success"><i
+                                            class="fa fa-print"></i>&nbsp;&nbsp;Cetak</a>
+                                    <a href="<?= base_url("pegawai/PelayananKK") ?>" class="btn btn-info"><i
+                                            class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 
                             </form>
                         </div>

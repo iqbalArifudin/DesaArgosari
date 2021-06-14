@@ -16,6 +16,12 @@
                                 Tambah Data Akta Kelahiran
                             </span>
                         </a>
+                        <a class='btn btn-success' href="akta_kelahiran/pdf">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <span>
+                                Download Surat Pengantar RT / RW
+                            </span>
+                        </a>
                     <table id="dataTable" class="table table-striped">
                         <thead class="table table-striped">
                             <tr>

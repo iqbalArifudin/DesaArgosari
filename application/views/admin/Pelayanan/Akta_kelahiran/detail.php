@@ -17,7 +17,7 @@
                             <?php foreach ($akta as $a) : ?>
 
                             <form action="" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="id_akta" value="<?= $a->id_akta;?>">
+                                <input type="hidden" name="id_akta" value="<?= $a->id_akta; ?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nama"><strong>Nama Yang Mengajukan</strong></label>
@@ -111,6 +111,18 @@
                                 <div class="form-row">
                                     <label for="nama"><strong>Persyaratan KTP Saksi</strong></label>
                                     <img src="<?= base_url('assets/persyaratan_akta/') . $a->fc_ktp_saksi ?>"
+                                        class="card-img" alt="..." width="100px">
+                                </div>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Persyaratan Surat Kelahiran</strong></label>
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_kelahiran ?>"
+                                        class="card-img" alt="..." width="100px">
+                                </div>
+                                <hr>
+                                <div class="form-row">
+                                    <label for="nama"><strong>Persyaratan Surat Pengantar RT / RW</strong></label>
+                                    <img src="<?= base_url('assets/persyaratan_akta/') . $a->surat_rt_rw ?>"
                                         class="card-img" alt="..." width="100px">
                                 </div>
 

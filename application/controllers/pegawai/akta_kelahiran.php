@@ -131,5 +131,13 @@ class akta_kelahiran extends CI_Controller
         $file = './assets/persyaratan_akta/' . $fileinfo['fc_ktp_saksi'];
         force_download($file, NULL);
     }
+
+    public function downloadktp_sk($id_akta)
+    {
+        $this->load->helper('download');
+        $fileinfo = $this->akta_kelahiran_model->download($id_akta);
+        $file = './assets/persyaratan_akta/' . $fileinfo['surat_kelahiran'];
+        force_download($file, NULL);
+    }
 }
         /* End of fils admin.php */

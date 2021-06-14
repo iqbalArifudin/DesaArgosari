@@ -11,6 +11,7 @@
             $this->load->model('berita_model');
             $this->load->model('pegawai_model');
             $this->load->model('penduduk_model');
+        $this->load->model('Informasi_model');
             // $this->load->model('admin/user/user_model');
         }
         
@@ -20,6 +21,7 @@
             $data['title'] = 'Halaman User';
             $data['penduduk'] = $this->penduduk_model->getPenduduk($this->session->userdata('id_penduduk'));
             $data['berita'] = $this->berita_model->tampilBerita();
+        $data['informasi'] = $this->Informasi_model->tampilInformasi();
             $data['pegawai'] = $this->pegawai_model->tampilPegawai();
             $this->load->view('template user/header',$data);
             $this->load->view('user/home', $data);
