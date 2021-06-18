@@ -1,5 +1,5 @@
 <?php
-    
+
     defined('BASEPATH') OR exit('No direct script access allowed');
 
     class LayananKtp extends CI_Controller {
@@ -13,7 +13,10 @@
         $this->load->model('penduduk_model');
         $this->load->model('Pengaduan_model');
         $this->load->model('Ktp_model');
+        
         $this->load->library('pdf');
+        
+
         }
         
         public function index()
@@ -63,6 +66,13 @@
                 
             }
         }
+
+
+        
+        
+
+
+
 
         public function hapus($id_ktp)
         {

@@ -56,7 +56,17 @@ class Ktp_model extends CI_Model {
 
     public function tambahKtp($upload, $upload1)
     {
-		$data=[
+        // data notifikasi
+        $dataNotif  = array(
+
+            'akses'         => "RT",
+            'id_penduduk'   => $this->session->userdata('id_penduduk'),
+            'id_ktp'        => $this->input->post('id_ktp', true),
+            'text'          => "Pengajuan KTP baru",
+        );
+
+        // data pengajuan
+		$data=[ 
             'id_ktp'=>$this->input->post('id_ktp', true),
             'id_penduduk'=>$this->session->userdata('id_penduduk'),
             'status'=>'Diajukan',
@@ -65,7 +75,13 @@ class Ktp_model extends CI_Model {
             'fc_kk'=>$upload['file']['file_name'],
             'surat_rt_rw' => $upload1['file']['file_name'],
 		];
-	$this->db->insert('ktp', $data);
+	    $this->db->insert('ktp', $data);
+
+        // buat notifikasi 
+        $judul      = "Pengajuan KTP Baru";
+        $deskripsi  = "Terdapat pengajuan KTP baru pada ". date('d F Y H.i A');
+        
+        insertDataNotifikasi( $judul, $deskripsi, $dataNotif );
     }
     
     public function upload(){    

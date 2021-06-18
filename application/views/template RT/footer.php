@@ -71,6 +71,70 @@ $('.custom-file-input').on('change', function() {
 });
 </script>
 
+
+
+
+<!-- Notifikasi Pusher.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script>
+
+    $(function() {
+
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('737a56fc6f362506cd75', {
+            cluster: 'ap1'
+        });
+
+
+        var all_notif = function() {
+
+            <?php $sess_hak_akses = $this->session->userdata('hak_akses') ?>
+            // refresh konten
+            $('#tampil-notifikasi').html( '<?php echo getDataNotifikasi( $sess_hak_akses ) ?>' );
+        }
+
+        var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+            // alert(JSON.stringify(data));
+
+            toastr["info"](data.judul, data.deskripsi)
+            
+            // panggil atau render html
+            all_notif();
+
+        });
+
+
+        all_notif();
+
+
+        
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+
+        // toastr.show("Pengajuan KTP", "Pemberitahuan")
+    });
+</script>
+
 </body>
 
 </html>
