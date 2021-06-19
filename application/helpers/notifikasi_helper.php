@@ -1,7 +1,7 @@
 <?php 
 
 
-    function insertDataNotifikasi( $judul, $deskripsi, $dataNotif ) {
+    function insertDataNotifikasi( $judul, $deskripsi, $dataNotif, $event ) {
 
 
         // tabel notifikasi database yang digunakan 
@@ -25,7 +25,7 @@
         
           $data['judul']     = $judul;
           $data['deskripsi'] = $deskripsi;
-          $pusher->trigger('my-channel', 'my-event', $data);
+          $pusher->trigger('my-channel', $event, $data);
 
 
         $ci->db->insert( $table, $dataNotif );
@@ -34,13 +34,27 @@
 
 
 
-    function getDataNotifikasi( $hak_akses ) {
+    function getDataNotifikasi( $hak_akses, $id_penduduk = null ) {
 
         $ci=& get_instance();
         $ci->load->database(); 
 
+        if ( $id_penduduk ) { // spesifikasi detail id_penduduk
 
-        $ci->db->select('*')->from('notifikasi')->where('akses', $hak_akses)->order_by('time', 'DESC');
+          $where = array(
+
+            'akses'       => $hak_akses,
+            'id_penduduk' => $id_penduduk,
+          );
+        } else {
+
+          $where = array(
+
+            'akses' => $hak_akses
+          );
+        }
+
+        $ci->db->select('*')->from('notifikasi')->where( $where )->order_by('time', 'DESC');
         $notifikasi = $ci->db->get();
         $elementHTML = "";
 

@@ -57,6 +57,7 @@
             } 
         }
 
+
         public function edit($id_ktp){
             $this->load->library('form_validation');
             $data ['ktp'] = $this->Ktp_model->getKtp($id_ktp);

@@ -51,6 +51,9 @@
                         <h6 class="dropdown-header">
                             Alerts Center
                         </h6>
+
+
+                        <div id="tampil-notifikasi"></div>
                         <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="mr-3">
                                 <div class="icon-circle bg-primary">
@@ -73,7 +76,7 @@
                                 $290.29 has been deposited into your account!
                             </div>
                         </a> -->
-                        <?php foreach ($notifikasi as $n): ?>
+                        <!-- <?php //foreach ($notifikasi as $n): ?>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="mr-3">
                                 <div class="icon-circle bg-warning">
@@ -81,11 +84,11 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="small text-gray-500"><?= $n->time ?></div>
-                                <?= $n->text ?>
+                                <div class="small text-gray-500"><?php //echo $n->time ?></div>
+                                <?php //echo $n->text ?>
                             </div>
                         </a>
-                        <?php endforeach ?>
+                        <?php //endforeach ?> -->
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
                 </li>

@@ -80,8 +80,9 @@ class Ktp_model extends CI_Model {
         // buat notifikasi 
         $judul      = "Pengajuan KTP Baru";
         $deskripsi  = "Terdapat pengajuan KTP baru pada ". date('d F Y H.i A');
+        $hak_aksestujuan = "RT";
         
-        insertDataNotifikasi( $judul, $deskripsi, $dataNotif );
+        insertDataNotifikasi( $judul, $deskripsi, $dataNotif, $hak_aksestujuan );
     }
     
     public function upload(){    
@@ -130,9 +131,49 @@ class Ktp_model extends CI_Model {
     }
     
     public function ubahKtp($id_ktp){
+
+
+        $status = $this->input->post('status', true); // inisialisasi nilai agar dapat digunakan di 2 objek berbeda
+        $alasan = $this->input->post('alasan', true);
+
+        // data notifikasi
+
+
+        // ambil data informasi penduduk yang dituju 
+        /** Karena parameter yang kita terima adalah @id_ktp maka kita harus memanggil 
+         * data ktp dan berdasasrkan id_penduduk yang bersangkutan */
+
+        #Informasi KTP
+        $ambilDataInformasiKTPById = $this->db->get_where('ktp', ['id_ktp' => $id_ktp])->row_array(); // sorthand query 
+        
+        // alternate 
+        /** $ambilDataInformasiKTPById = "SELECT * FROM ktp WHERE id_ktp = '$id_ktp'"; */
+        
+        $penerima = $ambilDataInformasiKTPById['id_penduduk']; // id_penduduk
+
+        $dataNotif  = array(
+
+            'akses'         => "Penduduk", // RT | RW | Admin | Pegawai | Penduduk
+            'id_penduduk'   => $penerima,
+            'id_ktp'        => $this->input->post('id_ktp', true),
+            'text'          => $alasan,
+        );
+
+        // buat notifikasi 
+        $judul      = "Pengajuan KTP";
+        $deskripsi  = "Status ".$status;
+        
+        $hak_aksestujuan = "Penduduk";
+        $event = $hak_aksestujuan.'-'.$penerima; // karena untuk penduduk dibutuhkan penerima
+
+        insertDataNotifikasi( $judul, $deskripsi, $dataNotif, $event );
+
+        // - - - - - - - - - -
+
+
 		$data=[
-            'status'=>$this->input->post('status', true),
-            'alasan'=>$this->input->post('alasan', true),
+            'status'=> $status,
+            'alasan'=> $alasan,
 		];
         $this->db->where('id_ktp', $id_ktp);	
         $this->db->update('ktp', $data);
