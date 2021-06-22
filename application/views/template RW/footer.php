@@ -71,6 +71,81 @@ $('.custom-file-input').on('change', function() {
 });
 </script>
 
+
+
+<!-- Notifikasi Pusher.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script>
+
+    $(function() {
+
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('737a56fc6f362506cd75', {
+            cluster: 'ap1'
+        });
+
+
+        var all_notif = function() {
+
+            <?php 
+                
+                $sess_hak_akses   = "RW";
+
+                // notif tertentu
+                $event = $sess_hak_akses;// hakaskes-id
+            ?>
+
+            $.ajax({
+
+                type: "get",
+                url : "<?php echo base_url('Notifikasi/get/'. $sess_hak_akses) ?>",
+                success: function( data ){
+
+                    $('#tampil-notifikasi').html( data );
+                }
+            })
+        }
+        all_notif();
+
+        
+
+        var channel = pusher.subscribe('my-channel');
+            channel.bind('<?php echo $event ?>', function(data) {
+            
+            toastr["info"](data.judul, data.deskripsi)
+            
+            // panggil atau render html
+            all_notif();
+
+        });
+
+
+        
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    });
+</script>
+<!-- End Notifikasi -->
+
+
 </body>
 
 </html>

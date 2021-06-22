@@ -145,6 +145,8 @@ $('.custom-file-input').on('change', function() {
         }
     });
 </script>
+<!-- End Notifikasi -->
+
 
 </body>
 

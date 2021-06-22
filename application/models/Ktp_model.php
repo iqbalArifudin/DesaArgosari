@@ -59,7 +59,7 @@ class Ktp_model extends CI_Model {
         // data notifikasi
         $dataNotif  = array(
 
-            'akses'         => "RT",
+            'akses'         => "RT", // untuk siapa ?
             'id_penduduk'   => $this->session->userdata('id_penduduk'),
             'id_ktp'        => $this->input->post('id_ktp', true),
             'text'          => "Pengajuan KTP baru",
@@ -167,6 +167,32 @@ class Ktp_model extends CI_Model {
         $event = $hak_aksestujuan.'-'.$penerima; // karena untuk penduduk dibutuhkan penerima
 
         insertDataNotifikasi( $judul, $deskripsi, $dataNotif, $event );
+
+
+
+        // notifikasi untuk RW (dengan catatan status di acc)
+        if ( $status == "Diajukan Ke Ketua RW" ) {
+
+
+            // buat notifikasi untuk RW
+            $dataNotifRW  = array(
+
+                'akses'         => "RW", // RT | RW | Admin | Pegawai | Penduduk
+                'id_penduduk'   => $penerima,
+                'id_ktp'        => $this->input->post('id_ktp', true),
+                'text'          => $status,
+            );
+
+             // buat notifikasi 
+            $judulRW      = "Pengajuan KTP";
+            $deskripsiRW  = "Status ".$status;
+            
+            $hak_aksestujuanRW = "RW";
+            $event = $hak_aksestujuanRW;
+
+            insertDataNotifikasi( $judulRW, $deskripsiRW, $dataNotifRW, $event );
+        }
+
 
         // - - - - - - - - - -
 
